@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Roccia · Heladería artesanal en Cumbayá</title>
 <meta name="description" content="Heladería italo-argentina artesanal en Plaza Briza, Cumbayá. Gelato con ingredientes reales de Italia, Argentina y Ecuador." />
+<link rel="canonical" href="https://roccia.ec/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roccia" />
+<meta property="og:locale" content="es_EC" />
+<meta property="og:url" content="https://roccia.ec/" />
+<meta property="og:title" content="Roccia · Heladería artesanal en Cumbayá" />
+<meta property="og:description" content="Gelato artesanal con ingredientes reales de Italia, Argentina y Ecuador. En Plaza Briza, Cumbayá." />
+<meta property="og:image" content="https://roccia.ec/assets/img/photo-modelo-affogato.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1500" />
+<meta property="og:image:alt" content="Affogato Roccia — espresso illy sobre vainilla artesanal" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Roccia · Heladería artesanal en Cumbayá" />
+<meta name="twitter:description" content="Gelato artesanal con ingredientes reales de Italia, Argentina y Ecuador. En Plaza Briza, Cumbayá." />
+<meta name="twitter:image" content="https://roccia.ec/assets/img/photo-modelo-affogato.jpg" />
+<meta name="theme-color" content="#50351c" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -134,9 +150,7 @@
   .sepia-soft { filter: sepia(0.10) saturate(0.95); }
 
   /* ── Grain background ────────────────────────────────── */
-  .grain {
-    position: relative;
-  }
+  .grain { position: relative; }
   .grain::after {
     content: '';
     position: absolute; inset: 0;
@@ -151,7 +165,7 @@
   .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
   .marquee-track > * { flex: 0 0 auto; padding-right: 64px; }
 
-  /* ── Hero rise animations ────────────────────────────── */
+  /* ── Animations ──────────────────────────────────────── */
   @keyframes rise {
     0% { opacity: 0; transform: translateY(28px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -176,7 +190,7 @@
   .nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 50;
-    transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease, box-shadow .35s ease;
+    transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease;
     background: transparent;
     border-bottom: 1px solid transparent;
   }
@@ -245,7 +259,7 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background-image: url('assets/photo-cafe-fachada-1.jpg');
+    background-image: url('assets/img/photo-cafe-fachada-1.jpg');
     background-size: cover;
     background-position: center 30%;
     filter: sepia(0.18) saturate(0.92) contrast(1.05) brightness(0.78);
@@ -285,7 +299,6 @@
     font-weight: 300;
     font-size: 14px;
     color: rgba(250, 244, 224, 0.78);
-    letter-spacing: 0;
   }
   .hero-headline {
     font-size: clamp(64px, 11vw, 168px);
@@ -346,7 +359,7 @@
   .hero-scroll svg { width: 14px; height: 14px; }
 
   /* ── Marquee section ─────────────────────────────────── */
-  .marquee {
+  .marquee-section {
     background: var(--cafe-oscuro);
     color: var(--crema);
     padding: 28px 0;
@@ -379,11 +392,12 @@
   }
   .statement-text .last { color: var(--cafe-medio); display: block; margin-top: 0.4em; }
 
+  /* ── Gallery grid ────────────────────────────────────── */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 880px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
   /* ── Origen Triple ───────────────────────────────────── */
-  .origen {
-    background: var(--cafe-oscuro);
-    color: var(--crema);
-  }
+  .origen { background: var(--cafe-oscuro); color: var(--crema); }
   .origen-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -480,10 +494,7 @@
   @media (max-width: 800px)  { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 480px)  { .cat-grid { grid-template-columns: 1fr; } }
 
-  .flavor-card {
-    display: flex; flex-direction: column;
-    gap: 14px;
-  }
+  .flavor-card { display: flex; flex-direction: column; gap: 14px; }
   .flavor-photo {
     aspect-ratio: 1 / 1;
     background-size: cover;
@@ -514,10 +525,7 @@
     line-height: 1.05;
     color: var(--cafe-oscuro);
   }
-  .flavor-meta {
-    display: flex; align-items: center; gap: 10px;
-    margin-top: -4px;
-  }
+  .flavor-meta { display: flex; align-items: center; gap: 10px; margin-top: -4px; }
   .flavor-origin {
     font-family: var(--serif);
     font-size: 10px;
@@ -537,10 +545,7 @@
   }
 
   /* ── Sabor del mes ───────────────────────────────────── */
-  .inseason {
-    background: var(--cafe-oscuro);
-    color: var(--crema);
-  }
+  .inseason { background: var(--cafe-oscuro); color: var(--crema); }
   .inseason-grid {
     display: grid;
     grid-template-columns: 5fr 6fr;
@@ -552,9 +557,7 @@
     aspect-ratio: 3/4;
     background-size: cover;
     background-position: center;
-    background-image: url('assets/photo-fresa-cup.jpeg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('assets/img/photo-fresa-cup.jpeg');
     filter: sepia(0.18) saturate(0.95) contrast(1.04);
     position: relative;
   }
@@ -597,10 +600,7 @@
     max-width: 52ch;
     margin-bottom: 32px;
   }
-  .inseason-origins {
-    display: flex; flex-wrap: wrap; gap: 12px;
-    margin-bottom: 36px;
-  }
+  .inseason-origins { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
   .inseason-origin-pill {
     border: 1px solid rgba(250, 244, 224, 0.28);
     padding: 8px 14px;
@@ -614,6 +614,18 @@
   .inseason-origin-pill .dot {
     display: inline-block; width: 6px; height: 6px; border-radius: 50%;
     margin-right: 9px; vertical-align: middle;
+  }
+
+  /* ── Insignias gallery ───────────────────────────────── */
+  .insignia-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  @media (max-width: 880px) {
+    .insignia-grid { grid-template-columns: 1fr 1fr; }
+    .insignia-grid > a:first-child { grid-row: span 1; grid-column: span 2; aspect-ratio: 4/3 !important; }
   }
 
   /* ── Menú ────────────────────────────────────────────── */
@@ -665,7 +677,7 @@
     color: var(--cafe-oscuro);
     white-space: nowrap;
   }
-  .menu-row .insignia {
+  .menu-row .insignia-tag {
     margin-left: 8px;
     font-size: 9px;
     letter-spacing: 0.18em;
@@ -733,22 +745,12 @@
     text-decoration: none;
     color: var(--cafe-oscuro);
     display: flex; flex-direction: column; gap: 16px;
-    transition: background .3s ease, border-color .3s ease, color .3s ease, transform .3s ease;
-    position: relative;
+    transition: background .3s ease, border-color .3s ease, color .3s ease;
     min-height: 220px;
     justify-content: space-between;
   }
-  .delivery-card:hover {
-    background: var(--cafe-oscuro);
-    color: var(--crema);
-    border-color: var(--cafe-oscuro);
-  }
-  .delivery-card .num {
-    font-family: var(--serif);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--cafe-medio);
-  }
+  .delivery-card:hover { background: var(--cafe-oscuro); color: var(--crema); border-color: var(--cafe-oscuro); }
+  .delivery-card .num { font-family: var(--serif); font-size: 11px; letter-spacing: 0.2em; color: var(--cafe-medio); }
   .delivery-card:hover .num { color: rgba(250, 244, 224, 0.7); }
   .delivery-card .name {
     font-family: var(--display);
@@ -814,17 +816,12 @@
     color: var(--cafe-medio);
     margin-bottom: 4px;
   }
-  .visit-row .value {
-    font-family: var(--serif);
-    font-size: 16px;
-    color: var(--cafe-oscuro);
-    line-height: 1.5;
-  }
+  .visit-row .value { font-family: var(--serif); font-size: 16px; color: var(--cafe-oscuro); line-height: 1.5; }
   .visit-photo {
     position: relative;
     aspect-ratio: 5 / 6;
     overflow: hidden;
-    background-image: url('assets/photo-modelo-affogato.jpg');
+    background-image: url('assets/img/photo-modelo-affogato.jpg');
     background-size: cover; background-position: center;
     filter: sepia(0.18) saturate(0.92) contrast(1.05);
   }
@@ -850,10 +847,7 @@
   }
 
   /* ── B2B ─────────────────────────────────────────────── */
-  .b2b {
-    background: var(--cafe-oscuro);
-    color: var(--crema);
-  }
+  .b2b { background: var(--cafe-oscuro); color: var(--crema); }
   .b2b-grid {
     display: grid;
     grid-template-columns: 7fr 5fr;
@@ -888,6 +882,43 @@
   .b2b-cta-wrap { display: flex; justify-content: flex-end; }
   @media (max-width: 880px) { .b2b-cta-wrap { justify-content: flex-start; } }
 
+  /* ── Section header ──────────────────────────────────── */
+  .section-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: clamp(28px, 3vw, 40px);
+    align-items: end;
+  }
+  @media (max-width: 880px) { .section-head { grid-template-columns: 1fr; } }
+  .section-head .seal { align-self: start; }
+  .section-headline {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 80px);
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    line-height: 0.98;
+    margin: 0;
+  }
+  .section-headline em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+  }
+  .section-eyebrow {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--cafe-medio);
+    margin-top: 14px;
+    max-width: 40ch;
+  }
+  .section-eyebrow.on-dark { color: rgba(250, 244, 224, 0.7); }
+
   /* ── Footer ──────────────────────────────────────────── */
   footer { background: var(--crema); color: var(--cafe-oscuro); padding: clamp(64px, 8vw, 120px) 0 36px; overflow: hidden; }
   .footer-wordmark {
@@ -897,7 +928,6 @@
     color: var(--cafe-oscuro);
     margin: 0 0 clamp(48px, 6vw, 80px);
     letter-spacing: -0.01em;
-    /* visual bleed: pull a hair past edges to feel architectural */
     margin-left: -0.02em;
   }
   .footer-grid {
@@ -939,54 +969,16 @@
     letter-spacing: 0.04em;
   }
   .footer-legal .dot-sep { margin: 0 10px; opacity: 0.5; }
-
-  /* ── Section header (reused) ─────────────────────────── */
-  .section-head {
-    display: grid;
-    grid-template-columns: 4fr 8fr;
-    gap: clamp(24px, 4vw, 56px);
-    margin-bottom: clamp(28px, 3vw, 40px);
-    align-items: end;
-  }
-  @media (max-width: 880px) { .section-head { grid-template-columns: 1fr; } }
-  .section-head .seal { align-self: start; }
-  .section-headline {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(40px, 5.5vw, 80px);
-    letter-spacing: -0.025em;
-    text-transform: uppercase;
-    line-height: 0.98;
-    margin: 0;
-  }
-  .section-headline em {
-    font-family: var(--script);
-    font-style: normal;
-    font-weight: 400;
-    text-transform: none;
-    color: var(--mostaza);
-    letter-spacing: 0;
-  }
-  .section-headline.on-dark em { color: var(--mostaza); }
-  .section-eyebrow {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 16px;
-    color: var(--cafe-medio);
-    margin-top: 14px;
-    max-width: 40ch;
-  }
-  .section-eyebrow.on-dark { color: rgba(250, 244, 224, 0.7); }
 </style>
 </head>
 <body>
 
 <!-- ── Header ───────────────────────────────────────── -->
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
   <div class="nav-inner">
     <a href="#top" aria-label="Roccia · Inicio" style="display:flex;align-items:center;">
-      <img src="assets/logo-crema.png" alt="Roccia" class="nav-logo nav-logo-light" />
-      <img src="assets/logo-roca.png"  alt="Roccia" class="nav-logo nav-logo-dark"  />
+      <img src="assets/img/logo-crema.png" alt="Roccia" class="nav-logo nav-logo-light" />
+      <img src="assets/img/logo-roca.png"  alt="Roccia" class="nav-logo nav-logo-dark"  />
     </a>
     <div class="nav-links">
       <a href="#menu">Menú</a>
@@ -997,31 +989,31 @@
     </div>
     <a href="#delivery" class="pill nav-cta">
       Pedir delivery
-      <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
     </a>
   </div>
 </nav>
 
 <!-- ── Hero ─────────────────────────────────────────── -->
-<header class="hero" id="top" data-screen-label="01 Hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+<header class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="Fachada de Roccia heladería en Cumbayá"></div>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
 
-  <div class="hero-corner hero-corner-tr">
+  <div class="hero-corner hero-corner-tr" aria-hidden="true">
     <span class="seal">Una dulce excusa</span>
   </div>
-  <div class="hero-corner hero-corner-bl">
+  <div class="hero-corner hero-corner-bl" aria-hidden="true">
     Edición Febrero · 26
   </div>
 
   <div class="hero-inner">
     <div class="hero-meta rise delay-1">
       <span class="seal">Cumbayá · Ec</span>
-      <span class="caption">Heladería artesanal</span>
+      <span class="caption" style="font-family:var(--serif); font-style:italic; font-weight:300; font-size:14px; color:rgba(250,244,224,0.78);">Heladería artesanal</span>
     </div>
     <h1 class="hero-headline display rise delay-2">
-      EL FRÍO ES UNA <span class="script">dulce</span> EXCUSA<span class="dot">.</span>
+      EL FRÍO ES UNA <span class="script" style="font-size:0.78em; color:var(--mostaza); margin:0 0.06em; display:inline-block; transform:translateY(0.06em);">dulce</span> EXCUSA<span style="color:var(--mostaza);">.</span>
     </h1>
     <p class="hero-sub rise delay-3">
       En tierras frías hay más calor. En el alma, en la gente, en la comida. Hacemos gelato artesanal con ingredientes reales de Italia, Argentina y Ecuador. Te invitamos a sentarte un poco más cerca.
@@ -1029,23 +1021,23 @@
     <div class="hero-ctas rise delay-4">
       <a href="#menu" class="pill invert">
         Ver el menú
-        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
       <a href="#ubicacion" class="hero-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
         Visítanos en Plaza Briza
       </a>
     </div>
   </div>
 
-  <div class="hero-scroll bob">
+  <div class="hero-scroll bob" aria-hidden="true">
     Scroll
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
   </div>
 </header>
 
 <!-- ── Marquee ──────────────────────────────────────── -->
-<section class="marquee" aria-hidden="true">
+<section class="marquee-section" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item">De los Alpes a los Andes <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Pausas dulces <span class="marquee-star">✺</span></span>
@@ -1061,23 +1053,23 @@
 </section>
 
 <!-- ── Statement editorial ──────────────────────────── -->
-<section class="section grain" data-screen-label="02 Statement">
+<section class="section grain" aria-labelledby="statement-heading">
   <div class="wrap">
     <div class="grid12" style="align-items: center;">
       <div style="grid-column: span 4;">
         <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--crema-warm);">
-          <img src="assets/photo-mantecadora.jpeg" alt="Mantecadora Roccia trabajando un sorbete de fresa" style="width:100%; height:100%; object-fit: cover; filter: sepia(0.18) saturate(0.92) contrast(1.04);" />
+          <img src="assets/img/photo-mantecadora.jpeg" alt="La mantecadora Roccia trabajando un sorbete de fresa de altura" style="width:100%; height:100%; object-fit: cover; filter: sepia(0.18) saturate(0.92) contrast(1.04);" />
           <div style="position:absolute; bottom:14px; left:14px;">
             <span class="seal" style="color:var(--crema); background: rgba(80,53,28,0.55); border-color: rgba(250,244,224,0.6); backdrop-filter: blur(6px);">Cocina · Cumbayá</span>
           </div>
         </div>
-        <div style="margin-top:14px; font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--cafe-medio); max-width: 32ch; line-height:1.5;">
+        <p style="margin-top:14px; font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--cafe-medio); max-width: 32ch; line-height:1.5;">
           La mantecadora trabajando un sorbete de fresa de altura. Sin colorantes, sin atajos.
-        </div>
+        </p>
       </div>
-      <div style="grid-column: span 1;"></div>
+      <div style="grid-column: span 1;" aria-hidden="true"></div>
       <div style="grid-column: span 7;">
-        <span class="seal" style="margin-bottom: 28px; display: inline-flex;">Sobre nosotros</span>
+        <h2 id="statement-heading" class="seal" style="margin-bottom: 28px; display: inline-flex; font-size: inherit; font-weight: inherit; text-transform: inherit; letter-spacing: inherit; line-height: inherit; padding: 6px 14px 5px;">Sobre nosotros</h2>
         <p class="statement-text" style="margin-top: 28px;">
           El frío nos hace sentarnos más cerca, abrazar más fuerte, entrelazar las manos, quedarnos más tiempo juntos. <em>Argentina y Ecuador, a los que hemos llamado hogar, nos han enseñado la dulzura del frío y el abrigo del encuentro.</em>
           <span class="last">Poniendo en práctica técnicas artesanales y usando ingredientes reales de nuestros distintos orígenes, creamos recuerdos comestibles.</span>
@@ -1087,45 +1079,40 @@
   </div>
 </section>
 
-<!-- ── Galería editorial (posters de marca) ─────────── -->
-<section style="background: var(--cafe-oscuro); padding: clamp(72px, 9vw, 128px) 0; color: var(--crema);" data-screen-label="02b Galería">
+<!-- ── Galería editorial ─────────────────────────────── -->
+<section style="background: var(--cafe-oscuro); padding: clamp(72px, 9vw, 128px) 0; color: var(--crema);" aria-labelledby="galeria-heading">
   <div class="wrap">
     <div class="section-head" style="margin-bottom: clamp(40px, 5vw, 64px);">
       <div><span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Galería</span></div>
       <div>
-        <h2 class="section-headline on-dark">Sabores de <em>altura.</em></h2>
+        <h2 id="galeria-heading" class="section-headline on-dark">Sabores de <em>altura.</em></h2>
         <p class="section-eyebrow on-dark">Cuatro retratos. Una sola cuchara. La técnica detrás del helado se ve en cada cucharada.</p>
       </div>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;" class="gallery-grid">
+    <div class="gallery-grid">
       <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/photo-sabores-altura-poster.jpg" alt="Sabores de altura" style="width:100%; height:100%; object-fit: cover;" />
+        <img src="assets/img/photo-sabores-altura-poster.jpg" alt="Sabores de altura — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
       </div>
       <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/photo-pistacchio-poster.jpg" alt="Pistacchio" style="width:100%; height:100%; object-fit: cover;" />
+        <img src="assets/img/photo-pistacchio-poster.jpg" alt="Pistacchio — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
       </div>
       <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/photo-mascarpone-poster.jpg" alt="Mascarpone & Berries" style="width:100%; height:100%; object-fit: cover;" />
+        <img src="assets/img/photo-mascarpone-poster.jpg" alt="Mascarpone &amp; Berries — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
       </div>
       <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/photo-mandarina-poster.jpg" alt="Mandarina" style="width:100%; height:100%; object-fit: cover;" />
+        <img src="assets/img/photo-mandarina-poster.jpg" alt="Mandarina — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
       </div>
     </div>
   </div>
-  <style>
-    @media (max-width: 880px) { .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-  </style>
 </section>
 
 <!-- ── Origen Triple ────────────────────────────────── -->
-<section class="origen section" id="origen" data-screen-label="03 Origen Triple">
+<section class="origen section" id="origen" aria-labelledby="origen-heading">
   <div class="wrap">
     <div class="section-head">
+      <div><span class="seal">Cap. uno</span></div>
       <div>
-        <span class="seal">Cap. uno</span>
-      </div>
-      <div>
-        <h2 class="section-headline on-dark">Origen <em>triple.</em></h2>
+        <h2 id="origen-heading" class="section-headline on-dark">Origen <em>triple.</em></h2>
         <p class="section-eyebrow on-dark">Tres países, una sola técnica. Cada cucharada es una geografía: Italia da el método, Argentina la dulzura, Ecuador la materia prima.</p>
       </div>
     </div>
@@ -1153,41 +1140,39 @@
 </section>
 
 <!-- ── Catálogo de sabores ──────────────────────────── -->
-<section class="section" id="sabores" data-screen-label="04 Sabores">
+<section class="section" id="sabores" aria-labelledby="sabores-heading">
   <div class="wrap">
     <div class="section-head">
+      <div><span class="seal">Cap. dos</span></div>
       <div>
-        <span class="seal">Cap. dos</span>
-      </div>
-      <div>
-        <h2 class="section-headline">Cuatro familias, <em>veintitrés</em> historias.</h2>
+        <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>veintitrés</em> historias.</h2>
         <p class="section-eyebrow">Cada sabor es un viaje corto. Elige uno y empieza por ahí.</p>
       </div>
     </div>
 
-    <div class="cat-tabs" role="tablist" id="cat-tabs">
-      <button class="cat-tab active" data-cat="cremas" role="tab" aria-selected="true">Cremas <span class="num">07</span></button>
-      <button class="cat-tab" data-cat="dulces" role="tab" aria-selected="false">Dulces de Leche <span class="num">05</span></button>
-      <button class="cat-tab" data-cat="chocolates" role="tab" aria-selected="false">Chocolates <span class="num">05</span></button>
-      <button class="cat-tab" data-cat="frutales" role="tab" aria-selected="false">Frutales Cremosos <span class="num">06</span></button>
+    <div class="cat-tabs" role="tablist" aria-label="Categorías de sabores" id="cat-tabs">
+      <button class="cat-tab active" data-cat="cremas" role="tab" aria-selected="true" aria-controls="cat-grid">Cremas <span class="num">07</span></button>
+      <button class="cat-tab" data-cat="dulces" role="tab" aria-selected="false" aria-controls="cat-grid">Dulces de Leche <span class="num">05</span></button>
+      <button class="cat-tab" data-cat="chocolates" role="tab" aria-selected="false" aria-controls="cat-grid">Chocolates <span class="num">05</span></button>
+      <button class="cat-tab" data-cat="frutales" role="tab" aria-selected="false" aria-controls="cat-grid">Frutales Cremosos <span class="num">06</span></button>
     </div>
 
-    <div class="cat-grid" id="cat-grid">
-      <!-- flavors injected by JS -->
+    <div class="cat-grid" id="cat-grid" role="tabpanel">
+      <!-- populated by JS -->
     </div>
   </div>
 </section>
 
 <!-- ── Sabor del mes ────────────────────────────────── -->
-<section class="inseason section" id="mes" data-screen-label="05 Sabor del mes">
+<section class="inseason section" id="mes" aria-labelledby="inseason-heading">
   <div class="wrap">
     <div class="inseason-grid">
-      <div class="inseason-photo" aria-hidden="true">
+      <div class="inseason-photo" role="img" aria-label="Stracciatella Triple Origen en copa">
         <span class="seal inseason-stamp">Sabor de febrero</span>
       </div>
       <div>
         <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">In Season</span>
-        <h2 class="inseason-headline">Stracciatella <em>triple</em> origen</h2>
+        <h2 id="inseason-heading" class="inseason-headline">Stracciatella <em>triple</em> origen</h2>
         <p class="inseason-sub">Crema italiana con láminas de cacao ecuatoriano. Tres provincias, una sola historia.</p>
         <p class="inseason-body">
           Empezamos por la base: una crema fior di latte cocida a fuego bajo, sin colorantes, con la cremosidad fina del gelato siciliano. Luego, las láminas — chocolate negro 62% con un hilo de aceite de coco — temperado a mano y vertido en hilo fino sobre la mantecadora, que se quiebra al mezclarse en astillas finas, irregulares, vivas.
@@ -1202,27 +1187,27 @@
         </div>
         <a href="#sabores" class="pill invert">
           Conoce su origen
-          <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Insignias del local (gallery) ─────────────────── -->
-<section class="section-tight" style="background: var(--crema);" data-screen-label="05b Insignias">
+<!-- ── Insignias del local ────────────────────────────── -->
+<section class="section-tight" style="background: var(--crema);" aria-labelledby="insignias-heading">
   <div class="wrap">
     <div class="section-head" style="margin-bottom: clamp(32px, 4vw, 48px);">
       <div><span class="seal">Insignias</span></div>
       <div>
-        <h2 class="section-headline">Los <em>imperdibles</em> de la casa.</h2>
+        <h2 id="insignias-heading" class="section-headline">Los <em>imperdibles</em> de la casa.</h2>
         <p class="section-eyebrow">Cinco creaciones que no aparecen en ningún delivery. Solo en mesa, recién hechas.</p>
       </div>
     </div>
-    <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 16px;" class="insignia-grid">
+    <div class="insignia-grid">
       <a href="#menu" style="position:relative; aspect-ratio: 4/5; overflow:hidden; grid-row: span 2; text-decoration:none;">
-        <img src="assets/photo-modelo-affogato.jpg" alt="Affogato Roccia" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.85) 100%);"></div>
+        <img src="assets/img/photo-modelo-affogato.jpg" alt="Affogato Roccia — espresso illy sobre vainilla artesanal" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.85) 100%);" aria-hidden="true"></div>
         <div style="position:absolute; bottom:24px; left:24px; right:24px; color: var(--crema);">
           <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza); margin-bottom: 12px;">Insignia</span>
           <div style="font-family: var(--display); font-weight:600; font-size: clamp(28px, 3vw, 44px); letter-spacing:-0.02em; text-transform:uppercase; line-height:0.95; margin-top:14px;">Affogato</div>
@@ -1230,32 +1215,32 @@
         </div>
       </a>
       <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/photo-waffle-bowl-mango.jpg" alt="Brioscia con waffle bowl" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);"></div>
+        <img src="assets/img/photo-waffle-bowl-mango.jpg" alt="Brioscia con waffle bowl" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
         <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
           <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Brioscia</div>
           <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Waffle bowl, maracuyá. $5.40</div>
         </div>
       </a>
       <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/photo-torta-helada.jpg" alt="Torta helada" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);"></div>
+        <img src="assets/img/photo-torta-helada.jpg" alt="Torta helada Roccia" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
         <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
           <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Torta helada</div>
           <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Capa sobre capa. $4.90</div>
         </div>
       </a>
       <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/photo-frappe.jpg" alt="Frappé" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);"></div>
+        <img src="assets/img/photo-frappe.jpg" alt="Frappé Roccia — café batido cremoso" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
         <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
           <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Frappé</div>
           <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Café batido cremoso. $5.50</div>
         </div>
       </a>
       <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/photo-alfajores.jpg" alt="Alfajores" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);"></div>
+        <img src="assets/img/photo-alfajores.jpg" alt="Alfajores Roccia — dulce de leche cocido lento" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
         <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
           <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Alfajores</div>
           <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Dulce de leche cocido lento.</div>
@@ -1263,154 +1248,152 @@
       </a>
     </div>
   </div>
-  <style>
-    @media (max-width: 880px) {
-      .insignia-grid { grid-template-columns: 1fr 1fr !important; }
-      .insignia-grid > a:first-child { grid-row: span 1 !important; grid-column: span 2; aspect-ratio: 4/3 !important; }
-    }
-  </style>
 </section>
 
 <!-- ── Menú ─────────────────────────────────────────── -->
-<section class="menu-section section" id="menu" data-screen-label="06 Menú">
+<section class="menu-section section" id="menu" aria-labelledby="menu-heading">
   <div class="wrap">
     <div class="menu-header">
       <span class="seal">Menú · Local</span>
-      <h2 class="menu-headline" style="margin-top: 22px;">Para <em>compartir,</em> para llevar.</h2>
+      <h2 id="menu-heading" class="menu-headline" style="margin-top: 22px;">Para <em>compartir,</em> para llevar.</h2>
       <p class="section-eyebrow" style="margin: 18px auto 0; max-width: 50ch;">La carta del local. Sirve para dos. Se disfruta mejor sin prisa.</p>
     </div>
 
     <div class="menu-grid">
       <div class="menu-col">
         <h3>Helados</h3>
-        <div class="menu-row"><span class="name">Simple</span><span class="dotted"></span><span class="price">$2.75</span></div>
-        <div class="menu-row"><span class="name">Doble</span><span class="dotted"></span><span class="price">$3.95</span></div>
-        <div class="menu-row"><span class="name">Medio Litro</span><span class="dotted"></span><span class="price">$8.00</span></div>
-        <div class="menu-row"><span class="name">Un Litro</span><span class="dotted"></span><span class="price">$15.00</span></div>
-        <div class="menu-row"><span class="name">Para compartir <span class="insignia">Insignia</span></span><span class="dotted"></span><span class="price">$21.00</span></div>
+        <div class="menu-row"><span class="name">Simple</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.75</span></div>
+        <div class="menu-row"><span class="name">Doble</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.95</span></div>
+        <div class="menu-row"><span class="name">Medio Litro</span><span class="dotted" aria-hidden="true"></span><span class="price">$8.00</span></div>
+        <div class="menu-row"><span class="name">Un Litro</span><span class="dotted" aria-hidden="true"></span><span class="price">$15.00</span></div>
+        <div class="menu-row"><span class="name">Para compartir <span class="insignia-tag">Insignia</span></span><span class="dotted" aria-hidden="true"></span><span class="price">$21.00</span></div>
       </div>
 
       <div class="menu-col">
         <h3>Café</h3>
-        <div class="menu-row"><span class="name">Affogato <span class="insignia">Insignia</span></span><span class="dotted"></span><span class="price">$4.90</span></div>
-        <div class="menu-row"><span class="name">Expresso</span><span class="dotted"></span><span class="price">$2.50</span></div>
-        <div class="menu-row"><span class="name">Expresso Doble</span><span class="dotted"></span><span class="price">$3.25</span></div>
-        <div class="menu-row"><span class="name">Macchiato</span><span class="dotted"></span><span class="price">$2.80</span></div>
-        <div class="menu-row"><span class="name">Americano</span><span class="dotted"></span><span class="price">$3.00</span></div>
-        <div class="menu-row"><span class="name">Cappuccino</span><span class="dotted"></span><span class="price">$3.50</span></div>
+        <div class="menu-row"><span class="name">Affogato <span class="insignia-tag">Insignia</span></span><span class="dotted" aria-hidden="true"></span><span class="price">$4.90</span></div>
+        <div class="menu-row"><span class="name">Expresso</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.50</span></div>
+        <div class="menu-row"><span class="name">Expresso Doble</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.25</span></div>
+        <div class="menu-row"><span class="name">Macchiato</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.80</span></div>
+        <div class="menu-row"><span class="name">Americano</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.00</span></div>
+        <div class="menu-row"><span class="name">Cappuccino</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.50</span></div>
       </div>
 
       <div class="menu-col">
         <h3>Creaciones</h3>
-        <div class="menu-row"><span class="name">Brioscia</span><span class="dotted"></span><span class="price">$5.40</span></div>
-        <div class="menu-row"><span class="name">Cornetto</span><span class="dotted"></span><span class="price">$5.40</span></div>
-        <div class="menu-row"><span class="name">Torta helada</span><span class="dotted"></span><span class="price">$4.90</span></div>
-        <div class="menu-row"><span class="name">Frappé</span><span class="dotted"></span><span class="price">$5.50</span></div>
+        <div class="menu-row"><span class="name">Brioscia</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.40</span></div>
+        <div class="menu-row"><span class="name">Cornetto</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.40</span></div>
+        <div class="menu-row"><span class="name">Torta helada</span><span class="dotted" aria-hidden="true"></span><span class="price">$4.90</span></div>
+        <div class="menu-row"><span class="name">Frappé</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.50</span></div>
       </div>
 
       <div class="menu-col">
         <h3>Combos</h3>
-        <div class="menu-row"><span class="name">Expresso + 2 Alfajores</span><span class="dotted"></span><span class="price">$3.49</span></div>
-        <div class="menu-row"><span class="name">Americano + 2 Alfajores</span><span class="dotted"></span><span class="price">$3.99</span></div>
-        <div class="menu-row"><span class="name">Cappuccino + 2 Alfajores</span><span class="dotted"></span><span class="price">$4.49</span></div>
+        <div class="menu-row"><span class="name">Expresso + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.49</span></div>
+        <div class="menu-row"><span class="name">Americano + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.99</span></div>
+        <div class="menu-row"><span class="name">Cappuccino + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$4.49</span></div>
       </div>
     </div>
 
     <div style="text-align:center; margin-top: clamp(40px, 5vw, 64px);">
       <a href="#menu" class="pill ghost" style="border-color: var(--cafe-oscuro);">
         Ver carta completa
-        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     </div>
   </div>
 </section>
 
 <!-- ── Delivery ─────────────────────────────────────── -->
-<section class="delivery-section section" id="delivery" data-screen-label="07 Delivery">
+<section class="delivery-section section" id="delivery" aria-labelledby="delivery-heading">
   <div class="wrap">
     <div class="delivery-header">
       <span class="seal">Delivery</span>
-      <h2 class="delivery-headline">Tu pausa dulce, <em>donde estés.</em></h2>
+      <h2 id="delivery-heading" class="delivery-headline">Tu pausa dulce, <em>donde estés.</em></h2>
       <p class="delivery-sub">Pide en tu app favorita o ven a visitarnos. Llegamos en frío a Quito y Cumbayá.</p>
     </div>
 
     <div class="delivery-grid">
-      <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="delivery-card">
+      <a href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer" class="delivery-card">
         <div>
           <div class="num">01 / Tres</div>
           <div class="name" style="margin-top: 14px;">Uber Eats</div>
           <p class="desc" style="margin-top: 12px;">Entrega rápida en Cumbayá y valle. Ideal para tarde de domingo.</p>
         </div>
-        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
-      <a href="https://www.rappi.com.ec" target="_blank" rel="noopener" class="delivery-card">
+      <a href="https://www.rappi.com.ec" target="_blank" rel="noopener noreferrer" class="delivery-card">
         <div>
           <div class="num">02 / Tres</div>
           <div class="name" style="margin-top: 14px;">Rappi</div>
           <p class="desc" style="margin-top: 12px;">Cobertura amplia en Quito. Promociones de fin de semana.</p>
         </div>
-        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
-      <a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener" class="delivery-card">
+      <a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener noreferrer" class="delivery-card">
         <div>
           <div class="num">03 / Tres</div>
           <div class="name" style="margin-top: 14px;">PedidosYa</div>
           <p class="desc" style="margin-top: 12px;">Reparto programado. Perfecto para cumpleaños y antojos planeados.</p>
         </div>
-        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     </div>
   </div>
 </section>
 
 <!-- ── Ubicación ────────────────────────────────────── -->
-<section class="section" id="ubicacion" data-screen-label="08 Ubicación">
+<section class="section" id="ubicacion" aria-labelledby="ubicacion-heading">
   <div class="wrap">
     <div class="visit-grid">
       <div>
         <span class="seal">Visítanos</span>
-        <h2 class="visit-headline">Aquí nos gusta <em>estar cerquita.</em></h2>
+        <h2 id="ubicacion-heading" class="visit-headline">Aquí nos gusta <em>estar cerquita.</em></h2>
 
         <div class="visit-info">
           <div class="visit-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
               <div class="label">Dirección</div>
               <div class="value">Plaza Briza · Av. Francisco de Orellana y Tajamar · Cumbayá, Quito</div>
             </div>
           </div>
           <div class="visit-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <div>
               <div class="label">Horario</div>
               <div class="value">Lunes a Domingo · 10:00 — 20:00</div>
             </div>
           </div>
           <div class="visit-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7.21 10.79a16 16 0 0 0 6 6l2.04-1.59a1 1 0 0 1 1-.29l4 1a1 1 0 0 1 .75 1Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7.21 10.79a16 16 0 0 0 6 6l2.04-1.59a1 1 0 0 1 1-.29l4 1a1 1 0 0 1 .75 1Z"/></svg>
             <div>
               <div class="label">Teléfono</div>
-              <div class="value">+593 96 399 7478</div>
+              <div class="value"><a href="tel:+593963997478" style="text-decoration:none; color:inherit;">+593 96 399 7478</a></div>
             </div>
           </div>
           <div class="visit-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
             <div>
               <div class="label">Instagram · Email</div>
-              <div class="value">@roccia_ec · hola@rocciaheladeria.com</div>
+              <div class="value">
+                <a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit;">@roccia_ec</a>
+                &nbsp;·&nbsp;
+                <a href="mailto:hola@rocciaheladeria.com" style="text-decoration:none; color:inherit;">hola@rocciaheladeria.com</a>
+              </div>
             </div>
           </div>
         </div>
 
         <div style="margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" target="_blank" rel="noopener" class="pill">
+          <a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" target="_blank" rel="noopener noreferrer" class="pill">
             Cómo llegar
-            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </a>
         </div>
       </div>
 
-      <div class="visit-photo">
+      <div class="visit-photo" role="img" aria-label="Ambiente en Roccia — affogato en el local">
         <div class="visit-photo-overlay">
           <div class="word">Roccia</div>
           <div class="tag">Una dulce excusa para verse.</div>
@@ -1421,18 +1404,18 @@
 </section>
 
 <!-- ── B2B Mayoristas ───────────────────────────────── -->
-<section class="b2b section" id="mayoristas" data-screen-label="09 B2B">
+<section class="b2b section" id="mayoristas" aria-labelledby="b2b-heading">
   <div class="wrap">
     <div class="b2b-grid">
       <div>
         <span class="seal" style="color:var(--mostaza); border-color: var(--mostaza);">Para restaurantes y hoteles</span>
-        <h2 class="b2b-headline">Roccia <em>en tu mesa.</em></h2>
+        <h2 id="b2b-heading" class="b2b-headline">Roccia <em>en tu mesa.</em></h2>
         <p class="b2b-sub">Llevamos nuestra técnica artesanal a tu carta. Producción dedicada, sabores a medida, formatos profesionales. Conversemos.</p>
       </div>
       <div class="b2b-cta-wrap">
-        <a href="#mayoristas" class="pill invert">
+        <a href="/mayoristas" class="pill invert">
           Hablemos
-          <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
         </a>
       </div>
     </div>
@@ -1440,13 +1423,13 @@
 </section>
 
 <!-- ── Footer ───────────────────────────────────────── -->
-<footer data-screen-label="10 Footer">
+<footer>
   <div class="wrap">
-    <h3 class="footer-wordmark">Roccia</h3>
+    <h2 class="footer-wordmark" aria-label="Roccia">Roccia</h2>
 
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>Ecosistema</h4>
+        <h3>Ecosistema</h3>
         <ul>
           <li><a href="https://roccia.ec">roccia.ec</a></li>
           <li><a href="https://heladosroccia.com">heladosroccia.com</a></li>
@@ -1455,7 +1438,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Marca</h4>
+        <h3>Marca</h3>
         <ul>
           <li><a href="#origen">Historia</a></li>
           <li><a href="#sabores">Sabores</a></li>
@@ -1464,20 +1447,19 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Visítanos</h4>
+        <h3>Visítanos</h3>
         <ul>
           <li><a href="#ubicacion">Plaza Briza</a></li>
           <li><a href="#ubicacion">Cumbayá, Quito</a></li>
           <li><a href="#ubicacion">10:00 — 20:00</a></li>
-          <li><a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" target="_blank" rel="noopener">Cómo llegar</a></li>
+          <li><a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" target="_blank" rel="noopener noreferrer">Cómo llegar</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Síguenos</h4>
+        <h3>Síguenos</h3>
         <ul>
-          <li><a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener">@roccia_ec</a></li>
+          <li><a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener noreferrer">@roccia_ec</a></li>
           <li><a href="#delivery">Uber Eats · Rappi · PedidosYa</a></li>
-          <li><a href="#footer">Newsletter</a></li>
           <li><a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a></li>
         </ul>
       </div>
@@ -1487,7 +1469,7 @@
       <span>© Roccia · Cumbayá · 2026</span>
       <span style="display:flex; align-items:center; flex-wrap:wrap; gap:0;">
         <em style="font-style: italic;">De los Alpes a los Andes</em>
-        <span class="dot-sep">·</span>
+        <span class="dot-sep" aria-hidden="true">·</span>
         <em style="font-style: italic;">Hecho en Ecuador con técnica italiana</em>
       </span>
     </div>
@@ -1506,38 +1488,38 @@
     onScroll();
   })();
 
-  // ── Flavor catalog data + tab switching
+  // ── Flavor catalog
   const FLAVORS = {
     cremas: [
-      { name: 'Vainilla Artesanal',  origin: 'Italia',    color: '#c6a252', desc: 'Clásica, suave y elegante.', img: 'assets/photo-conos-altura.jpg' },
-      { name: 'Pistacchio',          origin: 'Sicilia',   color: '#335b40', desc: 'Intenso, verde y cremoso.',   img: 'assets/photo-pistacchio-poster.jpg', stamp: 'Insignia' },
-      { name: 'Stracciatella',       origin: 'Manabí',    color: '#50351c', desc: 'Crema con láminas de cacao ecuatoriano.', img: 'assets/photo-vitrina-tortas.jpg', stamp: 'In Season' },
-      { name: 'Tiramisú',            origin: 'Italia',    color: '#846f59', desc: 'Inspirado en el postre italiano.', img: 'assets/photo-ddl-cup.jpeg' },
-      { name: 'Mascarpone & Berries',origin: 'Italia',    color: '#871d08', desc: 'Dulce, fresco y frutal.', img: 'assets/photo-mascarpone-poster.jpg' },
-      { name: 'Cookies & Cream',     origin: 'Casa',      color: '#50351c', desc: 'Galletas crocantes con cacao.', img: 'assets/photo-cup-cookies.jpg' },
-      { name: 'Cappuccino',          origin: 'Andes',     color: '#66523a', desc: 'Café andino con notas cremosas.', img: 'assets/photo-ddl-cup.jpeg' },
+      { name: 'Vainilla Artesanal',   origin: 'Italia',    color: '#c6a252', desc: 'Clásica, suave y elegante.',             img: 'assets/img/photo-conos-altura.jpg' },
+      { name: 'Pistacchio',           origin: 'Sicilia',   color: '#335b40', desc: 'Intenso, verde y cremoso.',              img: 'assets/img/photo-pistacchio-poster.jpg', stamp: 'Insignia' },
+      { name: 'Stracciatella',        origin: 'Manabí',    color: '#50351c', desc: 'Crema con láminas de cacao ecuatoriano.', img: 'assets/img/photo-vitrina-tortas.jpg',    stamp: 'In Season' },
+      { name: 'Tiramisú',             origin: 'Italia',    color: '#846f59', desc: 'Inspirado en el postre italiano.',       img: 'assets/img/photo-ddl-cup.jpeg' },
+      { name: 'Mascarpone & Berries', origin: 'Italia',    color: '#871d08', desc: 'Dulce, fresco y frutal.',                img: 'assets/img/photo-mascarpone-poster.jpg' },
+      { name: 'Cookies & Cream',      origin: 'Casa',      color: '#50351c', desc: 'Galletas crocantes con cacao.',          img: 'assets/img/photo-cup-cookies.jpg' },
+      { name: 'Cappuccino',           origin: 'Andes',     color: '#66523a', desc: 'Café andino con notas cremosas.',        img: 'assets/img/photo-ddl-cup.jpeg' },
     ],
     dulces: [
-      { name: 'Clásico',                        origin: 'Argentina', color: '#c6a252', desc: 'El sabor argentino por excelencia.', img: 'assets/photo-cono-fachada.jpg', stamp: 'Insignia' },
-      { name: 'Granizado',                      origin: 'Argentina', color: '#50351c', desc: 'Con escamas de chocolate amargo.', img: 'assets/photo-ddl-cup.jpeg' },
-      { name: 'Negro',                          origin: 'Argentina', color: '#50351c', desc: 'Más intenso y profundo.', img: 'assets/photo-cono-fachada.jpg' },
-      { name: 'Con Almendras Caramelizadas',    origin: 'Argentina', color: '#c6a252', desc: 'Crujiente y acaramelado.', img: 'assets/photo-ddl-cup.jpeg' },
-      { name: 'Súper DDL',                      origin: 'Argentina', color: '#871d08', desc: 'Remolinos de dulzura pura.', img: 'assets/photo-cono-fachada.jpg' },
+      { name: 'Clásico',                        origin: 'Argentina', color: '#c6a252', desc: 'El sabor argentino por excelencia.',   img: 'assets/img/photo-cono-fachada.jpg',    stamp: 'Insignia' },
+      { name: 'Granizado',                      origin: 'Argentina', color: '#50351c', desc: 'Con escamas de chocolate amargo.',     img: 'assets/img/photo-ddl-cup.jpeg' },
+      { name: 'Negro',                          origin: 'Argentina', color: '#50351c', desc: 'Más intenso y profundo.',              img: 'assets/img/photo-cono-fachada.jpg' },
+      { name: 'Con Almendras Caramelizadas',    origin: 'Argentina', color: '#c6a252', desc: 'Crujiente y acaramelado.',             img: 'assets/img/photo-ddl-cup.jpeg' },
+      { name: 'Súper DDL',                      origin: 'Argentina', color: '#871d08', desc: 'Remolinos de dulzura pura.',           img: 'assets/img/photo-cono-fachada.jpg' },
     ],
     chocolates: [
-      { name: 'Tradicional 70%',  origin: 'Esmeraldas', color: '#50351c', desc: 'Cacao profundo y equilibrado.', img: 'assets/photo-ddl-cup.jpeg' },
-      { name: 'Extra Cacao 85%',  origin: 'Manabí',     color: '#50351c', desc: 'Amargo, elegante y potente.', img: 'assets/photo-bolsa-frio.jpg', stamp: 'Insignia' },
-      { name: 'Blanco',           origin: 'Casa',       color: '#c6a252', desc: 'Suave, dulce y sedoso.', img: 'assets/photo-vitrina-pistacho.jpg' },
-      { name: 'Gianduia',         origin: 'Italia',     color: '#846f59', desc: 'Avellana italiana con cacao ecuatoriano.', img: 'assets/photo-ddl-cup.jpeg' },
-      { name: 'Con Naranja',      origin: 'Costa',      color: '#c6a252', desc: 'Fresco, cítrico y aromático.', img: 'assets/photo-mandarina-poster.jpg' },
+      { name: 'Tradicional 70%', origin: 'Esmeraldas', color: '#50351c', desc: 'Cacao profundo y equilibrado.',           img: 'assets/img/photo-ddl-cup.jpeg' },
+      { name: 'Extra Cacao 85%', origin: 'Manabí',     color: '#50351c', desc: 'Amargo, elegante y potente.',             img: 'assets/img/photo-bolsa-frio.jpg',          stamp: 'Insignia' },
+      { name: 'Blanco',          origin: 'Casa',       color: '#c6a252', desc: 'Suave, dulce y sedoso.',                  img: 'assets/img/photo-vitrina-pistacho.jpg' },
+      { name: 'Gianduia',        origin: 'Italia',     color: '#846f59', desc: 'Avellana italiana con cacao ecuatoriano.', img: 'assets/img/photo-ddl-cup.jpeg' },
+      { name: 'Con Naranja',     origin: 'Costa',      color: '#c6a252', desc: 'Fresco, cítrico y aromático.',            img: 'assets/img/photo-mandarina-poster.jpg' },
     ],
     frutales: [
-      { name: 'Fresa',           origin: 'Sierra',  color: '#871d08', desc: 'Dulce y refrescante de altura.', img: 'assets/photo-fresa-cup.jpeg' },
-      { name: 'Guanábana',       origin: 'Costa',   color: '#335b40', desc: 'Cremoso, ácido y perfumado.', img: 'assets/photo-vitrina-frutos.jpeg' },
-      { name: 'Coco',            origin: 'Costa',   color: '#c6a252', desc: 'Suave, fresco y delicado.', img: 'assets/photo-cono-pitufo.jpg' },
-      { name: 'Higo con Queso',  origin: 'Sierra',  color: '#50351c', desc: 'Tradición serrana hecha helado.', img: 'assets/photo-vitrina-frutos.jpeg', stamp: 'Insignia' },
-      { name: 'Mango',           origin: 'Costa',   color: '#c6a252', desc: 'Dulzura tropical de la costa.', img: 'assets/photo-waffle-bowl-mango.jpg' },
-      { name: 'Taxo',            origin: 'Andes',   color: '#c6a252', desc: 'Ácido y goloso a la vez.', img: 'assets/photo-maracuya-cup.jpeg' },
+      { name: 'Fresa',          origin: 'Sierra', color: '#871d08', desc: 'Dulce y refrescante de altura.',          img: 'assets/img/photo-fresa-cup.jpeg' },
+      { name: 'Guanábana',      origin: 'Costa',  color: '#335b40', desc: 'Cremoso, ácido y perfumado.',             img: 'assets/img/photo-vitrina-frutos.jpeg' },
+      { name: 'Coco',           origin: 'Costa',  color: '#c6a252', desc: 'Suave, fresco y delicado.',               img: 'assets/img/photo-cono-pitufo.jpg' },
+      { name: 'Higo con Queso', origin: 'Sierra', color: '#50351c', desc: 'Tradición serrana hecha helado.',          img: 'assets/img/photo-vitrina-frutos.jpeg',     stamp: 'Insignia' },
+      { name: 'Mango',          origin: 'Costa',  color: '#c6a252', desc: 'Dulzura tropical de la costa.',           img: 'assets/img/photo-waffle-bowl-mango.jpg' },
+      { name: 'Taxo',           origin: 'Andes',  color: '#c6a252', desc: 'Ácido y goloso a la vez.',                img: 'assets/img/photo-maracuya-cup.jpeg' },
     ],
   };
 
@@ -1546,12 +1528,12 @@
     const items = FLAVORS[cat] || [];
     grid.innerHTML = items.map((f, i) => `
       <article class="flavor-card" style="animation: rise .55s cubic-bezier(.2,.6,.2,1) ${i * 0.04}s both;">
-        <div class="flavor-photo" style="background-image:url('${f.img}');">
+        <div class="flavor-photo" style="background-image:url('${f.img}');" role="img" aria-label="${f.name}">
           ${f.stamp ? `<span class="flavor-stamp">${f.stamp}</span>` : ''}
         </div>
         <h3 class="flavor-name">${f.name}</h3>
         <div class="flavor-meta">
-          <span class="flavor-origin"><span class="dot" style="background:${f.color}"></span>${f.origin}</span>
+          <span class="flavor-origin"><span class="dot" style="background:${f.color}" aria-hidden="true"></span>${f.origin}</span>
         </div>
         <p class="flavor-desc">${f.desc}</p>
       </article>
@@ -1571,6 +1553,38 @@
   });
 
   renderFlavors('cremas');
+</script>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "name": "Roccia Heladería",
+  "description": "Heladería italo-argentina artesanal en Plaza Briza, Cumbayá. Gelato con ingredientes reales de Italia, Argentina y Ecuador.",
+  "url": "https://roccia.ec",
+  "telephone": "+593963997478",
+  "email": "hola@rocciaheladeria.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plaza Briza, Av. Francisco de Orellana y Tajamar",
+    "addressLocality": "Cumbayá",
+    "addressRegion": "Pichincha",
+    "addressCountry": "EC"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -0.2070,
+    "longitude": -78.4454
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00",
+    "closes": "20:00"
+  },
+  "sameAs": ["https://instagram.com/roccia_ec"]
+}
 </script>
 
 </body>
