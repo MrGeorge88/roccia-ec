@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Roccia · Gelato artesanal en Cumbayá · Helados artesanales Quito</title>
+<meta name="description" content="Heladería artesanal italo-argentina en Plaza Briza, Cumbayá. 23 sabores hechos a mano con técnica italiana e ingredientes ecuatorianos. Delivery por Uber Eats, Rappi y PedidosYa." />
+<link rel="canonical" href="https://heladosroccia.com/" />
+
+<meta property="og:title" content="Roccia · Gelato artesanal en Cumbayá" />
+<meta property="og:description" content="23 sabores hechos a mano. Técnica italiana, ingredientes ecuatorianos. 4.9 en Google." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Yellowtail&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles/roccia-system.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Restaurant", "LocalBusiness"],
+  "name": "Roccia",
+  "description": "Heladería artesanal italo-argentina con 23 sabores hechos a mano con técnica italiana e ingredientes ecuatorianos.",
+  "url": "https://heladosroccia.com/",
+  "image": "https://heladosroccia.com/assets/photo-modelo-roccia-fachada.png",
+  "logo": "https://heladosroccia.com/assets/logo-roca.png",
+  "servesCuisine": ["Italian", "Ice cream", "Gelato"],
+  "priceRange": "$$",
+  "telephone": "+593-99-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plaza Briza, Av. Interoceánica",
+    "addressLocality": "Cumbayá",
+    "addressRegion": "Pichincha",
+    "addressCountry": "EC"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -0.2058, "longitude": -78.4316 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00", "closes": "20:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "200"
+  },
+  "sameAs": [
+    "https://www.instagram.com/roccia.ec",
+    "https://roccia.ec",
+    "https://rocciaheladeria.com"
+  ]
+}
+</script>
+
+<style>
+  /* ── Page-specific tokens ─────────────────────────── */
+  .star {
+    display: inline-block;
+    width: 14px; height: 14px;
+    color: var(--mostaza);
+  }
+
+  /* ── Sub-brand divider in header ───────────────────── */
+  .nav-subbrand {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .nav-subbrand .divider {
+    width: 1px; height: 22px;
+    background: rgba(250, 244, 224, 0.35);
+  }
+  .nav.scrolled .nav-subbrand .divider { background: rgba(80, 53, 28, 0.25); }
+  .nav-subbrand .label {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(250, 244, 224, 0.88);
+  }
+  .nav.scrolled .nav-subbrand .label { color: var(--cafe-medio); }
+
+  /* ── Hero (commercial variant) ─────────────────────── */
+  .hero-c {
+    position: relative;
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding-top: clamp(120px, 13vw, 180px);
+    padding-bottom: clamp(72px, 9vw, 128px);
+    overflow: hidden;
+  }
+  .hero-c .grid {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    gap: clamp(40px, 6vw, 88px);
+    align-items: center;
+  }
+  @media (max-width: 980px) {
+    .hero-c .grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .hero-c .seal-row {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hero-c .rating {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--cafe-oscuro);
+  }
+  .hero-c .rating .stars { display: inline-flex; gap: 2px; }
+  .hero-c .rating em {
+    font-style: italic; color: var(--cafe-medio); font-weight: 400;
+  }
+  .hero-c h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(52px, 7.5vw, 112px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 0 0 26px;
+    max-width: 12ch;
+  }
+  .hero-c h1 em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+  }
+  .hero-c h1 .dot { color: var(--mostaza); }
+  .hero-c .lede {
+    font-family: var(--serif);
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.6;
+    color: var(--cafe-medio);
+    max-width: 50ch;
+    margin: 0 0 32px;
+  }
+  .hero-c .ctas {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .hero-c .pill.outline {
+    background: transparent;
+    color: var(--cafe-oscuro);
+    border-color: rgba(80, 53, 28, 0.35);
+  }
+  .hero-c .pill.outline:hover {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border-color: var(--cafe-oscuro);
+  }
+  .hero-c .visit-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--cafe-medio);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-size: 13px;
+    border-bottom: 1px solid rgba(132, 111, 89, 0.35);
+    padding-bottom: 3px;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .hero-c .visit-link:hover { color: var(--cafe-oscuro); border-bottom-color: var(--cafe-oscuro); }
+
+  .hero-c .photo {
+    position: relative;
+    aspect-ratio: 5/4;
+    overflow: hidden;
+    background: var(--crema-warm);
+  }
+  .hero-c .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.16) saturate(0.95) contrast(1.04);
+  }
+  .hero-c .photo .stamp-tl {
+    position: absolute; top: 22px; left: 22px;
+    color: var(--crema);
+    background: rgba(80, 53, 28, 0.55);
+    border-color: rgba(250, 244, 224, 0.5);
+    backdrop-filter: blur(6px);
+  }
+  .hero-c .photo .stamp-br {
+    position: absolute; bottom: 26px; right: 22px;
+    color: var(--cafe-oscuro);
+    background: var(--crema);
+    transform: rotate(-4deg);
+  }
+
+  /* ── Delivery destacado (top section) ──────────────── */
+  .delivery-top {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(72px, 9vw, 120px) 0;
+  }
+  .delivery-top .head {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  .delivery-top .head .seal { color: var(--mostaza); border-color: var(--mostaza); }
+  .delivery-top h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 22px 0 18px;
+  }
+  .delivery-top h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .delivery-top .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(15px, 1.4vw, 19px);
+    color: rgba(250, 244, 224, 0.82);
+    max-width: 56ch;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .delivery-top .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 880px) { .delivery-top .grid3 { grid-template-columns: 1fr; } }
+  .delivery-card-c {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: 32px 28px 28px;
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    min-height: 240px;
+    justify-content: space-between;
+    transition: transform .25s ease, background .25s ease;
+    position: relative;
+  }
+  .delivery-card-c:hover { transform: translateY(-4px); background: var(--crema-warm); }
+  .delivery-card-c .num {
+    font-family: var(--serif);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+  }
+  .delivery-card-c .name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 38px);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 14px 0 10px;
+  }
+  .delivery-card-c .desc {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+  }
+  .delivery-card-c .arrow {
+    position: absolute; top: 28px; right: 28px;
+    color: var(--cafe-oscuro);
+    transition: transform .25s ease;
+  }
+  .delivery-card-c:hover .arrow { transform: translate(3px, -3px); }
+
+  /* ── Catalog ──────────────────────────────────────── */
+  .cat-c {
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--crema);
+  }
+  .cat-c .toolbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: clamp(20px, 3vw, 40px);
+    align-items: end;
+    margin-bottom: clamp(28px, 3vw, 40px);
+  }
+  @media (max-width: 880px) { .cat-c .toolbar { grid-template-columns: 1fr; } }
+  .cat-c .head h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 14px 0 16px;
+  }
+  .cat-c .head h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .cat-c .head .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--cafe-medio);
+    font-size: 16px;
+    max-width: 48ch;
+    margin: 0;
+  }
+
+  .search {
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+  }
+  .search input {
+    width: 100%;
+    padding: 14px 18px 14px 44px;
+    border: 1px solid rgba(80, 53, 28, 0.22);
+    border-radius: 9999px;
+    background: transparent;
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    outline: none;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .search input::placeholder { color: var(--cafe-medio); font-style: italic; }
+  .search input:focus {
+    border-color: var(--cafe-oscuro);
+    background: var(--crema-warm);
+  }
+  .search svg {
+    position: absolute;
+    left: 16px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px;
+    color: var(--cafe-medio);
+    pointer-events: none;
+  }
+
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: clamp(28px, 3vw, 40px);
+  }
+  .chip {
+    background: transparent;
+    border: 1px solid rgba(80, 53, 28, 0.25);
+    color: var(--cafe-oscuro);
+    padding: 9px 18px;
+    border-radius: 9999px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .chip:hover { border-color: var(--cafe-oscuro); }
+  .chip.active {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border-color: var(--cafe-oscuro);
+  }
+  .chip .count {
+    margin-left: 8px;
+    font-size: 10px;
+    opacity: 0.7;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cat-c-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px 20px;
+  }
+  @media (max-width: 1100px) { .cat-c-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 720px)  { .cat-c-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px)  { .cat-c-grid { grid-template-columns: 1fr; } }
+
+  .fcard {
+    display: block;
+    text-decoration: none;
+    color: var(--cafe-oscuro);
+  }
+  .fcard .img {
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.18) saturate(0.92) contrast(1.02);
+    position: relative;
+    overflow: hidden;
+  }
+  .fcard .img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.85) 100%);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .fcard:hover .img::after { opacity: 1; }
+  .fcard .stamp {
+    position: absolute; top: 12px; left: 12px;
+    z-index: 2;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: 5px 9px 4px;
+    border-radius: 2px;
+  }
+  .fcard .stamp.gold { background: var(--mostaza); color: var(--cafe-oscuro); }
+  .fcard .hover-cta {
+    position: absolute; bottom: 16px; left: 16px;
+    z-index: 2;
+    color: var(--crema);
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 6px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .fcard:hover .hover-cta { opacity: 1; transform: translateY(0); }
+  .fcard .meta {
+    margin-top: 14px;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  }
+  .fcard .name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .fcard .origin {
+    font-family: var(--serif);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    white-space: nowrap;
+  }
+  .fcard .desc {
+    margin-top: 8px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--cafe-neutro);
+  }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px dashed rgba(80, 53, 28, 0.25);
+  }
+  .empty-state h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+  }
+  .empty-state p {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--cafe-medio);
+    margin: 0 0 22px;
+  }
+
+  /* ── 4 razones ─────────────────────────────────────── */
+  .razones {
+    background: var(--crema-warm);
+    padding: clamp(80px, 10vw, 140px) 0;
+  }
+  .razones .head { text-align: center; margin-bottom: clamp(48px, 6vw, 80px); }
+  .razones h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 22px 0 0;
+  }
+  .razones h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .razones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 1080px) { .razones-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px)  { .razones-grid { grid-template-columns: 1fr; } }
+  .razon {
+    text-align: center;
+  }
+  .razon .icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 22px;
+  }
+  .razon .icon svg { width: 26px; height: 26px; }
+  .razon h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .razon p {
+    font-family: var(--serif);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--cafe-medio);
+    margin: 0 auto;
+    max-width: 32ch;
+  }
+
+  /* ── Ubicación compact ─────────────────────────────── */
+  .ubicacion {
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--crema);
+  }
+  .ubicacion .grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  @media (max-width: 980px) { .ubicacion .grid { grid-template-columns: 1fr; } }
+  .ubicacion h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(44px, 5.5vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 18px 0 30px;
+  }
+  .ubicacion h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .ubicacion .info-list {
+    display: flex; flex-direction: column;
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+  }
+  .ubicacion .info-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.18);
+  }
+  .ubicacion .info-row svg { width: 18px; height: 18px; margin-top: 3px; color: var(--cafe-medio); }
+  .ubicacion .info-row .label {
+    font-family: var(--serif);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin-bottom: 4px;
+  }
+  .ubicacion .info-row .value {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--cafe-oscuro);
+    line-height: 1.5;
+  }
+  .ubicacion .ctas { display: flex; align-items: center; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+  .ubicacion .pill.outline {
+    background: transparent; color: var(--cafe-oscuro);
+    border-color: rgba(80, 53, 28, 0.35);
+  }
+  .ubicacion .pill.outline:hover {
+    background: var(--cafe-oscuro); color: var(--crema); border-color: var(--cafe-oscuro);
+  }
+  .ubicacion .momentum {
+    margin-top: 28px;
+    padding: 16px 18px;
+    background: rgba(198, 162, 82, 0.14);
+    border: 1px dashed rgba(80, 53, 28, 0.35);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    line-height: 1.5;
+  }
+  .ubicacion .momentum .star { color: var(--mostaza); margin-right: 8px; font-style: normal; }
+
+  .ubicacion .photo {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+  }
+  .ubicacion .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.18) saturate(0.92) contrast(1.04);
+  }
+  .ubicacion .photo .stamp {
+    position: absolute; bottom: 22px; left: 22px;
+    color: var(--crema);
+    background: rgba(80, 53, 28, 0.55);
+    border-color: rgba(250, 244, 224, 0.5);
+    backdrop-filter: blur(6px);
+    transform: rotate(-3deg);
+  }
+
+  /* ── Reviews Google ────────────────────────────────── */
+  .reviews {
+    background: var(--crema-warm);
+    padding: clamp(80px, 10vw, 140px) 0;
+  }
+  .reviews .head { text-align: center; margin-bottom: clamp(48px, 5vw, 64px); }
+  .reviews h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(48px, 6.5vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 22px 0 18px;
+  }
+  .reviews h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+    font-size: 1em;
+  }
+  .reviews .stars-line {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--cafe-medio);
+    font-size: 15px;
+  }
+  .reviews .stars-line .stars { display: inline-flex; gap: 3px; }
+  .reviews .stars-line .star { width: 16px; height: 16px; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: clamp(40px, 4vw, 56px);
+  }
+  @media (max-width: 1000px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .reviews-grid { grid-template-columns: 1fr; } }
+  .review {
+    background: var(--crema);
+    border: 1px solid rgba(80, 53, 28, 0.14);
+    padding: 26px 24px 22px;
+    position: relative;
+  }
+  .review::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(80, 53, 28, 0.06) 1px, transparent 0);
+    background-size: 6px 6px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  .review .top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .review .top .stars { display: inline-flex; gap: 2px; }
+  .review .top .when {
+    font-family: var(--serif);
+    font-size: 11.5px;
+    color: var(--cafe-medio);
+    font-style: italic;
+  }
+  .review .text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--cafe-oscuro);
+    margin: 0 0 18px;
+  }
+  .review .person {
+    display: flex; align-items: center; gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(80, 53, 28, 0.12);
+  }
+  .review .avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .review .who {
+    font-family: var(--serif);
+    font-size: 13.5px;
+    color: var(--cafe-oscuro);
+    font-weight: 500;
+  }
+  .reviews .all-link {
+    text-align: center;
+    margin-top: clamp(36px, 4vw, 56px);
+  }
+
+  /* ── FAQ accordion ─────────────────────────────────── */
+  .faq {
+    background: var(--crema);
+    padding: clamp(80px, 10vw, 140px) 0;
+  }
+  .faq .head { text-align: center; margin-bottom: clamp(40px, 5vw, 64px); }
+  .faq h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 22px 0 0;
+  }
+  .faq h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .faq-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(80, 53, 28, 0.15);
+    display: flex; flex-direction: column;
+    gap: 1px;
+  }
+  .faq-item {
+    background: var(--crema);
+  }
+  .faq-q {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 24px 28px;
+    text-align: left;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(17px, 1.6vw, 22px);
+    color: var(--cafe-oscuro);
+    text-transform: none;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+  .faq-q:hover { background: rgba(80, 53, 28, 0.04); }
+  .faq-q .icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(80, 53, 28, 0.08);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background .2s ease;
+  }
+  .faq-item.open .faq-q .icon {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+  }
+  .faq-q .icon svg { width: 14px; height: 14px; }
+  .faq-q .icon .minus { display: none; }
+  .faq-item.open .faq-q .icon .plus { display: none; }
+  .faq-item.open .faq-q .icon .minus { display: block; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .faq-item.open .faq-a { max-height: 600px; }
+  .faq-a-inner {
+    padding: 0 28px 26px;
+    font-family: var(--serif);
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--cafe-medio);
+    max-width: 64ch;
+  }
+
+  /* ── CTA final ─────────────────────────────────────── */
+  .final-cta {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(80px, 10vw, 140px) 0;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(56px, 8vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 22px 0 18px;
+  }
+  .final-cta h2 em {
+    font-family: var(--script);
+    font-style: normal; font-weight: 400; text-transform: none;
+    color: var(--mostaza); letter-spacing: 0;
+  }
+  .final-cta .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: rgba(250, 244, 224, 0.82);
+    max-width: 50ch;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+  }
+  .final-cta .pills {
+    display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .final-cta .pill { background: var(--crema); color: var(--cafe-oscuro); border-color: var(--crema); }
+  .final-cta .pill:hover { background: transparent; color: var(--crema); }
+  .final-cta .visit {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 32px;
+    color: rgba(250, 244, 224, 0.78);
+    font-family: var(--serif);
+    font-size: 13.5px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 244, 224, 0.35);
+    padding-bottom: 3px;
+  }
+  .final-cta .visit:hover { color: var(--crema); border-bottom-color: var(--crema); }
+
+  /* ── Footer comercial ──────────────────────────────── */
+  .footer-c {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: clamp(64px, 8vw, 100px) 0 32px;
+  }
+  .footer-c .top {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: clamp(40px, 6vw, 88px);
+    align-items: start;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 980px) { .footer-c .top { grid-template-columns: 1fr; } }
+  .footer-c .wordmark {
+    font-family: var(--script);
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.85;
+    color: var(--cafe-oscuro);
+    margin: 0 0 18px;
+  }
+  .footer-c .blurb {
+    font-family: var(--serif);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--cafe-medio);
+    max-width: 36ch;
+    margin: 0 0 18px;
+  }
+  .footer-c .social-proof {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--serif);
+    font-size: 12px;
+    color: var(--cafe-oscuro);
+    font-weight: 500;
+  }
+  .footer-c .social-proof .stars { display: inline-flex; gap: 2px; }
+  .footer-c .col-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  @media (max-width: 720px) { .footer-c .col-grid { grid-template-columns: repeat(2, 1fr); } }
+  .footer-c h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin: 0 0 16px;
+  }
+  .footer-c ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .footer-c li a {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+  .footer-c li a:hover { color: var(--cafe-medio); }
+  .footer-c .legal {
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+    padding-top: 26px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    font-family: var(--serif);
+    font-size: 11.5px;
+    color: var(--cafe-medio);
+    letter-spacing: 0.04em;
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ── Header ───────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" aria-label="Roccia · Inicio" class="nav-subbrand">
+      <img src="assets/logo-crema.png" alt="Roccia" class="nav-logo nav-logo-light" />
+      <img src="assets/logo-roca.png"  alt="Roccia" class="nav-logo nav-logo-dark"  />
+      <span class="divider" aria-hidden="true"></span>
+      <span class="label">Helados artesanales</span>
+    </a>
+    <div class="nav-links">
+      <a href="#sabores">Sabores</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#delivery" class="pill nav-cta">
+      <span class="full-cta">Pedir delivery</span>
+      <span class="short-cta" aria-hidden="true">Pedir</span>
+      <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </div>
+</nav>
+<style>
+  .short-cta { display: none; }
+  @media (max-width: 540px) {
+    .full-cta { display: none; }
+    .short-cta { display: inline; }
+  }
+</style>
+
+<!-- ── 1. Hero ──────────────────────────────────────── -->
+<header class="hero-c" id="top" data-screen-label="01 Hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="seal-row rise delay-1">
+          <span class="seal">Cumbayá · Quito</span>
+          <span class="rating">
+            <span class="stars" aria-label="4.9 estrellas">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </span>
+            <span><strong style="color:var(--cafe-oscuro); font-weight:600;">4.9</strong> en Google <em>· 200+ reseñas</em></span>
+          </span>
+        </div>
+        <h1 class="rise delay-2">Gelato <em>artesanal</em> en Cumbayá<span class="dot">.</span></h1>
+        <p class="lede rise delay-3">23 sabores hechos a mano con técnica italiana e ingredientes ecuatorianos. Pídelo a domicilio o ven a visitarnos.</p>
+        <div class="ctas rise delay-4">
+          <a href="#sabores" class="pill">
+            Ver los 23 sabores
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="#delivery" class="pill outline">
+            Pedir delivery
+          </a>
+          <a href="#ubicacion" class="visit-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Visitar local
+          </a>
+        </div>
+      </div>
+      <div class="photo rise delay-3">
+        <img src="assets/photo-modelo-roccia-fachada.png" alt="Cliente disfrutando un waffle bowl Roccia frente al local de Plaza Briza" />
+        <span class="seal stamp-tl">Hecho a mano</span>
+        <span class="seal stamp-br">23 sabores</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── 2. Delivery destacado ────────────────────────── -->
+<section class="delivery-top" id="delivery" data-screen-label="02 Delivery">
+  <div class="wrap">
+    <div class="head">
+      <span class="seal">Delivery</span>
+      <h2>Tu pausa dulce, <em>donde estés.</em></h2>
+      <p class="sub">Llegamos en frío a Cumbayá, Tumbaco, Quito y valles cercanos. Pídelo en la app que prefieras.</p>
+    </div>
+    <div class="grid3">
+      <a href="https://www.ubereats.com" class="delivery-card-c" target="_blank" rel="noopener">
+        <span class="num">01 · Delivery</span>
+        <div>
+          <div class="name">Uber Eats</div>
+          <div class="desc">El más rápido en Cumbayá</div>
+        </div>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://www.rappi.com.ec" class="delivery-card-c" target="_blank" rel="noopener">
+        <span class="num">02 · Delivery</span>
+        <div>
+          <div class="name">Rappi</div>
+          <div class="desc">Delivery con tracking</div>
+        </div>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://www.pedidosya.com.ec" class="delivery-card-c" target="_blank" rel="noopener">
+        <span class="num">03 · Delivery</span>
+        <div>
+          <div class="name">PedidosYa</div>
+          <div class="desc">Cobertura amplia en Quito</div>
+        </div>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. Catálogo ──────────────────────────────────── -->
+<section class="cat-c" id="sabores" data-screen-label="03 Catálogo">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="head">
+        <span class="seal">Catálogo · 23 sabores</span>
+        <h2>Encuentra tu <em>sabor favorito.</em></h2>
+        <p class="sub">Cada cucharada es una geografía. Buscas por nombre, filtras por familia.</p>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="search-input" type="text" placeholder="Buscar sabor (pistacho, higo, taxo…)" autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="chips" id="chip-row" role="tablist">
+      <button class="chip active" data-cat="all">Todos <span class="count">23</span></button>
+      <button class="chip" data-cat="cremas">Cremas <span class="count">07</span></button>
+      <button class="chip" data-cat="dulces">Dulces de Leche <span class="count">05</span></button>
+      <button class="chip" data-cat="chocolates">Chocolates <span class="count">05</span></button>
+      <button class="chip" data-cat="frutales">Frutales <span class="count">06</span></button>
+    </div>
+
+    <div class="cat-c-grid" id="cat-grid"></div>
+  </div>
+</section>
+
+<!-- ── 4. Por qué Roccia ────────────────────────────── -->
+<section class="razones" data-screen-label="04 Razones">
+  <div class="wrap">
+    <div class="head">
+      <span class="seal">Por qué Roccia</span>
+      <h2>Cuatro razones para <em>elegirnos.</em></h2>
+    </div>
+    <div class="razones-grid">
+      <div class="razon">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <h3>Técnica italiana</h3>
+        <p>Laboratorio 100% italiano. Pasteurización lenta, maduración mínima de 12 horas.</p>
+      </div>
+      <div class="razon">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.4 1.4C19.4 8.4 19.4 15 13 17.4"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
+        <h3>Ingredientes reales</h3>
+        <p>Sin saborizantes artificiales ni colorantes. Frutas reales, cacao ecuatoriano, pistacho siciliano.</p>
+      </div>
+      <div class="razon">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></div>
+        <h3>Origen ecuatoriano</h3>
+        <p>Cacao de Manabí y Esmeraldas. Higo de la sierra, mango y guanábana de la costa.</p>
+      </div>
+      <div class="razon">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></div>
+        <h3>Hecho a mano</h3>
+        <p>Cada lote artesanal, controlado. La vitrina cambia con la temporada y los ingredientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. Ubicación ─────────────────────────────────── -->
+<section class="ubicacion" id="ubicacion" data-screen-label="05 Ubicación">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="seal">Visítanos</span>
+        <h2>Plaza Briza, <em>Cumbayá.</em></h2>
+        <div class="info-list">
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="label">Dirección</div>
+              <div class="value">Plaza Briza, Av. Interoceánica<br/>Cumbayá, Quito</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div>
+              <div class="label">Horario</div>
+              <div class="value">Todos los días · 10:00 — 20:00</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <div class="label">Teléfono</div>
+              <div class="value">+593 99 000 0000</div>
+            </div>
+          </div>
+        </div>
+        <div class="ctas">
+          <a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" class="pill" target="_blank" rel="noopener">
+            Cómo llegar
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="#" class="pill outline">Otras ubicaciones</a>
+        </div>
+        <div class="momentum"><span class="star">✺</span>Pronto en Scala Shopping y Quicentro.</div>
+      </div>
+      <div class="photo">
+        <img src="assets/photo-cafe-fachada-2.jpg" alt="Local Roccia en Plaza Briza, Cumbayá" />
+        <span class="seal stamp">Plaza Briza · Cumbayá</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. Reviews Google ────────────────────────────── -->
+<section class="reviews" id="resenas" data-screen-label="06 Reseñas">
+  <div class="wrap">
+    <div class="head">
+      <span class="seal">Reseñas verificadas</span>
+      <h2><em>4.9</em> en Google.</h2>
+      <span class="stars-line">
+        <span class="stars">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+        Más de 200 reseñas
+      </span>
+    </div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+    <div class="all-link">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="pill ghost" style="border-color: rgba(80,53,28,0.35);">
+        Ver todas las reseñas en Google
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. FAQ ───────────────────────────────────────── -->
+<section class="faq" id="faq" data-screen-label="07 FAQ">
+  <div class="wrap">
+    <div class="head">
+      <span class="seal">Preguntas frecuentes</span>
+      <h2>Lo que más nos <em>preguntan.</em></h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ── 8. CTA Final ─────────────────────────────────── -->
+<section class="final-cta" data-screen-label="08 CTA Final">
+  <div class="wrap">
+    <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Dale el sí</span>
+    <h2>¿Listo para <em>tu pausa?</em></h2>
+    <p class="sub">Tres apps, un local, una sola heladería. Tú eliges por dónde empezar.</p>
+    <div class="pills">
+      <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="pill">Uber Eats</a>
+      <a href="https://www.rappi.com.ec" target="_blank" rel="noopener" class="pill">Rappi</a>
+      <a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener" class="pill">PedidosYa</a>
+    </div>
+    <div>
+      <a href="#ubicacion" class="visit">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        O ven a visitarnos a Plaza Briza
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 9. Footer comercial ──────────────────────────── -->
+<footer class="footer-c">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="wordmark">Roccia</div>
+        <p class="blurb">Heladería artesanal italo-argentina en Cumbayá. 23 sabores hechos a mano con ingredientes reales.</p>
+        <div class="social-proof">
+          <span class="stars">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          4.9 en Google
+        </div>
+      </div>
+      <div class="col-grid">
+        <div>
+          <h4>Sabores</h4>
+          <ul>
+            <li><a href="#sabores">Cremas</a></li>
+            <li><a href="#sabores">Dulces de Leche</a></li>
+            <li><a href="#sabores">Chocolates</a></li>
+            <li><a href="#sabores">Frutales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pedir</h4>
+          <ul>
+            <li><a href="https://www.ubereats.com" target="_blank" rel="noopener">Uber Eats</a></li>
+            <li><a href="https://www.rappi.com.ec" target="_blank" rel="noopener">Rappi</a></li>
+            <li><a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener">PedidosYa</a></li>
+            <li><a href="https://wa.me/593990000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visitar</h4>
+          <ul>
+            <li><a href="#ubicacion">Plaza Briza · Cumbayá</a></li>
+            <li><a href="#ubicacion">10:00 — 20:00</a></li>
+            <li><a href="https://maps.google.com/?q=Plaza+Briza+Cumbaya" target="_blank" rel="noopener">Cómo llegar</a></li>
+            <li><a href="#ubicacion">Otras ubicaciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Roccia</h4>
+          <ul>
+            <li><a href="index.html">Nuestra historia</a></li>
+            <li><a href="mayoristas.html">Mayoristas</a></li>
+            <li><a href="https://instagram.com/roccia.ec" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="mailto:hola@rocciaheladeria.com">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© Roccia · Cumbayá · 2026</span>
+      <span>Helados artesanales · heladosroccia.com</span>
+      <span>hola@rocciaheladeria.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Sticky nav scroll ────────────────────────────────
+  (function() {
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  // ── Flavor data (23) ─────────────────────────────────
+  const FLAVORS = [
+    // Cremas (7)
+    { slug:'vainilla-artesanal', name:'Vainilla artesanal', alt:'Vainilla', cat:'cremas', origin:'Italia', desc:'Clásica, suave y elegante.', img:'assets/photo-conos-altura.jpg' },
+    { slug:'pistacchio',         name:'Pistacchio',         alt:'Pistacho siciliano', cat:'cremas', origin:'Sicilia', desc:'Intenso, verde y cremoso.', img:'assets/photo-pistacchio-poster.jpg', stamp:'Insignia', stampGold:true },
+    { slug:'stracciatella',      name:'Stracciatella',      alt:'Stracciatella triple origen', cat:'cremas', origin:'Manabí', desc:'Crema con láminas de cacao ecuatoriano.', img:'assets/photo-vitrina-tortas.jpg', stamp:'Triple origen', stampGold:true },
+    { slug:'tiramisu',           name:'Tiramisú',           alt:'Tiramisú', cat:'cremas', origin:'Italia', desc:'Inspirado en el postre italiano.', img:'assets/photo-ddl-cup.jpeg' },
+    { slug:'mascarpone-berries', name:'Mascarpone & Berries', alt:'Mascarpone con frutos rojos', cat:'cremas', origin:'Italia', desc:'Dulce, fresco y frutal.', img:'assets/photo-mascarpone-poster.jpg' },
+    { slug:'cookies-cream',      name:'Cookies & Cream',    alt:'Galletas y crema', cat:'cremas', origin:'Casa', desc:'Galletas crocantes con cacao.', img:'assets/photo-cup-cookies.jpg', stamp:'Más pedido' },
+    { slug:'cappuccino',         name:'Cappuccino',         alt:'Cappuccino café', cat:'cremas', origin:'Andes', desc:'Café andino con notas cremosas.', img:'assets/photo-frappe.jpg' },
+    // Dulces de Leche (5)
+    { slug:'ddl-clasico',                 name:'DDL Clásico',                  alt:'Dulce de leche clásico', cat:'dulces', origin:'Argentina', desc:'El sabor argentino por excelencia.', img:'assets/photo-cono-fachada.jpg', stamp:'Más pedido' },
+    { slug:'ddl-granizado',               name:'DDL Granizado',                alt:'Dulce de leche granizado', cat:'dulces', origin:'Argentina', desc:'Con escamas de chocolate amargo.', img:'assets/photo-ddl-cup.jpeg' },
+    { slug:'ddl-negro',                   name:'DDL Negro',                    alt:'Dulce de leche negro', cat:'dulces', origin:'Argentina', desc:'Más intenso y profundo.', img:'assets/photo-cono-fachada.jpg' },
+    { slug:'ddl-almendras-caramelizadas', name:'DDL con almendras', alt:'Dulce de leche con almendras caramelizadas', cat:'dulces', origin:'Argentina', desc:'Crujiente y acaramelado.', img:'assets/photo-ddl-cup.jpeg' },
+    { slug:'super-ddl',                   name:'Súper DDL',                    alt:'Súper dulce de leche', cat:'dulces', origin:'Argentina', desc:'Remolinos de dulzura pura.', img:'assets/photo-cono-fachada.jpg', stamp:'Solo en Roccia' },
+    // Chocolates (5)
+    { slug:'chocolate-tradicional', name:'Chocolate 70%', alt:'Chocolate tradicional 70%', cat:'chocolates', origin:'Esmeraldas', desc:'Cacao profundo y equilibrado.', img:'assets/photo-ddl-cup.jpeg' },
+    { slug:'chocolate-extra-cacao', name:'Extra Cacao 85%', alt:'Chocolate extra cacao 85%', cat:'chocolates', origin:'Manabí', desc:'Amargo, elegante y potente.', img:'assets/photo-bolsa-frio.jpg', stamp:'Insignia', stampGold:true },
+    { slug:'chocolate-blanco',      name:'Chocolate Blanco', alt:'Chocolate blanco', cat:'chocolates', origin:'Casa', desc:'Suave, dulce y sedoso.', img:'assets/photo-vitrina-pistacho.jpg' },
+    { slug:'gianduia',              name:'Gianduia', alt:'Gianduia avellana cacao', cat:'chocolates', origin:'Italia', desc:'Avellana italiana con cacao ecuatoriano.', img:'assets/photo-ddl-cup.jpeg' },
+    { slug:'chocolate-naranja',     name:'Chocolate con Naranja', alt:'Chocolate naranja cítrico', cat:'chocolates', origin:'Costa', desc:'Fresco, cítrico y aromático.', img:'assets/photo-mandarina-poster.jpg' },
+    // Frutales (6)
+    { slug:'fresa',           name:'Fresa',           alt:'Fresa de altura', cat:'frutales', origin:'Sierra', desc:'Dulce y refrescante de altura.', img:'assets/photo-fresa-cup.jpeg' },
+    { slug:'guanabana',       name:'Guanábana',       alt:'Guanábana', cat:'frutales', origin:'Costa', desc:'Cremoso, ácido y perfumado.', img:'assets/photo-vitrina-frutos.jpeg' },
+    { slug:'coco',            name:'Coco',            alt:'Coco', cat:'frutales', origin:'Costa', desc:'Suave, fresco y delicado.', img:'assets/photo-cono-pitufo.jpg' },
+    { slug:'higo-con-queso',  name:'Higo con Queso',  alt:'Higo con queso serrano', cat:'frutales', origin:'Sierra', desc:'Tradición serrana hecha helado.', img:'assets/photo-vitrina-frutos.jpeg', stamp:'Solo en Roccia', stampGold:true },
+    { slug:'mango',           name:'Mango',           alt:'Mango tropical', cat:'frutales', origin:'Costa', desc:'Dulzura tropical de la costa.', img:'assets/photo-waffle-bowl-mango.jpg' },
+    { slug:'taxo',            name:'Taxo',            alt:'Taxo andino', cat:'frutales', origin:'Andes', desc:'Ácido y goloso a la vez.', img:'assets/photo-maracuya-cup.jpeg' },
+  ];
+
+  // ── Render flavor cards ─────────────────────────────
+  const ORIGIN_COLORS = {
+    'Italia':'#c6a252','Sicilia':'#335b40','Manabí':'#50351c','Andes':'#66523a',
+    'Casa':'#871d08','Argentina':'#c6a252','Esmeraldas':'#50351c','Costa':'#c6a252','Sierra':'#871d08'
+  };
+  const grid = document.getElementById('cat-grid');
+  const chipRow = document.getElementById('chip-row');
+  const search = document.getElementById('search-input');
+  let activeCat = 'all';
+  let query = '';
+
+  function renderFlavors() {
+    const q = query.trim().toLowerCase();
+    const filtered = FLAVORS.filter(f => {
+      const catOk = activeCat === 'all' || f.cat === activeCat;
+      if (!catOk) return false;
+      if (!q) return true;
+      return (f.name.toLowerCase().includes(q) ||
+              (f.alt || '').toLowerCase().includes(q) ||
+              f.desc.toLowerCase().includes(q));
+    });
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <h3>Ningún sabor con ese nombre.</h3>
+          <p>Prueba "pistacho", "higo" o "taxo".</p>
+          <button class="pill ghost" style="border-color: rgba(80,53,28,0.35);" onclick="document.getElementById('search-input').value=''; window.__resetFilters && window.__resetFilters();">
+            Ver todos los sabores
+          </button>
+        </div>`;
+      return;
+    }
+    grid.innerHTML = filtered.map(f => {
+      const dot = ORIGIN_COLORS[f.origin] || 'var(--mostaza)';
+      return `
+        <a class="fcard" href="/sabores/${f.slug}">
+          <div class="img" style="background-image:url('${f.img}');">
+            ${f.stamp ? `<span class="stamp ${f.stampGold ? 'gold':''}">${f.stamp}</span>` : ''}
+            <span class="hover-cta">Ver detalles
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <div class="meta">
+            <div class="name">${f.name}</div>
+            <div class="origin"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:${dot};margin-right:8px;vertical-align:middle;"></span>${f.origin}</div>
+          </div>
+          <div class="desc">${f.desc}</div>
+        </a>`;
+    }).join('');
+  }
+
+  window.__resetFilters = () => {
+    activeCat = 'all'; query = '';
+    [...chipRow.children].forEach(c => c.classList.toggle('active', c.dataset.cat === 'all'));
+    renderFlavors();
+  };
+
+  chipRow.addEventListener('click', (e) => {
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    activeCat = btn.dataset.cat;
+    [...chipRow.children].forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    renderFlavors();
+  });
+  search.addEventListener('input', (e) => {
+    query = e.target.value;
+    renderFlavors();
+  });
+  renderFlavors();
+
+  // ── Reviews ─────────────────────────────────────────
+  const REVIEWS = [
+    { name: 'María Elena V.', when: 'hace 2 semanas', stars: 5,
+      text: 'El pistacho es de otro nivel. Se nota que el ingrediente es real, sicilianísimo. Ya somos clientes fijos.' },
+    { name: 'Daniel R.',      when: 'hace 1 mes',     stars: 5,
+      text: 'Probé el higo con queso y no esperaba que me transportara a la sierra. Único en Quito.' },
+    { name: 'Camila P.',      when: 'hace 3 semanas', stars: 5,
+      text: 'La stracciatella triple origen es la mejor que he probado. El cacao ecuatoriano se siente en cada cucharada.' },
+    { name: 'Juan Pablo M.',  when: 'hace 1 semana',  stars: 5,
+      text: 'Vine por el dulce de leche y me quedé por el affogato. La atención es cálida, el local precioso.' },
+    { name: 'Andrea S.',      when: 'hace 2 meses',   stars: 5,
+      text: 'El cappuccino helado es mi preferido. Tiene la cremosidad perfecta. Pido por Uber Eats casi cada finde.' },
+    { name: 'Sebastián L.',   when: 'hace 5 días',    stars: 5,
+      text: 'Probé el taxo por curiosidad y terminó siendo mi favorito. Ácido, goloso, distinto. Me sorprendió mucho.' },
+  ];
+  function starSvg() {
+    return `<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+  }
+  document.getElementById('reviews-grid').innerHTML = REVIEWS.map(r => {
+    const initial = r.name.charAt(0).toUpperCase();
+    return `
+      <article class="review">
+        <div class="top">
+          <span class="stars">${starSvg().repeat(r.stars)}</span>
+          <span class="when">${r.when}</span>
+        </div>
+        <p class="text">"${r.text}"</p>
+        <div class="person">
+          <span class="avatar">${initial}</span>
+          <span class="who">${r.name}</span>
+        </div>
+      </article>`;
+  }).join('');
+
+  // ── FAQ ─────────────────────────────────────────────
+  const FAQ = [
+    { q: '¿Hacen delivery a domicilio?',
+      a: 'Sí. Tenemos delivery por <strong>Uber Eats</strong>, <strong>Rappi</strong> y <strong>PedidosYa</strong>. Llegamos en frío a Cumbayá, Tumbaco, Quito y valles cercanos. El tiempo promedio es 25–40 minutos según la zona y la app que elijas.' },
+    { q: '¿Dónde están ubicados?',
+      a: 'Estamos en <strong>Plaza Briza</strong>, sobre la Av. Interoceánica en Cumbayá, Quito. Atendemos todos los días de 10:00 a 20:00. Pronto abriremos en Scala Shopping y Quicentro.' },
+    { q: '¿Cuántos sabores tienen disponibles?',
+      a: 'Tenemos <strong>23 sabores</strong> divididos en cuatro familias: Cremas (7), Dulces de Leche (5), Chocolates (5) y Frutales Cremosos (6). La vitrina cambia con la temporada — algunos sabores como el higo con queso o el taxo son estacionales.' },
+    { q: '¿Sus helados son artesanales?',
+      a: 'Sí, 100% artesanales. Trabajamos en un laboratorio italiano con pasteurización lenta y maduración mínima de 12 horas. Sin saborizantes artificiales ni colorantes. Frutas reales, cacao ecuatoriano de Manabí y Esmeraldas, pistacho siciliano.' },
+    { q: '¿Atienden eventos privados o catering?',
+      a: 'Sí. Hacemos catering para eventos privados, bodas y empresariales, además de servicio mayorista para hoteles y restaurantes. Si te interesa, escríbenos a <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a> o visita nuestra <a href="mayoristas.html">página de mayoristas</a>.' },
+    { q: '¿Tienen opciones sin azúcar o veganas?',
+      a: 'Tenemos sorbetes frutales sin lácteos (apto vegano) y opciones reducidas en azúcar. Pregunta en el local por la disponibilidad de la vitrina del día — cambia según la temporada de frutas.' },
+  ];
+  const faqList = document.getElementById('faq-list');
+  faqList.innerHTML = FAQ.map((f, i) => `
+    <div class="faq-item${i === 0 ? ' open' : ''}">
+      <button class="faq-q" aria-expanded="${i === 0}">
+        <span>${f.q}</span>
+        <span class="icon">
+          <svg class="plus"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>
+        </span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>`).join('');
+  faqList.addEventListener('click', (e) => {
+    const q = e.target.closest('.faq-q');
+    if (!q) return;
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    [...faqList.children].forEach(c => c.classList.remove('open'));
+    [...faqList.querySelectorAll('.faq-q')].forEach(b => b.setAttribute('aria-expanded', 'false'));
+    if (!wasOpen) {
+      item.classList.add('open');
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+</script>
+
+</body>
+</html>

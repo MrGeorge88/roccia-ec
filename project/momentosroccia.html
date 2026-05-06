@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Momentos · Una publicación editorial de Roccia sobre el oficio del gelato</title>
+<meta name="description" content="Revista digital sobre el oficio del gelato, sus orígenes y la cultura del helado artesanal. Una publicación editorial de Roccia. Cumbayá, Ecuador." />
+<link rel="canonical" href="https://momentosroccia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Momentos · Una publicación editorial de Roccia" />
+<meta property="og:description" content="Revista digital sobre el oficio del gelato, sus orígenes y la cultura del helado artesanal." />
+<meta property="og:url" content="https://momentosroccia.com/" />
+<meta property="og:locale" content="es_EC" />
+
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Yellowtail&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles/roccia-system.css" />
+
+<!-- Schema.org · Blog publication + ItemList of articles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://momentosroccia.com/#publication",
+      "name": "Momentos",
+      "alternateName": "Momentos Roccia",
+      "description": "Revista digital editorial sobre el oficio del gelato, sus orígenes y la cultura del helado artesanal.",
+      "url": "https://momentosroccia.com/",
+      "inLanguage": "es-EC",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Roccia",
+        "url": "https://roccia.ec"
+      },
+      "editor": {
+        "@type": "Person",
+        "name": "Jorge Roca",
+        "jobTitle": "Editor · Fundador de Roccia"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://momentosroccia.com/articulos/cacao-manabi-mejor-chocolate-mundo" },
+        { "@type": "ListItem", "position": 2, "url": "https://momentosroccia.com/articulos/gelato-vs-helado-diferencia-real" },
+        { "@type": "ListItem", "position": 3, "url": "https://momentosroccia.com/articulos/pistacchio-real-no-es-verde-brillante" },
+        { "@type": "ListItem", "position": 4, "url": "https://momentosroccia.com/articulos/bergamo-1962-historia-stracciatella" },
+        { "@type": "ListItem", "position": 5, "url": "https://momentosroccia.com/articulos/metodo-italiano-maduracion-12-horas" },
+        { "@type": "ListItem", "position": 6, "url": "https://momentosroccia.com/articulos/higo-con-queso-sierra-ecuatoriana-gelato" },
+        { "@type": "ListItem", "position": 7, "url": "https://momentosroccia.com/articulos/manos-detras-de-roccia" },
+        { "@type": "ListItem", "position": 8, "url": "https://momentosroccia.com/articulos/dulce-de-leche-argentino-historia" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ── Page-specific overrides for editorial register ── */
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Editorial type roles */
+  .ed-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 144;
+  }
+  .ed-italic {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144;
+  }
+  .ed-italic-md {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 24;
+  }
+
+  /* ── Header ──────────────────────────────────── */
+  .ed-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(250, 244, 224, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(80, 53, 28, 0.10);
+  }
+  .ed-header-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 18px clamp(20px, 4vw, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand-lockup {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--cafe-oscuro);
+  }
+  .brand-lockup .script-logo {
+    font-family: var(--script);
+    font-size: 30px;
+    line-height: 1;
+    color: var(--cafe-oscuro);
+  }
+  .brand-lockup .divider {
+    width: 1px; height: 22px;
+    background: var(--cafe-oscuro);
+    opacity: 0.4;
+    transform: translateY(2px);
+  }
+  .brand-lockup .pub-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    font-variation-settings: "opsz" 36;
+  }
+  .ed-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .ed-nav a {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    position: relative;
+    transition: opacity .25s ease;
+  }
+  .ed-nav a em {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .ed-nav a::after {
+    content: ''; position: absolute;
+    left: 0; right: 0; bottom: -3px;
+    height: 1px; background: currentColor;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .ed-nav a:hover::after { transform: scaleX(1); }
+  .subscribe-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 9999px;
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .25s ease;
+  }
+  .subscribe-pill:hover { background: #3b2615; }
+  .subscribe-pill svg { width: 14px; height: 14px; }
+  @media (max-width: 880px) {
+    .ed-nav { display: none; }
+  }
+
+  /* ── Layout primitives ───────────────────────── */
+  .ed-wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 56px);
+  }
+  .ed-wrap-narrow {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 56px);
+  }
+  .ed-grid12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+
+  /* ── Masthead ────────────────────────────────── */
+  .masthead {
+    padding: clamp(48px, 8vw, 96px) 0 clamp(32px, 5vw, 56px);
+    position: relative;
+  }
+  .masthead-top {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    gap: 32px;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+  .masthead-top-right {
+    max-width: 42ch;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--cafe-medio);
+    text-align: right;
+  }
+  @media (max-width: 720px) {
+    .masthead-top { flex-direction: column; align-items: flex-start; }
+    .masthead-top-right { text-align: left; }
+  }
+  .masthead-word {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(80px, 16vw, 220px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--cafe-oscuro);
+    font-variation-settings: "opsz" 144;
+    margin: 0;
+  }
+  .masthead-meta {
+    margin-top: clamp(28px, 4vw, 44px);
+    padding-top: 22px;
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-neutro);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    align-items: center;
+  }
+  .masthead-meta .star {
+    color: var(--mostaza);
+    font-size: 14px;
+    line-height: 0;
+  }
+
+  /* Stagger entrance */
+  .rise { opacity: 0; transform: translateY(18px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .rise-1 { animation-delay: .05s; }
+  .rise-2 { animation-delay: .18s; }
+  .rise-3 { animation-delay: .32s; }
+  .rise-4 { animation-delay: .46s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Featured article ───────────────────────── */
+  .featured {
+    padding: clamp(40px, 6vw, 96px) 0 clamp(56px, 8vw, 112px);
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(40px, 6vw, 88px);
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .featured-grid { grid-template-columns: 1fr; }
+  }
+  .featured-meta {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 20px;
+  }
+  .seal-mostaza {
+    background: var(--mostaza);
+    color: var(--crema);
+    border-color: var(--mostaza);
+  }
+  .seal-mostaza::before, .seal-mostaza::after { background: var(--mostaza); }
+  .cat-caps {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .featured-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 104px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 18px 0 56px;
+    color: var(--cafe-oscuro);
+    font-variation-settings: "opsz" 144;
+  }
+  .featured-title a {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .featured-title a:hover { background-size: 100% 1px; }
+  .featured-subtitle {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.25;
+    color: var(--cafe-medio);
+    margin: 0 0 28px;
+    font-variation-settings: "opsz" 36;
+    max-width: 30ch;
+  }
+  .featured-excerpt {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--cafe-oscuro);
+    max-width: 56ch;
+    margin: 0 0 32px;
+  }
+  .author-line {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px;
+  }
+  .avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    display: grid; place-items: center;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  .author-name {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    line-height: 1.3;
+  }
+  .author-role {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    line-height: 1.3;
+  }
+  .read-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cafe-oscuro);
+    padding-bottom: 4px;
+    transition: gap .3s ease;
+  }
+  .read-link:hover { gap: 18px; }
+  .read-link svg { width: 14px; height: 14px; transition: transform .3s ease; }
+  .read-link:hover svg { transform: translateX(4px); }
+
+  .featured-photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--crema-warm);
+  }
+  .featured-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.20) saturate(0.92) contrast(1.04);
+    transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
+  }
+  .featured-photo:hover img { transform: scale(1.04); }
+  .featured-photo .stamp {
+    position: absolute;
+    top: 22px; right: 22px;
+    transform: rotate(4deg);
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: 8px 14px;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--cafe-oscuro);
+  }
+
+  /* ── 4 Temáticas (dark) ────────────────────── */
+  .themes {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(72px, 10vw, 128px) 0;
+    position: relative;
+  }
+  .themes-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: clamp(48px, 6vw, 80px);
+    align-items: end;
+  }
+  @media (max-width: 720px) {
+    .themes-head { grid-template-columns: 1fr; }
+  }
+  .themes-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.018em;
+    color: var(--crema);
+    margin: 18px 0 0;
+    font-variation-settings: "opsz" 144;
+  }
+  .themes-headline em {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .themes-sub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(250, 244, 224, 0.72);
+    margin: 16px 0 0;
+    max-width: 52ch;
+    font-variation-settings: "opsz" 24;
+  }
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(250, 244, 224, 0.18);
+    border: 1px solid rgba(250, 244, 224, 0.18);
+  }
+  @media (max-width: 880px) {
+    .themes-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .theme-card {
+    background: var(--cafe-oscuro);
+    padding: 32px 28px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--crema);
+    transition: background .35s ease;
+    cursor: pointer;
+  }
+  .theme-card:hover { background: #3d2614; }
+  .theme-card-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .theme-card .icon-wrap {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+  }
+  .theme-card .icon-wrap svg {
+    width: 22px; height: 22px;
+    stroke-width: 1.6;
+  }
+  .theme-card .count {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(250, 244, 224, 0.55);
+  }
+  .theme-card .name {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 10px;
+  }
+  .theme-card .desc {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.4;
+    color: rgba(250, 244, 224, 0.78);
+    margin: 0;
+    font-variation-settings: "opsz" 24;
+  }
+
+  /* Color tints per theme */
+  .theme-card.origen .icon-wrap { color: var(--mostaza); }
+  .theme-card.tecnica .icon-wrap { color: #c95538; }
+  .theme-card.sabores .icon-wrap { color: var(--azul); }
+  .theme-card.comunidad .icon-wrap { color: #6fa57a; }
+
+  /* ── Archive ─────────────────────────────── */
+  .archive {
+    padding: clamp(80px, 10vw, 128px) 0 clamp(64px, 8vw, 112px);
+  }
+  .archive-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: clamp(40px, 5vw, 64px);
+    align-items: end;
+  }
+  @media (max-width: 720px) {
+    .archive-head { grid-template-columns: 1fr; }
+  }
+  .archive-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.018em;
+    color: var(--cafe-oscuro);
+    margin: 18px 0 0;
+    font-variation-settings: "opsz" 144;
+  }
+  .archive-headline em { font-style: italic; }
+  .archive-sub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cafe-medio);
+    margin: 16px 0 0;
+    max-width: 56ch;
+    font-variation-settings: "opsz" 24;
+  }
+  .archive-filters {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 18px 0 28px;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.14);
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  .filter-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px;
+    border: 1px solid rgba(80, 53, 28, 0.30);
+    background: transparent;
+    color: var(--cafe-oscuro);
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .filter-chip:hover { border-color: var(--cafe-oscuro); }
+  .filter-chip.active {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border-color: var(--cafe-oscuro);
+  }
+  .filter-chip .num {
+    font-size: 10px;
+    opacity: 0.55;
+    letter-spacing: 0.1em;
+  }
+  .filter-chip.active .num { opacity: 0.75; }
+
+  .archive-top {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: clamp(28px, 4vw, 56px);
+    margin-bottom: clamp(56px, 7vw, 88px);
+  }
+  @media (max-width: 880px) {
+    .archive-top { grid-template-columns: 1fr; }
+  }
+
+  .article-photo {
+    overflow: hidden;
+    position: relative;
+    background: var(--crema-warm);
+  }
+  .article-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.16) saturate(0.94) contrast(1.04);
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+  }
+  .article-card:hover .article-photo img { transform: scale(1.04); }
+
+  .archive-hero { display: block; text-decoration: none; color: var(--cafe-oscuro); }
+  .archive-hero .article-photo { aspect-ratio: 16/10; margin-bottom: 22px; }
+  .archive-hero .article-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 14px 0 14px;
+    font-variation-settings: "opsz" 144;
+  }
+  .archive-hero .article-subtitle {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--cafe-medio);
+    margin: 0 0 18px;
+    font-variation-settings: "opsz" 36;
+  }
+  .archive-hero .article-excerpt {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cafe-oscuro);
+    margin: 0 0 16px;
+    max-width: 60ch;
+  }
+
+  .archive-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .side-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--cafe-oscuro);
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.12);
+  }
+  .side-card:last-child { border-bottom: none; padding-bottom: 0; }
+  .side-card .article-photo { aspect-ratio: 1/1; }
+  .side-card .article-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 6px 0 6px;
+    font-variation-settings: "opsz" 36;
+  }
+  .side-card .article-subtitle {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.3;
+    color: var(--cafe-medio);
+    margin: 0 0 8px;
+    font-variation-settings: "opsz" 24;
+  }
+  .side-card .read-time {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+  }
+
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 48px) clamp(24px, 3vw, 40px);
+  }
+  @media (max-width: 880px) {
+    .archive-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .archive-grid { grid-template-columns: 1fr; }
+  }
+  .archive-card {
+    text-decoration: none;
+    color: var(--cafe-oscuro);
+  }
+  .archive-card .article-photo { aspect-ratio: 5/4; margin-bottom: 18px; }
+  .archive-card .meta-row {
+    display: flex; gap: 14px; align-items: center;
+    margin-bottom: 10px;
+  }
+  .archive-card .article-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin: 6px 0 8px;
+    font-variation-settings: "opsz" 60;
+  }
+  .archive-card .article-subtitle {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--cafe-medio);
+    margin: 0 0 18px;
+    font-variation-settings: "opsz" 24;
+  }
+  .archive-card .article-excerpt {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--cafe-oscuro);
+    opacity: 0.82;
+    max-width: 42ch;
+    margin: 0;
+  }
+  .archive-card.hidden { display: none; }
+  .archive-empty {
+    display: none;
+    padding: 80px 24px;
+    text-align: center;
+    border: 1px dashed rgba(80, 53, 28, 0.30);
+  }
+  .archive-empty.show { display: block; }
+  .archive-empty .ed-italic { font-size: 28px; color: var(--cafe-oscuro); }
+  .archive-empty p {
+    font-size: 14px; color: var(--cafe-medio);
+    max-width: 40ch; margin: 14px auto 0;
+  }
+
+  /* Category color accents per article */
+  .cat-origen { color: var(--mostaza); }
+  .cat-tecnica { color: #c95538; }
+  .cat-sabores { color: var(--azul); }
+  .cat-comunidad { color: #6fa57a; }
+
+  /* ── Series · Triple Origen ──────────────── */
+  .series {
+    background: var(--crema-warm);
+    padding: clamp(80px, 10vw, 144px) 0;
+  }
+  .series-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(40px, 6vw, 88px);
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .series-grid { grid-template-columns: 1fr; }
+  }
+  .series-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.022em;
+    color: var(--cafe-oscuro);
+    margin: 22px 0 22px;
+    font-variation-settings: "opsz" 144;
+  }
+  .series-sub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--cafe-medio);
+    margin: 0 0 24px;
+    max-width: 32ch;
+    font-variation-settings: "opsz" 36;
+  }
+  .series-body {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--cafe-oscuro);
+    margin: 0 0 28px;
+    max-width: 50ch;
+  }
+  .series-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .series-thumb {
+    position: relative;
+    aspect-ratio: 5/6;
+    overflow: hidden;
+    background: var(--cafe-oscuro);
+    text-decoration: none;
+    display: block;
+  }
+  .series-thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.32) saturate(0.85) contrast(1.05) brightness(0.78);
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+  }
+  .series-thumb:hover img { transform: scale(1.05); }
+  .series-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,24,12,0) 35%, rgba(40,24,12,0.85) 100%);
+  }
+  .series-thumb .num {
+    position: absolute;
+    top: 18px; left: 18px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--mostaza);
+    z-index: 2;
+    font-variation-settings: "opsz" 36;
+  }
+  .series-thumb.t-mostaza .num { color: var(--mostaza); }
+  .series-thumb.t-rojo .num { color: #d97a5e; }
+  .series-thumb.t-azul .num { color: var(--azul); }
+  .series-thumb.t-verde .num { color: #6fa57a; }
+  .series-thumb .label {
+    position: absolute;
+    bottom: 18px; left: 18px; right: 18px;
+    color: var(--crema);
+    z-index: 2;
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+
+  /* ── Newsletter ─────────────────────────── */
+  .newsletter {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(80px, 10vw, 144px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.85  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .newsletter > * { position: relative; z-index: 1; }
+  .newsletter-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .newsletter-grid { grid-template-columns: 1fr; }
+  }
+  .newsletter-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--crema);
+    margin: 22px 0 24px;
+    font-variation-settings: "opsz" 144;
+  }
+  .newsletter-headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--mostaza);
+    position: relative;
+    padding-right: 14px;
+  }
+  .newsletter-headline em::after {
+    content: '.';
+    color: var(--mostaza);
+    font-style: normal;
+  }
+  .newsletter-sub {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(250, 244, 224, 0.82);
+    margin: 0;
+    max-width: 52ch;
+  }
+  .newsletter-form {
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .nl-label {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(250, 244, 224, 0.65);
+  }
+  .nl-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(250, 244, 224, 0.32);
+    padding: 12px 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--crema);
+    outline: none;
+    transition: border-color .25s ease;
+    font-variation-settings: "opsz" 36;
+  }
+  .nl-input::placeholder { color: rgba(250, 244, 224, 0.32); }
+  .nl-input:focus { border-bottom-color: var(--mostaza); }
+  .nl-button {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    border: 1px solid var(--crema);
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .nl-button:hover { background: var(--mostaza); border-color: var(--mostaza); color: var(--cafe-oscuro); }
+  .nl-caption {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(250, 244, 224, 0.42);
+    margin: 0;
+  }
+  .nl-success { display: none; }
+  .nl-success.show { display: block; }
+  .nl-success .ok-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    color: var(--mostaza);
+    margin: 0 0 18px;
+    font-variation-settings: "opsz" 144;
+  }
+  .nl-success p {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(250, 244, 224, 0.86);
+    max-width: 46ch;
+    margin: 0;
+  }
+
+  /* ── Sobre Momentos ───────────────────── */
+  .about {
+    padding: clamp(80px, 10vw, 144px) 0;
+    background: var(--crema);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+  }
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  .pull-quote {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--cafe-oscuro);
+    margin: 0 0 44px;
+    max-width: 32ch;
+    font-variation-settings: "opsz" 60;
+  }
+  .pull-quote::before {
+    content: '"';
+    color: var(--mostaza);
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 4px;
+  }
+  .pull-quote::after {
+    content: '"';
+    color: var(--mostaza);
+    font-style: normal;
+    font-weight: 400;
+  }
+  .about-paragraphs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 4vw, 56px);
+    margin-bottom: 48px;
+  }
+  @media (max-width: 720px) {
+    .about-paragraphs { grid-template-columns: 1fr; }
+  }
+  .about-paragraphs p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--cafe-oscuro);
+    margin: 0;
+  }
+  .about-signature {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(80, 53, 28, 0.16);
+  }
+  .about-signature .avatar {
+    width: 52px; height: 52px;
+    font-size: 16px;
+  }
+  .about-signature .name {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin: 0 0 6px;
+  }
+  .about-signature .role {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin: 0;
+  }
+
+  /* ── Footer editorial ──────────────────── */
+  .ed-footer {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: clamp(56px, 7vw, 96px) 0 clamp(32px, 4vw, 48px);
+    border-top: 1px solid rgba(80, 53, 28, 0.16);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(40px, 6vw, 88px);
+    align-items: start;
+    margin-bottom: clamp(48px, 6vw, 80px);
+  }
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .footer-wordmark {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-wordmark .roccia {
+    font-family: var(--script);
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1;
+    color: var(--cafe-oscuro);
+  }
+  .footer-wordmark .div-dot { color: var(--cafe-medio); font-size: 32px; line-height: 1; }
+  .footer-wordmark .pub {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1;
+    color: var(--cafe-oscuro);
+    font-variation-settings: "opsz" 60;
+  }
+  .footer-tagline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--cafe-medio);
+    margin: 0;
+    max-width: 38ch;
+    font-variation-settings: "opsz" 36;
+  }
+  .footer-nav {
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    transition: opacity .2s ease;
+  }
+  .footer-nav a:hover { opacity: 0.6; }
+  .footer-legal {
+    padding-top: 28px;
+    border-top: 1px solid rgba(80, 53, 28, 0.14);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    justify-content: space-between;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+  }
+  .footer-legal a { color: var(--cafe-medio); text-decoration: none; }
+  .footer-legal a:hover { color: var(--cafe-oscuro); }
+</style>
+</head>
+
+<body data-screen-label="Home Momentos">
+
+<!-- ───────── Header ───────── -->
+<header class="ed-header">
+  <div class="ed-header-inner">
+    <a href="/" class="brand-lockup" aria-label="Momentos · Roccia">
+      <span class="script-logo">Roccia</span>
+      <span class="divider" aria-hidden="true"></span>
+      <span class="pub-name">Momentos</span>
+    </a>
+    <nav class="ed-nav" aria-label="Categorías">
+      <a href="#origen">Origen</a>
+      <a href="#tecnica">Técnica</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#serie"><em>Series</em></a>
+    </nav>
+    <a href="#newsletter" class="subscribe-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Suscríbete
+    </a>
+  </div>
+</header>
+
+<!-- ───────── 1. Masthead ───────── -->
+<section class="masthead" data-screen-label="01 Masthead">
+  <div class="ed-wrap">
+    <div class="masthead-top">
+      <span class="seal rise rise-1">Vol. 01 · 2026</span>
+      <p class="masthead-top-right rise rise-2">
+        Una publicación editorial de Roccia sobre el oficio del gelato, sus orígenes y la cultura del helado artesanal. Publicamos cuando vale la pena leerlo.
+      </p>
+    </div>
+    <h1 class="masthead-word rise rise-3">Momentos</h1>
+    <div class="masthead-meta rise rise-4">
+      <span>Cumbayá · Quito · Ecuador</span>
+      <span class="star">✺</span>
+      <span>Lectura semanal</span>
+      <span class="star">✺</span>
+      <span>Editor: Jorge Roca</span>
+      <span class="star">✺</span>
+      <span>8 artículos publicados</span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 2. Featured ───────── -->
+<section class="featured" data-screen-label="02 Lectura destacada">
+  <div class="ed-wrap">
+    <div class="featured-grid">
+      <article>
+        <div class="featured-meta">
+          <span class="seal seal-mostaza">★ Lectura destacada</span>
+          <span class="cat-caps" style="color: var(--cafe-medio);">15 de abril, 2026 · 12 min de lectura</span>
+        </div>
+        <span class="cat-caps cat-origen">Origen</span>
+        <h2 class="featured-title">
+          <a href="/articulos/cacao-manabi-mejor-chocolate-mundo">El cacao de Manabí.</a>
+        </h2>
+        <p class="featured-subtitle">Por qué Ecuador hace el mejor chocolate del mundo, aunque casi nadie lo sepa.</p>
+        <p class="featured-excerpt">
+          A 60 kilómetros de la costa, en una hacienda manabita que lleva cuatro generaciones cultivando la misma variedad de cacao Nacional, encontramos la respuesta a una pregunta que llevamos años haciéndonos: ¿por qué un chocolate ecuatoriano sabe distinto a cualquier otro del mundo? La respuesta empieza con el suelo, sigue con la fermentación y termina con un señor que se llama don Luis y nunca ha probado un gelato.
+        </p>
+        <div class="author-line">
+          <div class="avatar">JR</div>
+          <div>
+            <div class="author-name">Jorge Roca</div>
+            <div class="author-role">Fundador de Roccia</div>
+          </div>
+        </div>
+        <a href="/articulos/cacao-manabi-mejor-chocolate-mundo" class="read-link">
+          Leer el artículo completo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+      <div class="featured-photo">
+        <img src="assets/photo-mascarpone-poster.jpg" alt="Cacao de Manabí · cucharón de gelato de chocolate ecuatoriano" />
+        <span class="stamp">Vol. 01 · Lectura 1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 3. 4 Temáticas ───────── -->
+<section class="themes" data-screen-label="03 Temáticas">
+  <div class="ed-wrap">
+    <div class="themes-head">
+      <div>
+        <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Las cuatro temáticas</span>
+      </div>
+      <div>
+        <h2 class="themes-headline">De qué hablamos en <em>Momentos.</em></h2>
+        <p class="themes-sub">Cuatro entradas a una misma conversación: el oficio del gelato. No es un blog corporativo. Es una revista digital sobre técnica, origen, cultura y la gente que lo hace posible.</p>
+      </div>
+    </div>
+    <div class="themes-grid" role="list">
+      <a href="#origen" class="theme-card origen" role="listitem">
+        <div class="theme-card-top">
+          <span class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>
+          </span>
+          <span class="count">3 artículos</span>
+        </div>
+        <div>
+          <h3 class="name">Origen</h3>
+          <p class="desc">Las historias detrás de cada ingrediente.</p>
+        </div>
+      </a>
+      <a href="#tecnica" class="theme-card tecnica" role="listitem">
+        <div class="theme-card-top">
+          <span class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          </span>
+          <span class="count">2 artículos</span>
+        </div>
+        <div>
+          <h3 class="name">Técnica</h3>
+          <p class="desc">El oficio del gelato artesanal.</p>
+        </div>
+      </a>
+      <a href="#sabores" class="theme-card sabores" role="listitem">
+        <div class="theme-card-top">
+          <span class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </span>
+          <span class="count">2 artículos</span>
+        </div>
+        <div>
+          <h3 class="name">Sabores</h3>
+          <p class="desc">Exploraciones profundas, sabor por sabor.</p>
+        </div>
+      </a>
+      <a href="#comunidad" class="theme-card comunidad" role="listitem">
+        <div class="theme-card-top">
+          <span class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span class="count">1 artículo</span>
+        </div>
+        <div>
+          <h3 class="name">Comunidad</h3>
+          <p class="desc">La gente que hace posible Roccia.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 4. Archivo ───────── -->
+<section class="archive" id="archivo" data-screen-label="04 Archivo">
+  <div class="ed-wrap">
+    <div class="archive-head">
+      <div>
+        <span class="seal">Archivo</span>
+      </div>
+      <div>
+        <h2 class="archive-headline">Todas las <em>lecturas.</em></h2>
+        <p class="archive-sub">Filtra por temática o explora cronológicamente. Los artículos no caducan — cada uno fue escrito para durar.</p>
+      </div>
+    </div>
+
+    <div class="archive-filters" role="tablist">
+      <button class="filter-chip active" data-filter="all" type="button">Todas <span class="num">8</span></button>
+      <button class="filter-chip" data-filter="origen" type="button">Origen <span class="num">3</span></button>
+      <button class="filter-chip" data-filter="tecnica" type="button">Técnica <span class="num">2</span></button>
+      <button class="filter-chip" data-filter="sabores" type="button">Sabores <span class="num">2</span></button>
+      <button class="filter-chip" data-filter="comunidad" type="button">Comunidad <span class="num">1</span></button>
+    </div>
+
+    <!-- Top: hero + sidebar (3 stories) -->
+    <div class="archive-top">
+      <a href="/articulos/gelato-vs-helado-diferencia-real" class="archive-hero article-card" data-cat="tecnica">
+        <div class="article-photo">
+          <img src="assets/photo-mantecadora.jpeg" alt="Mantecadora trabajando un sorbete artesanal" />
+        </div>
+        <div class="meta-row" style="display:flex; gap:14px; align-items:center; margin-bottom:10px;">
+          <span class="cat-caps cat-tecnica">Técnica</span>
+          <span class="cat-caps" style="color: var(--cafe-medio);">8 min · 02 abr 2026</span>
+        </div>
+        <h3 class="article-title">Gelato vs. helado.</h3>
+        <p class="article-subtitle">La diferencia real (y por qué importa cuando lo pruebas).</p>
+        <p class="article-excerpt">No es marketing italiano. Es densidad, temperatura de servicio y porcentaje de aire incorporado. Tres variables que cambian completamente lo que pasa cuando una cucharada toca tu lengua. Te explicamos qué hace que un gelato sea gelato — y por qué la mayoría de los "helados artesanales" del mercado, técnicamente, son otra cosa.</p>
+        <span class="cat-caps" style="color: var(--cafe-oscuro); margin-top: 14px; display: inline-block;">Por Jorge Roca</span>
+      </a>
+
+      <aside class="archive-side">
+        <a href="/articulos/pistacchio-real-no-es-verde-brillante" class="side-card article-card" data-cat="sabores">
+          <div class="article-photo">
+            <img src="assets/photo-pistacchio-poster.jpg" alt="Pistacchio · sabor verde apagado" />
+          </div>
+          <div>
+            <span class="cat-caps cat-sabores">Sabores</span>
+            <h4 class="article-title">Pistacchio.</h4>
+            <p class="article-subtitle">Por qué el real no es de verde brillante.</p>
+            <span class="read-time">10 min · 26 mar 2026</span>
+          </div>
+        </a>
+        <a href="/articulos/bergamo-1962-historia-stracciatella" class="side-card article-card" data-cat="origen">
+          <div class="article-photo">
+            <img src="assets/photo-vitrina-tortas.jpg" alt="Stracciatella · láminas de cacao en crema fior di latte" />
+          </div>
+          <div>
+            <span class="cat-caps cat-origen">Origen</span>
+            <h4 class="article-title">Bérgamo, 1962.</h4>
+            <p class="article-subtitle">La historia secreta de la stracciatella.</p>
+            <span class="read-time">7 min · 20 mar 2026</span>
+          </div>
+        </a>
+        <a href="/articulos/metodo-italiano-maduracion-12-horas" class="side-card article-card" data-cat="tecnica">
+          <div class="article-photo">
+            <img src="assets/photo-vitrina-pistacho.jpg" alt="Maduración · base láctea en reposo" />
+          </div>
+          <div>
+            <span class="cat-caps cat-tecnica">Técnica</span>
+            <h4 class="article-title">El método italiano.</h4>
+            <p class="article-subtitle">Por qué maduramos doce horas, ni una menos.</p>
+            <span class="read-time">9 min · 12 mar 2026</span>
+          </div>
+        </a>
+      </aside>
+    </div>
+
+    <!-- Resto del grid: 4 artículos -->
+    <div class="archive-grid">
+      <a href="/articulos/higo-con-queso-sierra-ecuatoriana-gelato" class="archive-card article-card" data-cat="sabores">
+        <div class="article-photo">
+          <img src="assets/photo-vitrina-frutos.jpeg" alt="Higo con queso · gelato de tradición serrana" />
+        </div>
+        <div class="meta-row">
+          <span class="cat-caps cat-sabores">Sabores</span>
+          <span class="cat-caps" style="color: var(--cafe-medio);">11 min · 05 mar 2026</span>
+        </div>
+        <h3 class="article-title">Higo con queso.</h3>
+        <p class="article-subtitle">Cómo llevar la sierra ecuatoriana al gelato.</p>
+        <p class="article-excerpt">Un postre serrano que casi nadie hace ya en helado, y la receta que terminó saliéndonos después de catorce pruebas fallidas en la mantecadora.</p>
+      </a>
+
+      <a href="/articulos/manos-detras-de-roccia" class="archive-card article-card" data-cat="comunidad">
+        <div class="article-photo">
+          <img src="assets/photo-cafe-fachada-1.jpg" alt="Las manos detrás de Roccia" />
+        </div>
+        <div class="meta-row">
+          <span class="cat-caps cat-comunidad">Comunidad</span>
+          <span class="cat-caps" style="color: var(--cafe-medio);">14 min · 26 feb 2026</span>
+        </div>
+        <h3 class="article-title">Las manos detrás de Roccia.</h3>
+        <p class="article-subtitle">Cinco retratos del equipo que abre el local cada mañana.</p>
+        <p class="article-excerpt">No están en el logo. No están en las fotos. Pero el sabor del helado que comes el domingo empezó a hacerse el viernes a las seis de la mañana, en sus manos.</p>
+      </a>
+
+      <a href="/articulos/dulce-de-leche-argentino-historia" class="archive-card article-card" data-cat="origen">
+        <div class="article-photo">
+          <img src="assets/photo-ddl-cup.jpeg" alt="Dulce de leche argentino · cocción lenta" />
+        </div>
+        <div class="meta-row">
+          <span class="cat-caps cat-origen">Origen</span>
+          <span class="cat-caps" style="color: var(--cafe-medio);">9 min · 19 feb 2026</span>
+        </div>
+        <h3 class="article-title">Dulce de leche argentino.</h3>
+        <p class="article-subtitle">Una crema que tardó doscientos años en encontrar su nombre.</p>
+        <p class="article-excerpt">Cuentan que fue un descuido de una sirvienta en Cañuelas, 1829. Probablemente sea mentira. Lo que sí es cierto es que un siglo después se convirtió en lo más argentino que hay.</p>
+      </a>
+    </div>
+
+    <div class="archive-empty" id="archive-empty">
+      <span class="ed-italic">No hay lecturas en esta temática todavía.</span>
+      <p>Las publicamos cuando tenemos algo que valga la pena leer. Mientras tanto, te invitamos a explorar las otras categorías.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 5. Series · Triple Origen ───────── -->
+<section class="series" id="serie" data-screen-label="05 Serie Triple Origen">
+  <div class="ed-wrap">
+    <div class="series-grid">
+      <div>
+        <span class="seal">Serie en curso</span>
+        <h2 class="series-headline">Triple <br />Origen</h2>
+        <p class="series-sub">Cómo conviven Italia, Argentina y Ecuador en una sola cuchara.</p>
+        <p class="series-body">
+          Una serie de doce artículos sobre cómo conviven la técnica italiana, la tradición argentina del dulce de leche, y los ingredientes ecuatorianos en un solo gelato. Publicamos uno cada tres semanas. Cada entrega es una pieza independiente — pero leídas en orden cuentan una historia más larga sobre lo que significa hacer helado en este lado del mundo.
+        </p>
+        <a href="/series/triple-origen" class="read-link">
+          Ver los 4 artículos publicados
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="series-thumbs">
+        <a href="/articulos/cacao-manabi-mejor-chocolate-mundo" class="series-thumb t-mostaza">
+          <img src="assets/photo-mascarpone-poster.jpg" alt="El cacao de Manabí" />
+          <span class="num">01</span>
+          <span class="label">El cacao<br />de Manabí</span>
+        </a>
+        <a href="/articulos/bergamo-1962-historia-stracciatella" class="series-thumb t-rojo">
+          <img src="assets/photo-vitrina-tortas.jpg" alt="Bérgamo, 1962" />
+          <span class="num">02</span>
+          <span class="label">Bérgamo,<br />1962</span>
+        </a>
+        <a href="/articulos/dulce-de-leche-argentino-historia" class="series-thumb t-azul">
+          <img src="assets/photo-ddl-cup.jpeg" alt="Dulce de leche argentino" />
+          <span class="num">03</span>
+          <span class="label">Dulce de leche<br />argentino</span>
+        </a>
+        <a href="/articulos/higo-con-queso-sierra-ecuatoriana-gelato" class="series-thumb t-verde">
+          <img src="assets/photo-vitrina-frutos.jpeg" alt="Higo con queso" />
+          <span class="num">04</span>
+          <span class="label">Higo<br />con queso</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 6. Newsletter ───────── -->
+<section class="newsletter" id="newsletter" data-screen-label="06 Newsletter">
+  <div class="ed-wrap">
+    <div class="newsletter-grid">
+      <div>
+        <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Newsletter · Quincenal</span>
+        <h2 class="newsletter-headline">
+          Una buena<br />
+          lectura cada<br />
+          <em>quince días</em>
+        </h2>
+        <p class="newsletter-sub">Te enviamos los nuevos artículos de Momentos directo a tu correo. Sin saturarte, sin promociones disfrazadas. Solo lectura que vale la pena.</p>
+      </div>
+      <div>
+        <form id="nl-form" class="newsletter-form" novalidate>
+          <label for="nl-email" class="nl-label">Tu correo electrónico</label>
+          <input id="nl-email" name="email" type="email" required placeholder="hola@ejemplo.com" class="nl-input" />
+          <button type="submit" class="nl-button">
+            Suscribirme
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="nl-caption">Sin spam · Cancela cuando quieras · Privacidad respetada</p>
+        </form>
+        <div id="nl-success" class="nl-success">
+          <h3 class="ok-headline">Listo.</h3>
+          <p>Te acabamos de enviar un correo de confirmación. Ábrelo para activar tu suscripción. Nos leemos pronto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 7. Sobre Momentos ───────── -->
+<section class="about" data-screen-label="07 Sobre Momentos">
+  <div class="ed-wrap">
+    <div class="about-grid">
+      <div>
+        <span class="seal">Sobre Momentos</span>
+      </div>
+      <div>
+        <p class="pull-quote">Empezamos a escribir Momentos porque nos dimos cuenta de algo: en cada cucharada de un buen gelato hay una historia que casi nadie cuenta.</p>
+        <div class="about-paragraphs">
+          <p>Quién cultivó el cacao, cómo decidió un heladero italiano romper la tradición, qué pasa químicamente cuando una crema madura doce horas. Todas son historias que merecen ser contadas con cuidado.</p>
+          <p>Acá no hablamos de Roccia. Hablamos de gelato, de origen, de oficio. Roccia es la editorial, no el protagonista. Y publicamos solo cuando tenemos algo que valga la pena leer.</p>
+        </div>
+        <div class="about-signature">
+          <div class="avatar">JR</div>
+          <div>
+            <h3 class="name">Jorge Roca</h3>
+            <p class="role">Editor · Fundador de Roccia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 8. Footer ───────── -->
+<footer class="ed-footer">
+  <div class="ed-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-wordmark">
+          <span class="roccia">Roccia</span>
+          <span class="div-dot">·</span>
+          <span class="pub">Momentos</span>
+        </div>
+        <p class="footer-tagline">Una publicación editorial sobre el oficio del gelato.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/">Inicio</a>
+        <a href="#archivo">Archivo completo</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://roccia.ec">Volver a roccia.ec</a>
+        <a href="https://heladosroccia.com">Pedir delivery (heladosroccia.com)</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <span>© Roccia · Vol. 01 · 2026</span>
+      <span>momentosroccia.com</span>
+      <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Filtros del archivo
+  (function() {
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.article-card');
+    const empty = document.getElementById('archive-empty');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        let visible = 0;
+        cards.forEach(card => {
+          const cat = card.dataset.cat;
+          const show = filter === 'all' || cat === filter;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+        empty.classList.toggle('show', visible === 0);
+      });
+    });
+  })();
+
+  // Newsletter form
+  (function() {
+    const form = document.getElementById('nl-form');
+    const success = document.getElementById('nl-success');
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if (!email || !email.includes('@')) {
+        form.email.style.borderBottomColor = '#d97a5e';
+        form.email.focus();
+        return;
+      }
+      form.style.display = 'none';
+      success.classList.add('show');
+    });
+    form.email.addEventListener('input', () => {
+      form.email.style.borderBottomColor = '';
+    });
+  })();
+</script>
+</body>
+</html>

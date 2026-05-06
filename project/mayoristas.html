@@ -1,0 +1,1823 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Roccia · Mayoristas — Helado artesanal para tu carta</title>
+<meta name="description" content="Helado artesanal italo-argentino para restaurantes, hoteles, cafeterías, catering y tiendas premium. Postres firmados, pintas 500 ml y sabores a medida desde nuestro laboratorio 100% italiano en Cumbayá." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Yellowtail&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles/roccia-system.css" />
+
+<style>
+  /* ────────────────────────────────────────────
+     Mayoristas · estilos específicos
+     Hereda de styles/roccia-system.css.
+     Tono: un escalón más sobrio que la home.
+     ──────────────────────────────────────────── */
+
+  /* ── Hero (sobrio, no full-bleed) ───────── */
+  .m-hero {
+    position: relative;
+    padding: clamp(140px, 16vw, 220px) 0 clamp(80px, 10vw, 140px);
+    background: var(--crema);
+    overflow: hidden;
+  }
+  .m-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(80, 53, 28, 0.07) 1px, transparent 0);
+    background-size: 6px 6px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  .m-hero-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 880px) { .m-hero-grid { grid-template-columns: 1fr; } }
+
+  .m-hero-meta {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .m-hero-caption {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--cafe-medio);
+  }
+
+  .m-hero-headline {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(52px, 8vw, 128px);
+    letter-spacing: -0.025em;
+    line-height: 0.92;
+    text-transform: uppercase;
+    margin: 0 0 32px;
+    color: var(--cafe-oscuro);
+    max-width: 12ch;
+  }
+  .m-hero-headline em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+    font-size: 0.78em;
+    display: inline-block;
+    transform: translateY(0.06em);
+  }
+  .m-hero-headline .dot { color: var(--mostaza); }
+
+  .m-hero-sub {
+    font-family: var(--serif);
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.6;
+    color: var(--cafe-neutro);
+    max-width: 56ch;
+    margin: 0 0 36px;
+  }
+
+  .m-hero-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .m-hero-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-size: 13px;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.4);
+    padding-bottom: 4px;
+  }
+  .m-hero-link:hover { border-bottom-color: var(--cafe-oscuro); }
+
+  .m-hero-photo-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: visible;
+  }
+  .m-hero-photo {
+    width: 100%; height: 100%;
+    background-image: url('assets/photo-modelo-affogato.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.18) saturate(0.92) contrast(1.04);
+  }
+  .m-hero-stamp-tr {
+    position: absolute;
+    top: -18px; right: -14px;
+    transform: rotate(6deg);
+    color: var(--cafe-oscuro);
+    background: var(--crema);
+    padding: 6px 14px 5px;
+  }
+  .m-hero-stamp-bl {
+    position: absolute;
+    bottom: -16px; left: -14px;
+    transform: rotate(-3deg);
+    color: var(--cafe-oscuro);
+    background: var(--crema);
+    padding: 6px 14px 5px;
+  }
+  .m-hero-meta-bottom {
+    margin-top: 20px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--cafe-medio);
+  }
+  .m-hero-meta-bottom .bullet { width: 4px; height: 4px; border-radius: 50%; background: var(--cafe-medio); display: inline-block; }
+
+  /* ── Marquee crema (no oscuro) ──────────── */
+  .m-marquee {
+    background: var(--crema-warm);
+    color: var(--cafe-oscuro);
+    padding: 26px 0;
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+    border-bottom: 1px solid rgba(80, 53, 28, 0.18);
+    overflow: hidden;
+  }
+  .m-marquee-item {
+    font-family: var(--display);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: clamp(20px, 2.4vw, 32px);
+    display: inline-flex; align-items: center; gap: 64px;
+  }
+  .m-marquee-star { color: var(--mostaza); font-weight: 300; }
+
+  /* ── Pilares ─────────────────────────────── */
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(80, 53, 28, 0.18);
+    margin-top: clamp(48px, 6vw, 80px);
+  }
+  @media (max-width: 880px) { .pilares-grid { grid-template-columns: 1fr; } }
+  .pilar {
+    background: var(--crema);
+    padding: clamp(36px, 4vw, 56px) clamp(28px, 3.5vw, 44px);
+    display: flex; flex-direction: column;
+    min-height: 380px;
+  }
+  .pilar-num {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--mostaza);
+    margin-bottom: 28px;
+  }
+  .pilar-icon {
+    width: 36px; height: 36px;
+    color: var(--cafe-oscuro);
+    margin-bottom: 24px;
+  }
+  .pilar-icon svg { width: 100%; height: 100%; }
+  .pilar-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 16px;
+    color: var(--cafe-oscuro);
+  }
+  .pilar-lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--cafe-medio);
+    margin: 0 0 18px;
+    max-width: 32ch;
+  }
+  .pilar-body {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--cafe-neutro);
+    margin: 0;
+    max-width: 38ch;
+  }
+
+  /* ── Casos de uso ────────────────────────── */
+  .casos {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+  }
+  .casos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: clamp(48px, 6vw, 80px);
+  }
+  @media (max-width: 1100px) { .casos-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 720px)  { .casos-grid { grid-template-columns: 1fr; } }
+  .caso {
+    background: rgba(250, 244, 224, 0.04);
+    border: 1px solid rgba(250, 244, 224, 0.12);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease;
+  }
+  .caso:hover { background: rgba(250, 244, 224, 0.06); border-color: rgba(250, 244, 224, 0.22); }
+  .caso.featured { border-color: var(--mostaza); }
+  .caso-photo {
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.22) saturate(0.85) contrast(1.04) brightness(0.85);
+    position: relative;
+  }
+  .caso-photo::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,24,12,0) 60%, rgba(40,24,12,0.55) 100%);
+  }
+  .caso-tag {
+    position: absolute; top: 14px; left: 14px;
+    z-index: 2;
+    color: var(--crema);
+    background: rgba(80, 53, 28, 0.78);
+    border-color: rgba(250, 244, 224, 0.5);
+    backdrop-filter: blur(6px);
+  }
+  .caso.featured .caso-tag {
+    background: var(--mostaza);
+    color: var(--cafe-oscuro);
+    border-color: var(--mostaza);
+  }
+  .caso-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .caso-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: var(--crema);
+    margin: 0;
+  }
+  .caso-desc {
+    font-family: var(--serif);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: rgba(250, 244, 224, 0.78);
+    margin: 0;
+  }
+  .caso-example {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--mostaza);
+    border-top: 1px solid rgba(250, 244, 224, 0.14);
+    padding-top: 14px;
+    margin-top: auto;
+  }
+  .caso-example .label {
+    font-family: var(--serif);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(250, 244, 224, 0.6);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ── Formatos ────────────────────────────── */
+  .formatos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(80, 53, 28, 0.18);
+    margin-top: clamp(48px, 6vw, 80px);
+  }
+  @media (max-width: 880px) { .formatos-grid { grid-template-columns: 1fr; } }
+  .formato {
+    background: var(--crema);
+    padding: clamp(36px, 4vw, 56px) clamp(28px, 3.5vw, 44px);
+    display: flex; flex-direction: column;
+    min-height: 480px;
+    position: relative;
+  }
+  .formato.featured {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+  }
+  .formato-roman {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(56px, 7vw, 96px);
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    color: var(--cafe-oscuro);
+    margin-bottom: 22px;
+    opacity: 0.18;
+  }
+  .formato.featured .formato-roman { color: var(--mostaza); opacity: 1; }
+  .formato-tag {
+    position: absolute; top: 28px; right: 28px;
+    color: var(--mostaza);
+    border-color: var(--mostaza);
+  }
+  .formato-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 38px);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 16px;
+    color: var(--cafe-oscuro);
+  }
+  .formato.featured .formato-title { color: var(--crema); }
+  .formato-lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--cafe-medio);
+    margin: 0 0 26px;
+    max-width: 30ch;
+  }
+  .formato.featured .formato-lead { color: rgba(250, 244, 224, 0.78); }
+  .formato-specs {
+    list-style: none; padding: 0; margin: 0 0 28px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .formato-specs li {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-family: var(--serif);
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--cafe-neutro);
+  }
+  .formato.featured .formato-specs li { color: rgba(250, 244, 224, 0.85); }
+  .formato-specs svg {
+    width: 14px; height: 14px;
+    color: var(--mostaza);
+    margin-top: 5px;
+  }
+  .formato-ideal {
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid rgba(80, 53, 28, 0.22);
+  }
+  .formato.featured .formato-ideal { border-top-color: rgba(250, 244, 224, 0.18); }
+  .formato-ideal .label {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .formato.featured .formato-ideal .label { color: rgba(250, 244, 224, 0.55); }
+  .formato-ideal .text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cafe-oscuro);
+    line-height: 1.5;
+  }
+  .formato.featured .formato-ideal .text { color: var(--crema); }
+
+  /* ── Proceso ─────────────────────────────── */
+  .proceso-section { background: var(--crema-warm); }
+  .proceso-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: clamp(48px, 6vw, 72px);
+    position: relative;
+  }
+  .proceso-track::before {
+    content: '';
+    position: absolute;
+    top: 32px; left: 10%; right: 10%;
+    height: 1px;
+    background: rgba(80, 53, 28, 0.28);
+    z-index: 0;
+  }
+  @media (max-width: 880px) {
+    .proceso-track { grid-template-columns: 1fr; gap: 32px; }
+    .proceso-track::before { display: none; }
+  }
+  .proceso-step {
+    position: relative;
+    z-index: 1;
+    padding: 0 clamp(12px, 1.4vw, 24px);
+    display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  }
+  .proceso-dot {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--crema-warm);
+    border: 1px solid rgba(80, 53, 28, 0.32);
+    display: grid; place-items: center;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--cafe-oscuro);
+  }
+  .proceso-step.active .proceso-dot {
+    background: var(--cafe-oscuro);
+    color: var(--mostaza);
+    border-color: var(--cafe-oscuro);
+  }
+  .proceso-when {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mostaza);
+    margin-top: 2px;
+  }
+  .proceso-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    line-height: 1.05;
+    margin: 0;
+  }
+  .proceso-desc {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--cafe-neutro);
+    margin: 0;
+    max-width: 28ch;
+  }
+
+  /* ── Laboratorio ─────────────────────────── */
+  .lab-section { background: var(--crema); }
+  .lab-grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: stretch;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 880px) { .lab-grid { grid-template-columns: 1fr; } }
+  .lab-photo-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--crema-warm);
+  }
+  .lab-photo {
+    position: absolute; inset: 0;
+    background-image: url('assets/photo-mantecadora.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.22) saturate(0.88) contrast(1.04);
+  }
+  .lab-photo-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,24,12,0) 45%, rgba(40,24,12,0.85) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: clamp(24px, 3vw, 36px);
+    color: var(--crema);
+  }
+  .lab-photo-overlay .quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 22px);
+    line-height: 1.4;
+    color: var(--crema);
+    max-width: 26ch;
+  }
+  .lab-photo-overlay .attrib {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mostaza);
+    margin-top: 12px;
+  }
+
+  .lab-blocks { display: flex; flex-direction: column; gap: 32px; }
+  .lab-block {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 22px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.18);
+  }
+  .lab-block:last-child { border-bottom: 0; padding-bottom: 0; }
+  .lab-block-icon {
+    width: 28px; height: 28px;
+    color: var(--mostaza);
+    margin-top: 4px;
+  }
+  .lab-block h4 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    margin: 0 0 10px;
+    line-height: 1.05;
+  }
+  .lab-block p {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--cafe-neutro);
+    margin: 0;
+    max-width: 48ch;
+  }
+
+  .lab-stats {
+    margin-top: clamp(48px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(80, 53, 28, 0.18);
+  }
+  @media (max-width: 720px) { .lab-stats { grid-template-columns: repeat(2, 1fr); } }
+  .lab-stat {
+    background: var(--crema);
+    padding: 36px 28px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .lab-stat .num {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(36px, 4vw, 52px);
+    letter-spacing: -0.025em;
+    color: var(--cafe-oscuro);
+    line-height: 1;
+  }
+  .lab-stat .num em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--mostaza);
+    font-size: 0.7em;
+    letter-spacing: 0;
+  }
+  .lab-stat .unit {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--cafe-medio);
+    margin-top: 4px;
+  }
+  .lab-stat .label {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin-top: 14px;
+  }
+
+  /* Cadena de frío block */
+  .lab-cold {
+    margin-top: clamp(48px, 6vw, 80px);
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(40px, 5vw, 72px);
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: center;
+  }
+  @media (max-width: 880px) { .lab-cold { grid-template-columns: 1fr; } }
+  .lab-cold-num {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(120px, 16vw, 240px);
+    letter-spacing: -0.05em;
+    color: var(--mostaza);
+    line-height: 0.85;
+    margin: 0;
+  }
+  .lab-cold-num .deg {
+    font-family: var(--display);
+    font-size: 0.45em;
+    vertical-align: top;
+  }
+  .lab-cold-text h4 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin: 0 0 18px;
+  }
+  .lab-cold-text h4 em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+  }
+  .lab-cold-text p {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(250, 244, 224, 0.82);
+    max-width: 50ch;
+    margin: 0;
+  }
+
+  /* ── Marcas placeholder ──────────────────── */
+  .marcas-section { background: var(--crema-warm); }
+  .marcas-card {
+    border: 1px dashed rgba(80, 53, 28, 0.4);
+    padding: clamp(40px, 5vw, 72px);
+    text-align: center;
+    background: var(--crema);
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  .marcas-card .label {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mostaza);
+    margin-bottom: 18px;
+  }
+  .marcas-card h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 44px);
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: var(--cafe-oscuro);
+    margin: 0 0 16px;
+    max-width: 22ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .marcas-card h3 em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+  }
+  .marcas-card p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cafe-medio);
+    max-width: 48ch;
+    margin: 0 auto 24px;
+  }
+  .marcas-row {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    margin-top: 28px;
+  }
+  .marcas-row .placeholder {
+    width: 110px; height: 56px;
+    border: 1px solid rgba(80, 53, 28, 0.18);
+    background: var(--crema-warm);
+    display: grid; place-items: center;
+    font-family: var(--serif);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    opacity: 0.55;
+  }
+
+  /* ── Formulario ──────────────────────────── */
+  .form-section {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: clamp(80px, 11vw, 160px) 0;
+  }
+  .form-head { text-align: left; margin-bottom: clamp(40px, 5vw, 64px); }
+  .form-head .seal { color: var(--mostaza); border-color: var(--mostaza); }
+
+  .form-card {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: clamp(40px, 5vw, 72px);
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .form-section-block {
+    padding-bottom: clamp(36px, 4vw, 56px);
+    margin-bottom: clamp(36px, 4vw, 56px);
+    border-bottom: 1px solid rgba(80, 53, 28, 0.18);
+  }
+  .form-section-block:last-of-type { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+  .form-section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .form-section-num {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--mostaza);
+  }
+  .form-section-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(22px, 2.4vw, 32px);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    line-height: 1;
+    margin: 0;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 720px) { .form-row { grid-template-columns: 1fr; } }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-label {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    margin-bottom: 10px;
+  }
+  .form-label .req { color: var(--rojo); margin-left: 4px; }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(80, 53, 28, 0.32);
+    padding: 12px 0;
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--cafe-oscuro);
+    outline: none;
+    transition: border-color .2s ease;
+    border-radius: 0;
+    width: 100%;
+  }
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: rgba(132, 111, 89, 0.55); font-style: italic; }
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus { border-bottom-color: var(--cafe-oscuro); }
+  .form-input.error,
+  .form-select.error { border-bottom-color: var(--rojo); }
+  .form-error {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--rojo);
+    margin-top: 6px;
+    min-height: 16px;
+  }
+  .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2350351c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    padding-right: 24px;
+  }
+  .form-textarea { resize: vertical; min-height: 96px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    border: 1px solid rgba(80, 53, 28, 0.32);
+    padding: 10px 18px 9px;
+    border-radius: 9999px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--cafe-oscuro);
+    cursor: pointer;
+    background: transparent;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+    user-select: none;
+  }
+  .chip:hover { border-color: var(--cafe-oscuro); }
+  .chip.selected {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border-color: var(--cafe-oscuro);
+  }
+  .chip .check {
+    display: inline-block;
+    width: 12px; height: 12px;
+    margin-right: 8px;
+    vertical-align: -2px;
+    opacity: 0;
+    transition: opacity .15s ease;
+  }
+  .chip.selected .check { opacity: 1; }
+
+  .radio-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .radio-card {
+    border: 1px solid rgba(80, 53, 28, 0.32);
+    padding: 12px 18px;
+    border-radius: 2px;
+    font-family: var(--serif);
+    font-size: 13.5px;
+    color: var(--cafe-oscuro);
+    cursor: pointer;
+    background: transparent;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+    user-select: none;
+  }
+  .radio-card:hover { border-color: var(--cafe-oscuro); }
+  .radio-card.selected {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border-color: var(--cafe-oscuro);
+  }
+
+  .form-submit-row {
+    margin-top: 36px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .form-submit-row .legal {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--cafe-medio);
+    max-width: 42ch;
+    line-height: 1.5;
+  }
+  .form-submit {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    border: 1px solid var(--cafe-oscuro);
+    padding: 18px 32px;
+    border-radius: 9999px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .form-submit:hover { background: transparent; color: var(--cafe-oscuro); }
+  .form-submit[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+  .form-alt {
+    margin-top: clamp(40px, 5vw, 56px);
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(250, 244, 224, 0.65);
+  }
+  .form-alt a {
+    color: var(--mostaza);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(198, 162, 82, 0.5);
+    padding-bottom: 1px;
+  }
+  .form-alt a:hover { border-bottom-color: var(--mostaza); }
+  .form-alt .sep { margin: 0 14px; opacity: 0.4; }
+
+  /* Success state */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: clamp(40px, 5vw, 64px) clamp(24px, 3vw, 48px);
+  }
+  .form-success.visible { display: block; }
+  .form-success .seal {
+    color: var(--mostaza);
+    border-color: var(--mostaza);
+    margin-bottom: 28px;
+  }
+  .form-success h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(40px, 5vw, 72px);
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--cafe-oscuro);
+    margin: 0 0 22px;
+  }
+  .form-success h3 em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--mostaza);
+    letter-spacing: 0;
+  }
+  .form-success p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.55;
+    color: var(--cafe-medio);
+    max-width: 48ch;
+    margin: 0 auto 32px;
+  }
+  .form-success .summary {
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+    padding-top: 28px;
+    margin-top: 32px;
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--cafe-medio);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Footer mínimo ───────────────────────── */
+  .m-footer {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    padding: clamp(56px, 7vw, 96px) 0 36px;
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+  }
+  .m-footer-grid {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+  .m-footer-brand { display: flex; align-items: center; gap: 14px; }
+  .m-footer-brand img { height: 32px; width: auto; }
+  .m-footer-brand .sub {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cafe-medio);
+    border-left: 1px solid rgba(80, 53, 28, 0.3);
+    padding-left: 14px;
+    line-height: 1;
+  }
+  .m-footer-nav { display: flex; gap: 28px; flex-wrap: wrap; }
+  .m-footer-nav a {
+    text-decoration: none;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cafe-oscuro);
+    transition: color .2s ease;
+  }
+  .m-footer-nav a:hover { color: var(--cafe-medio); }
+  .m-footer-legal {
+    border-top: 1px solid rgba(80, 53, 28, 0.18);
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    font-family: var(--serif);
+    font-size: 11.5px;
+    color: var(--cafe-medio);
+    letter-spacing: 0.04em;
+  }
+  .m-footer-legal .dot-sep { margin: 0 10px; opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ───────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Roccia · Mayoristas">
+      <img src="assets/logo-crema.png" alt="Roccia" class="nav-logo nav-logo-light" />
+      <img src="assets/logo-roca.png"  alt="Roccia" class="nav-logo nav-logo-dark"  />
+      <span class="nav-sub">Mayoristas</span>
+    </a>
+    <div class="nav-links">
+      <a href="#propuesta">Propuesta</a>
+      <a href="#casos">Casos</a>
+      <a href="#formatos">Formatos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#capacidad">Laboratorio</a>
+    </div>
+    <a href="#contacto" class="pill nav-cta">
+      Conversemos
+      <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────── -->
+<header class="m-hero" id="top" data-screen-label="01 Hero">
+  <div class="wrap">
+    <div class="m-hero-grid">
+      <div>
+        <div class="m-hero-meta rise delay-1">
+          <span class="seal">Mayoristas · 2026</span>
+          <span class="m-hero-caption">Para restaurantes, hoteles y tiendas premium</span>
+        </div>
+        <h1 class="m-hero-headline rise delay-2">
+          Roccia <em>en tu</em><br/>carta<span class="dot">.</span>
+        </h1>
+        <p class="m-hero-sub rise delay-3">
+          Llevamos nuestra técnica artesanal italo-argentina a tu cocina. Postres firmados, pintas individuales y sabores a medida, producidos en nuestro laboratorio 100% italiano en Cumbayá. Misma cremosidad que servimos en mesa, en formatos pensados para tu operación.
+        </p>
+        <div class="m-hero-ctas rise delay-4">
+          <a href="#contacto" class="pill">
+            Pedir propuesta
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="#formatos" class="m-hero-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Ver formatos profesionales
+          </a>
+        </div>
+      </div>
+      <div class="rise delay-3">
+        <div class="m-hero-photo-wrap">
+          <span class="seal m-hero-stamp-tr">Postre firmado</span>
+          <span class="seal m-hero-stamp-bl">Cumbayá · Ec</span>
+          <div class="m-hero-photo" role="img" aria-label="Postre firmado Roccia en plato gourmet"></div>
+        </div>
+        <div class="m-hero-meta-bottom">
+          <span>Affogato Roccia</span>
+          <span class="bullet"></span>
+          <span>Plato gourmet · servicio en mesa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Marquee crema ────────────────────────────────── -->
+<section class="m-marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-marquee-item">Restaurantes <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Hoteles <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Catering <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Cafeterías <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Tiendas premium <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Restaurantes <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Hoteles <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Catering <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Cafeterías <span class="m-marquee-star">✺</span></span>
+    <span class="m-marquee-item">Tiendas premium <span class="m-marquee-star">✺</span></span>
+  </div>
+</section>
+
+<!-- ── Pilares ──────────────────────────────────────── -->
+<section class="section" id="propuesta" data-screen-label="03 Pilares">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">La propuesta</span></div>
+      <div>
+        <h2 class="section-headline">Por qué Roccia <em>en tu mesa.</em></h2>
+        <p class="section-eyebrow">Tres principios que definen lo que entregamos. Tres razones por las que un chef ejecutivo nos invita a su carta.</p>
+      </div>
+    </div>
+
+    <div class="pilares-grid">
+      <div class="pilar">
+        <div class="pilar-num">01 / Técnica</div>
+        <div class="pilar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 18v4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="pilar-title">Técnica</h3>
+        <p class="pilar-lead">Gelato siciliano. Mantecación lenta. Maduración mínima de 12 horas.</p>
+        <p class="pilar-body">Cada base se diseña con parámetros profesionales: PAC, POD, sólidos totales, balance de grasas y proteínas. La curva de azúcares se ajusta por sabor para una textura sedosa a -14 °C de servicio. Sin atajos industriales, sin agua añadida, sin gomas estabilizantes innecesarias.</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">02 / Ingredientes</div>
+        <div class="pilar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z"/><path d="M8 22h8"/><path d="M12 18v4"/></svg>
+        </div>
+        <h3 class="pilar-title">Ingredientes</h3>
+        <p class="pilar-lead">Pasta madre de pistacho siciliano. Cacao de Manabí. Frutas de altura.</p>
+        <p class="pilar-body">Trabajamos con productores trazables: cacao fino de aroma de tres provincias ecuatorianas, leche fresca andina, frutas de proveedores directos en costa y sierra. La pasta de pistacho viene de Sicilia. El dulce de leche se cocina lento en casa, en lotes pequeños, como en Buenos Aires.</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">03 / Servicio</div>
+        <div class="pilar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h12"/><circle cx="20" cy="17" r="2"/></svg>
+        </div>
+        <h3 class="pilar-title">Servicio</h3>
+        <p class="pilar-lead">Cadena de frío controlada. Entregas semanales. Respuesta en 24 horas.</p>
+        <p class="pilar-body">Producimos por lote y entregamos a -22 °C en transporte propio refrigerado. Cada lote viene con ficha técnica, fecha de elaboración y trazabilidad. Tu chef tiene un contacto directo con nuestra cocina. Sin intermediarios, sin call centers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Casos de uso ─────────────────────────────────── -->
+<section class="casos section" id="casos" data-screen-label="04 Casos">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Casos de uso</span></div>
+      <div>
+        <h2 class="section-headline on-dark">Cinco escenarios. <em>Una</em> técnica.</h2>
+        <p class="section-eyebrow on-dark">Cada negocio tiene una operación distinta. La técnica detrás del helado se mantiene igual.</p>
+      </div>
+    </div>
+
+    <div class="casos-grid">
+
+      <article class="caso">
+        <div class="caso-photo" style="background-image: url('assets/photo-modelo-affogato.jpg');"></div>
+        <span class="seal caso-tag">Restaurantes</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Postres firmados</h3>
+          <p class="caso-desc">Helados base y combinaciones diseñadas con tu chef pastelero. Llegan en cubetas de 2,5 ó 5 litros, listos para emplatar.</p>
+          <div class="caso-example">
+            <span class="label">Ejemplo</span>
+            Affogato de pistacho con bizcocho de almendra y café andino.
+          </div>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="caso-photo" style="background-image: url('assets/photo-cup-local.jpg');"></div>
+        <span class="seal caso-tag">Hoteles 4-5★</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Room service y eventos</h3>
+          <p class="caso-desc">Pintas individuales 500 ml para minibar y room service. Cubetas grandes para banquetes y eventos privados.</p>
+          <div class="caso-example">
+            <span class="label">Ejemplo</span>
+            Pintas firmadas con sello del hotel para suites de huésped premium.
+          </div>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="caso-photo" style="background-image: url('assets/photo-vitrina-tortas.jpg');"></div>
+        <span class="seal caso-tag">Cafeterías</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Oferta complementaria</h3>
+          <p class="caso-desc">Vitrina lista en 6 sabores rotativos. Affogato, brioscia y torta helada como anclas. Capacitamos a tu equipo en mantención y servicio.</p>
+          <div class="caso-example">
+            <span class="label">Ejemplo</span>
+            Carta breve de 6 sabores con rotación mensual estacional.
+          </div>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="caso-photo" style="background-image: url('assets/photo-fresa-cone.jpeg');"></div>
+        <span class="seal caso-tag">Catering</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Eventos privados</h3>
+          <p class="caso-desc">Estación de helado servida por nuestro equipo o pintas pre-porcionadas para invitados. Volúmenes desde 30 hasta 600 invitados.</p>
+          <div class="caso-example">
+            <span class="label">Ejemplo</span>
+            Bodas, corporativos, lanzamientos. Tres sabores firmados por evento.
+          </div>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="caso-photo" style="background-image: url('assets/photo-vitrina-frutos.jpeg');"></div>
+        <span class="seal caso-tag">Tiendas premium</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Delicatessen y gourmet</h3>
+          <p class="caso-desc">Pintas 500 ml etiquetadas para reventa en delicatessen, mercados gourmet y tiendas de especialidad. Mínimo de pedido y rotación garantizada.</p>
+          <div class="caso-example">
+            <span class="label">Ejemplo</span>
+            Línea de seis sabores con etiqueta Roccia para góndola refrigerada.
+          </div>
+        </div>
+      </article>
+
+      <article class="caso featured">
+        <div class="caso-photo" style="background-image: url('assets/photo-mantecadora.jpeg');"></div>
+        <span class="seal caso-tag">Diferenciador</span>
+        <div class="caso-body">
+          <h3 class="caso-title">Private label</h3>
+          <p class="caso-desc">Tu marca, nuestra técnica. Desarrollamos sabores exclusivos para tu carta o tu góndola, con tu nombre y tu identidad. Producción dedicada, NDA, exclusividad por zona.</p>
+          <div class="caso-example">
+            <span class="label">Tu marca</span>
+            Tres sabores firmados por tu chef, etiquetados con tu identidad.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Formatos ─────────────────────────────────────── -->
+<section class="section" id="formatos" data-screen-label="05 Formatos">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Formatos</span></div>
+      <div>
+        <h2 class="section-headline">Tres formatos <em>profesionales.</em></h2>
+        <p class="section-eyebrow">Elige el que mejor se acomode a tu operación. Combinarlos es lo más común.</p>
+      </div>
+    </div>
+
+    <div class="formatos-grid">
+
+      <div class="formato">
+        <div class="formato-roman">I</div>
+        <h3 class="formato-title">Postres firmados</h3>
+        <p class="formato-lead">Cubetas profesionales de 2,5 ó 5 litros para servicio en mesa.</p>
+        <ul class="formato-specs">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Cubetas Gastronorm 2,5 L y 5 L</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Catálogo de 23 sabores rotativos</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Ficha técnica por lote</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Servicio óptimo a -14 °C</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Pedido mínimo: 5 cubetas mensuales</span>
+          </li>
+        </ul>
+        <div class="formato-ideal">
+          <span class="label">Ideal para</span>
+          <p class="text">Restaurantes con carta de postres y hoteles con servicio de banquetes.</p>
+        </div>
+      </div>
+
+      <div class="formato">
+        <div class="formato-roman">II</div>
+        <h3 class="formato-title">Pintas individuales</h3>
+        <p class="formato-lead">Envases 500 ml etiquetados, listos para reventa o consumo individual.</p>
+        <ul class="formato-specs">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Envases 500 ml con tapa hermética</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Etiqueta Roccia o tu marca</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Trazabilidad y código de lote</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Vida útil 6 meses a -22 °C</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Pedido mínimo: 60 pintas mensuales</span>
+          </li>
+        </ul>
+        <div class="formato-ideal">
+          <span class="label">Ideal para</span>
+          <p class="text">Tiendas premium, minibar de hotel, eventos y delicatessen.</p>
+        </div>
+      </div>
+
+      <div class="formato featured">
+        <span class="seal formato-tag">Más demandado</span>
+        <div class="formato-roman">III</div>
+        <h3 class="formato-title">Sabores a medida</h3>
+        <p class="formato-lead">Private label. Tu marca, nuestra técnica. Desarrollo dedicado.</p>
+        <ul class="formato-specs">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Desarrollo de receta exclusiva con tu chef</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>2 a 3 rondas de degustación</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>NDA y exclusividad por zona</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Etiquetado bajo tu marca</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Producción dedicada por lote</span>
+          </li>
+        </ul>
+        <div class="formato-ideal">
+          <span class="label">Ideal para</span>
+          <p class="text">Hoteles 5★, cadenas premium y proyectos gourmet con identidad propia.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Proceso ──────────────────────────────────────── -->
+<section class="proceso-section section" id="proceso" data-screen-label="06 Proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Cómo trabajamos</span></div>
+      <div>
+        <h2 class="section-headline">De la consulta a <em>tu cocina,</em> en tres semanas.</h2>
+        <p class="section-eyebrow">Un proceso ordenado para que sepas qué esperar en cada momento.</p>
+      </div>
+    </div>
+
+    <div class="proceso-track">
+      <div class="proceso-step active">
+        <div class="proceso-dot">01</div>
+        <div class="proceso-when">Día 1</div>
+        <h3 class="proceso-title">Consulta</h3>
+        <p class="proceso-desc">Conversación inicial de 30 minutos. Entendemos tu operación, volúmenes y necesidades.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-dot">02</div>
+        <div class="proceso-when">Días 3 — 5</div>
+        <h3 class="proceso-title">Degustación</h3>
+        <p class="proceso-desc">Visita a nuestro laboratorio o degustación en tu cocina. Probamos sabores y formatos.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-dot">03</div>
+        <div class="proceso-when">Días 7 — 10</div>
+        <h3 class="proceso-title">Propuesta</h3>
+        <p class="proceso-desc">Documento con sabores, formatos, precios mayoristas y condiciones logísticas.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-dot">04</div>
+        <div class="proceso-when">Semana 3</div>
+        <h3 class="proceso-title">Producción inicial</h3>
+        <p class="proceso-desc">Primer lote producido y entregado en tu cocina. Capacitación al equipo si aplica.</p>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-dot">05</div>
+        <div class="proceso-when">En adelante</div>
+        <h3 class="proceso-title">Entregas regulares</h3>
+        <p class="proceso-desc">Cronograma de entrega semanal o quincenal. Un contacto directo con nuestra cocina.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Laboratorio ──────────────────────────────────── -->
+<section class="lab-section section" id="capacidad" data-screen-label="07 Laboratorio">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Capacidad</span></div>
+      <div>
+        <h2 class="section-headline">Un laboratorio <em>100% italiano.</em></h2>
+        <p class="section-eyebrow">Equipamiento importado directamente desde Italia. Las mismas máquinas que usan las mejores gelaterías de Bolonia y Bérgamo, instaladas en Cumbayá.</p>
+      </div>
+    </div>
+
+    <div class="lab-grid">
+      <div class="lab-photo-wrap">
+        <div class="lab-photo" role="img" aria-label="Laboratorio Roccia en Cumbayá"></div>
+        <div class="lab-photo-overlay">
+          <p class="quote">Donde la tradición italiana se encuentra con la altura andina.</p>
+          <p class="attrib">Laboratorio Roccia · Cumbayá</p>
+        </div>
+      </div>
+
+      <div class="lab-blocks">
+        <div class="lab-block">
+          <div class="lab-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><path d="M12 11v5"/><path d="M9 14h6"/></svg>
+          </div>
+          <div>
+            <h4>Equipamiento de origen italiano</h4>
+            <p>Mantecadoras verticales, pasteurizadores combinados, abatidores de temperatura. Estándar profesional, las mismas máquinas que las mejores gelaterías de Bolonia o Bérgamo. Comunicamos la capacidad, no el inventario.</p>
+          </div>
+        </div>
+
+        <div class="lab-block">
+          <div class="lab-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h4>Técnica artesanal certificada</h4>
+            <p>Diseñamos cada base con parámetros profesionales: PAC, POD, sólidos totales, balance de grasas y proteínas. Maduración en frío durante 12 horas mínimo antes de mantecar. Sin atajos, sin gomas innecesarias, sin agua añadida.</p>
+          </div>
+        </div>
+
+        <div class="lab-block">
+          <div class="lab-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg>
+          </div>
+          <div>
+            <h4>Control de calidad por lote</h4>
+            <p>Cada lote lleva ficha técnica, fecha de elaboración, lote y trazabilidad de ingredientes. Análisis sensorial interno antes de despacho. Si algo no pasa la prueba, no sale del laboratorio. Así de simple.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="lab-stats">
+      <div class="lab-stat">
+        <div class="num">2.000<span class="unit"> L</span></div>
+        <div class="unit">por mes</div>
+        <div class="label">Capacidad productiva</div>
+      </div>
+      <div class="lab-stat">
+        <div class="num">12<span class="unit"> h</span></div>
+        <div class="unit">mínimo</div>
+        <div class="label">Maduración en frío</div>
+      </div>
+      <div class="lab-stat">
+        <div class="num">−22<span class="unit">°C</span></div>
+        <div class="unit">constante</div>
+        <div class="label">Cadena de frío</div>
+      </div>
+      <div class="lab-stat">
+        <div class="num">24<span class="unit"> h</span></div>
+        <div class="unit">o menos</div>
+        <div class="label">Tiempo de respuesta</div>
+      </div>
+    </div>
+
+    <!-- Cadena de frío -->
+    <div class="lab-cold">
+      <div>
+        <h3 class="lab-cold-num">−22<span class="deg">°</span></h3>
+      </div>
+      <div class="lab-cold-text">
+        <h4>Cadena de frío <em>sin variación.</em></h4>
+        <p>De nuestro laboratorio a tu cocina, sin un grado de variación. Producción y almacenamiento a -22 °C constantes, transporte propio refrigerado y monitoreo de temperatura por lote. La textura que probaste en degustación es la misma que llega a tu mesa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Marcas placeholder ───────────────────────────── -->
+<section class="marcas-section section-tight" data-screen-label="08 Marcas">
+  <div class="wrap">
+    <div class="marcas-card">
+      <div class="label">Marcas que confían</div>
+      <h3>Pronto, <em>aquí.</em></h3>
+      <p>Estamos cerrando nuestras primeras alianzas mayoristas en Quito y Cumbayá. Pronto verás aquí los logos de los restaurantes, hoteles y tiendas premium que sirven Roccia en su mesa.</p>
+      <div class="marcas-row">
+        <div class="placeholder">Pronto</div>
+        <div class="placeholder">Pronto</div>
+        <div class="placeholder">Pronto</div>
+        <div class="placeholder">Pronto</div>
+        <div class="placeholder">Pronto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Formulario ───────────────────────────────────── -->
+<section class="form-section" id="contacto" data-screen-label="09 Formulario">
+  <div class="wrap">
+    <div class="form-head">
+      <span class="seal">Conversemos</span>
+      <h2 class="section-headline on-dark" style="margin-top: 22px;">Cuéntanos de tu <em>proyecto.</em></h2>
+      <p class="section-eyebrow on-dark">Respondemos en menos de 24 horas con una propuesta inicial. Sin compromiso.</p>
+    </div>
+
+    <div class="form-card" id="form-card">
+
+      <form id="lead-form" novalidate>
+
+        <!-- 01 Sobre ti -->
+        <div class="form-section-block">
+          <div class="form-section-head">
+            <span class="form-section-num">01</span>
+            <h3 class="form-section-title">Sobre ti</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="nombre">Nombre <span class="req">*</span></label>
+              <input class="form-input" id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+              <div class="form-error" data-error-for="nombre"></div>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="cargo">Cargo</label>
+              <input class="form-input" id="cargo" name="cargo" type="text" placeholder="Chef ejecutivo, F&B Manager, Gerente, etc." />
+              <div class="form-error" data-error-for="cargo"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="email">Email <span class="req">*</span></label>
+              <input class="form-input" id="email" name="email" type="email" placeholder="tu@empresa.com" required />
+              <div class="form-error" data-error-for="email"></div>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="whatsapp">WhatsApp</label>
+              <input class="form-input" id="whatsapp" name="whatsapp" type="tel" placeholder="+593 99 000 0000" />
+              <div class="form-error" data-error-for="whatsapp"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Tu negocio -->
+        <div class="form-section-block">
+          <div class="form-section-head">
+            <span class="form-section-num">02</span>
+            <h3 class="form-section-title">Tu negocio</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="empresa">Empresa <span class="req">*</span></label>
+              <input class="form-input" id="empresa" name="empresa" type="text" placeholder="Nombre comercial" required />
+              <div class="form-error" data-error-for="empresa"></div>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="tipo">Tipo de negocio <span class="req">*</span></label>
+              <select class="form-select" id="tipo" name="tipo" required>
+                <option value="">Elige una opción</option>
+                <option value="Restaurante">Restaurante</option>
+                <option value="Hotel">Hotel 4 ó 5 estrellas</option>
+                <option value="Cafetería">Cafetería</option>
+                <option value="Catering">Catering / Eventos</option>
+                <option value="Tienda premium">Tienda premium / Delicatessen</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <div class="form-error" data-error-for="tipo"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Tu proyecto -->
+        <div class="form-section-block">
+          <div class="form-section-head">
+            <span class="form-section-num">03</span>
+            <h3 class="form-section-title">Tu proyecto</h3>
+          </div>
+
+          <div class="form-field full" style="margin-bottom: 28px;">
+            <label class="form-label">Formatos de interés <span class="req">*</span></label>
+            <div class="chips" id="chips-formatos" role="group" aria-label="Formatos de interés">
+              <button type="button" class="chip" data-value="Postres firmados">
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Postres firmados
+              </button>
+              <button type="button" class="chip" data-value="Pintas 500 ml">
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Pintas 500 ml
+              </button>
+              <button type="button" class="chip" data-value="Sabores a medida">
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Sabores a medida
+              </button>
+              <button type="button" class="chip" data-value="Aún no lo sé">
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Aún no lo sé
+              </button>
+            </div>
+            <div class="form-error" data-error-for="formatos"></div>
+          </div>
+
+          <div class="form-field full" style="margin-bottom: 28px;">
+            <label class="form-label">Volumen estimado mensual</label>
+            <div class="radio-row" id="radios-volumen" role="radiogroup" aria-label="Volumen estimado mensual">
+              <button type="button" class="radio-card" data-value="Hasta 50 L">Hasta 50 L</button>
+              <button type="button" class="radio-card" data-value="50 — 150 L">50 — 150 L</button>
+              <button type="button" class="radio-card" data-value="150 — 400 L">150 — 400 L</button>
+              <button type="button" class="radio-card" data-value="Más de 400 L">Más de 400 L</button>
+              <button type="button" class="radio-card" data-value="Aún no lo sé">Aún no lo sé</button>
+            </div>
+          </div>
+
+          <div class="form-field full" style="margin-bottom: 28px;">
+            <label class="form-label">Plazo deseado</label>
+            <div class="radio-row" id="radios-plazo" role="radiogroup" aria-label="Plazo deseado">
+              <button type="button" class="radio-card" data-value="Esta semana">Esta semana</button>
+              <button type="button" class="radio-card" data-value="Este mes">Este mes</button>
+              <button type="button" class="radio-card" data-value="Próximo trimestre">Próximo trimestre</button>
+              <button type="button" class="radio-card" data-value="Estoy explorando">Estoy explorando</button>
+            </div>
+          </div>
+
+          <div class="form-field full">
+            <label class="form-label" for="mensaje">Cuéntanos más (opcional)</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Tu carta actual, sabores que tienes en mente, sello de la marca, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <p class="legal">Al enviar, aceptas que un miembro de Roccia te contacte por email o WhatsApp en menos de 24 horas. Sin spam, sin newsletters automáticos.</p>
+          <button type="submit" class="form-submit" id="submit-btn">
+            Enviar propuesta
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Estado de éxito -->
+      <div class="form-success" id="form-success">
+        <span class="seal">Recibido · 2026</span>
+        <h3>Gracias, <em id="success-name">amigo</em><span style="color: var(--mostaza);">.</span></h3>
+        <p>Te respondemos por email o WhatsApp en menos de 24 horas con una propuesta inicial: sabores sugeridos, formatos recomendados y siguientes pasos.</p>
+        <div class="summary" id="success-summary"></div>
+      </div>
+    </div>
+
+    <p class="form-alt">
+      ¿Prefieres escribir directo? <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a>
+      <span class="sep">·</span>
+      <a href="tel:+593963997478">+593 96 399 7478</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── Footer mínimo ────────────────────────────────── -->
+<footer class="m-footer" data-screen-label="10 Footer">
+  <div class="wrap">
+    <div class="m-footer-grid">
+      <a href="index.html" class="m-footer-brand">
+        <img src="assets/logo-roca.png" alt="Roccia" />
+        <span class="sub">Mayoristas</span>
+      </a>
+      <nav class="m-footer-nav" aria-label="Footer">
+        <a href="index.html">Volver a roccia.ec</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hola@rocciaheladeria.com">Email</a>
+      </nav>
+    </div>
+    <div class="m-footer-legal">
+      <span>© Roccia · Cumbayá · 2026</span>
+      <span>De los Alpes a los Andes <span class="dot-sep">·</span> Hecho en Ecuador con técnica italiana</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Header scroll behavior ─────────────────────────
+  const nav = document.getElementById('nav');
+  let scrolled = false;
+  function onScroll() {
+    const s = window.scrollY > 24;
+    if (s !== scrolled) {
+      scrolled = s;
+      nav.classList.toggle('scrolled', s);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── Chips multi-select ─────────────────────────────
+  const chipsContainer = document.getElementById('chips-formatos');
+  chipsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    btn.classList.toggle('selected');
+    btn.setAttribute('aria-pressed', btn.classList.contains('selected'));
+    clearError('formatos');
+  });
+  function getSelectedChips() {
+    return Array.from(chipsContainer.querySelectorAll('.chip.selected')).map(b => b.dataset.value);
+  }
+
+  // ── Radio cards (single select per group) ─────────
+  function bindRadios(containerId) {
+    const container = document.getElementById(containerId);
+    container.addEventListener('click', (e) => {
+      const btn = e.target.closest('.radio-card');
+      if (!btn) return;
+      container.querySelectorAll('.radio-card').forEach(b => {
+        b.classList.toggle('selected', b === btn);
+        b.setAttribute('aria-checked', b === btn);
+      });
+    });
+  }
+  bindRadios('radios-volumen');
+  bindRadios('radios-plazo');
+  function getSelectedRadio(containerId) {
+    const sel = document.querySelector(`#${containerId} .radio-card.selected`);
+    return sel ? sel.dataset.value : '';
+  }
+
+  // ── Form validation + submit ──────────────────────
+  const form = document.getElementById('lead-form');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function setError(name, msg) {
+    const el = document.querySelector(`[data-error-for="${name}"]`);
+    if (el) el.textContent = msg || '';
+    const input = form.querySelector(`[name="${name}"]`);
+    if (input) input.classList.toggle('error', !!msg);
+  }
+  function clearError(name) { setError(name, ''); }
+
+  function validate() {
+    let ok = true;
+    const data = new FormData(form);
+    const required = ['nombre', 'email', 'empresa', 'tipo'];
+    required.forEach(name => {
+      const v = (data.get(name) || '').toString().trim();
+      if (!v) { setError(name, 'Este campo es necesario.'); ok = false; }
+      else { clearError(name); }
+    });
+    const email = (data.get('email') || '').toString().trim();
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('email', 'Revisa el formato del email.');
+      ok = false;
+    }
+    if (getSelectedChips().length === 0) {
+      setError('formatos', 'Elige al menos un formato.');
+      ok = false;
+    }
+    return ok;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) {
+      // scroll to first error
+      const firstErr = form.querySelector('.form-input.error, .form-select.error');
+      if (firstErr) firstErr.focus({ preventScroll: false });
+      return;
+    }
+
+    const data = new FormData(form);
+    const formatos = getSelectedChips();
+    const volumen = getSelectedRadio('radios-volumen');
+    const plazo = getSelectedRadio('radios-plazo');
+
+    const fullName = (data.get('nombre') || '').toString().trim();
+    const firstName = fullName.split(/\s+/)[0] || 'amigo';
+
+    // Hide form, show success
+    form.style.display = 'none';
+    const success = document.getElementById('form-success');
+    document.getElementById('success-name').textContent = firstName;
+
+    // Build summary
+    const tipo = (data.get('tipo') || '').toString();
+    const empresa = (data.get('empresa') || '').toString();
+    const parts = [];
+    if (empresa) parts.push(empresa);
+    if (tipo) parts.push(tipo);
+    if (formatos.length) parts.push(formatos.join(' + '));
+    if (volumen) parts.push(volumen);
+    if (plazo) parts.push(plazo);
+    document.getElementById('success-summary').textContent = parts.length
+      ? 'Resumen recibido: ' + parts.join(' · ')
+      : '';
+
+    success.classList.add('visible');
+
+    // Smooth scroll to success
+    success.scrollIntoView ? null : null;
+    const card = document.getElementById('form-card');
+    const top = card.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+
+  // Clear errors as user types
+  form.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => clearError(el.name));
+    el.addEventListener('change', () => clearError(el.name));
+  });
+</script>
+
+</body>
+</html>
