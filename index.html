@@ -540,7 +540,7 @@
     text-transform: uppercase;
     color: var(--cafe-medio);
   }
-  .flavor-origin .dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+  .flavor-origin .dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 8px; vertical-align: middle; background: var(--mostaza); }
   .flavor-desc {
     font-family: var(--serif);
     font-style: italic;
@@ -549,6 +549,28 @@
     line-height: 1.5;
     color: var(--cafe-neutro);
     max-width: 30ch;
+  }
+  .flavor-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -2px; }
+  .flavor-badge {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 9px 3px;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+    line-height: 1;
+  }
+  .flavor-badge--vegan { color: var(--verde); }
+  .flavor-badge--nuevo { color: var(--rojo); }
+  .flavor-badge--solo-en-roccia { color: var(--cafe-oscuro); }
+  .flavor-badge--mas-pedido { color: var(--mostaza); }
+  .cat-loading {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--cafe-medio);
+    padding: 32px 0;
   }
 
   /* ── Sabor del mes ───────────────────────────────────── */
@@ -1149,20 +1171,17 @@
     <div class="section-head">
       <div><span class="seal">Cap. dos</span></div>
       <div>
-        <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>veintitrés</em> historias.</h2>
+        <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>treinta y cinco</em> historias.</h2>
         <p class="section-eyebrow">Cada sabor es un viaje corto. Elige uno y empieza por ahí.</p>
       </div>
     </div>
 
     <div class="cat-tabs" role="tablist" aria-label="Categorías de sabores" id="cat-tabs">
-      <button class="cat-tab active" data-cat="cremas" role="tab" aria-selected="true" aria-controls="cat-grid">Cremas <span class="num">07</span></button>
-      <button class="cat-tab" data-cat="dulces" role="tab" aria-selected="false" aria-controls="cat-grid">Dulces de Leche <span class="num">05</span></button>
-      <button class="cat-tab" data-cat="chocolates" role="tab" aria-selected="false" aria-controls="cat-grid">Chocolates <span class="num">05</span></button>
-      <button class="cat-tab" data-cat="frutales" role="tab" aria-selected="false" aria-controls="cat-grid">Frutales Cremosos <span class="num">06</span></button>
+      <!-- tabs populated by JS from assets/data/flavors.json -->
     </div>
 
     <div class="cat-grid" id="cat-grid" role="tabpanel">
-      <!-- populated by JS -->
+      <p class="cat-loading">Cargando sabores…</p>
     </div>
   </div>
 </section>
@@ -1492,71 +1511,79 @@
     onScroll();
   })();
 
-  // ── Flavor catalog
-  const FLAVORS = {
-    cremas: [
-      { name: 'Vainilla Artesanal',   origin: 'Italia',    color: '#c6a252', desc: 'Clásica, suave y elegante.',             img: 'assets/img/photo-conos-altura.jpg' },
-      { name: 'Pistacchio',           origin: 'Sicilia',   color: '#335b40', desc: 'Intenso, verde y cremoso.',              img: 'assets/img/photo-pistacchio-poster.jpg', stamp: 'Insignia' },
-      { name: 'Stracciatella',        origin: 'Manabí',    color: '#50351c', desc: 'Crema con láminas de cacao ecuatoriano.', img: 'assets/img/photo-vitrina-tortas.jpg',    stamp: 'In Season' },
-      { name: 'Tiramisú',             origin: 'Italia',    color: '#846f59', desc: 'Inspirado en el postre italiano.',       img: 'assets/img/photo-ddl-cup.jpeg' },
-      { name: 'Mascarpone & Berries', origin: 'Italia',    color: '#871d08', desc: 'Dulce, fresco y frutal.',                img: 'assets/img/photo-mascarpone-poster.jpg' },
-      { name: 'Cookies & Cream',      origin: 'Casa',      color: '#50351c', desc: 'Galletas crocantes con cacao.',          img: 'assets/img/photo-cup-cookies.jpg' },
-      { name: 'Cappuccino',           origin: 'Andes',     color: '#66523a', desc: 'Café andino con notas cremosas.',        img: 'assets/img/photo-ddl-cup.jpeg' },
-    ],
-    dulces: [
-      { name: 'Clásico',                        origin: 'Argentina', color: '#c6a252', desc: 'El sabor argentino por excelencia.',   img: 'assets/img/photo-cono-fachada.jpg',    stamp: 'Insignia' },
-      { name: 'Granizado',                      origin: 'Argentina', color: '#50351c', desc: 'Con escamas de chocolate amargo.',     img: 'assets/img/photo-ddl-cup.jpeg' },
-      { name: 'Negro',                          origin: 'Argentina', color: '#50351c', desc: 'Más intenso y profundo.',              img: 'assets/img/photo-cono-fachada.jpg' },
-      { name: 'Con Almendras Caramelizadas',    origin: 'Argentina', color: '#c6a252', desc: 'Crujiente y acaramelado.',             img: 'assets/img/photo-ddl-cup.jpeg' },
-      { name: 'Súper DDL',                      origin: 'Argentina', color: '#871d08', desc: 'Remolinos de dulzura pura.',           img: 'assets/img/photo-cono-fachada.jpg' },
-    ],
-    chocolates: [
-      { name: 'Tradicional 70%', origin: 'Esmeraldas', color: '#50351c', desc: 'Cacao profundo y equilibrado.',           img: 'assets/img/photo-ddl-cup.jpeg' },
-      { name: 'Extra Cacao 85%', origin: 'Manabí',     color: '#50351c', desc: 'Amargo, elegante y potente.',             img: 'assets/img/photo-bolsa-frio.jpg',          stamp: 'Insignia' },
-      { name: 'Blanco',          origin: 'Casa',       color: '#c6a252', desc: 'Suave, dulce y sedoso.',                  img: 'assets/img/photo-vitrina-pistacho.jpg' },
-      { name: 'Gianduia',        origin: 'Italia',     color: '#846f59', desc: 'Avellana italiana con cacao ecuatoriano.', img: 'assets/img/photo-ddl-cup.jpeg' },
-      { name: 'Con Naranja',     origin: 'Costa',      color: '#c6a252', desc: 'Fresco, cítrico y aromático.',            img: 'assets/img/photo-mandarina-poster.jpg' },
-    ],
-    frutales: [
-      { name: 'Fresa',          origin: 'Sierra', color: '#871d08', desc: 'Dulce y refrescante de altura.',          img: 'assets/img/photo-fresa-cup.jpeg' },
-      { name: 'Guanábana',      origin: 'Costa',  color: '#335b40', desc: 'Cremoso, ácido y perfumado.',             img: 'assets/img/photo-vitrina-frutos.jpeg' },
-      { name: 'Coco',           origin: 'Costa',  color: '#c6a252', desc: 'Suave, fresco y delicado.',               img: 'assets/img/photo-cono-pitufo.jpg' },
-      { name: 'Higo con Queso', origin: 'Sierra', color: '#50351c', desc: 'Tradición serrana hecha helado.',          img: 'assets/img/photo-vitrina-frutos.jpeg',     stamp: 'Insignia' },
-      { name: 'Mango',          origin: 'Costa',  color: '#c6a252', desc: 'Dulzura tropical de la costa.',           img: 'assets/img/photo-waffle-bowl-mango.jpg' },
-      { name: 'Taxo',           origin: 'Andes',  color: '#c6a252', desc: 'Ácido y goloso a la vez.',                img: 'assets/img/photo-maracuya-cup.jpeg' },
-    ],
-  };
+  // ── Flavor catalog (datos centralizados en assets/data/flavors.json)
+  (function () {
+    const tabsEl = document.getElementById('cat-tabs');
+    const gridEl = document.getElementById('cat-grid');
+    const TAG_LABELS = {
+      'nuevo': 'Nuevo',
+      'solo-en-roccia': 'Solo en Roccia',
+      'mas-pedido': 'Más pedido',
+    };
 
-  function renderFlavors(cat) {
-    const grid = document.getElementById('cat-grid');
-    const items = FLAVORS[cat] || [];
-    grid.innerHTML = items.map((f, i) => `
-      <article class="flavor-card" style="animation: rise .55s cubic-bezier(.2,.6,.2,1) ${i * 0.04}s both;">
-        <div class="flavor-photo" style="background-image:url('${f.img}');" role="img" aria-label="${f.name}">
-          ${f.stamp ? `<span class="flavor-stamp">${f.stamp}</span>` : ''}
-        </div>
-        <h3 class="flavor-name">${f.name}</h3>
-        <div class="flavor-meta">
-          <span class="flavor-origin"><span class="dot" style="background:${f.color}" aria-hidden="true"></span>${f.origin}</span>
-        </div>
-        <p class="flavor-desc">${f.desc}</p>
-      </article>
-    `).join('');
-  }
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
 
-  document.querySelectorAll('.cat-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-tab').forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
+    function renderFlavors(category) {
+      const flavors = category.flavors || [];
+      gridEl.innerHTML = flavors.map((f, i) => {
+        const tagPills = (f.tags || [])
+          .map((t) => `<span class="flavor-badge flavor-badge--${esc(t)}">${esc(TAG_LABELS[t] || t)}</span>`)
+          .join('');
+        const veganPill = category.vegan
+          ? '<span class="flavor-badge flavor-badge--vegan">Vegano</span>'
+          : '';
+        const origin = f.origin
+          ? `<div class="flavor-meta"><span class="flavor-origin"><span class="dot" aria-hidden="true"></span>${esc(f.origin)}</span></div>`
+          : '';
+        const desc = f.description ? `<p class="flavor-desc">${esc(f.description)}</p>` : '';
+        return `
+        <article class="flavor-card" style="animation: rise .55s cubic-bezier(.2,.6,.2,1) ${i * 0.04}s both;">
+          <h3 class="flavor-name">${esc(f.name)}</h3>
+          ${origin}
+          ${(veganPill || tagPills) ? `<div class="flavor-badges">${veganPill}${tagPills}</div>` : ''}
+          ${desc}
+        </article>`;
+      }).join('');
+    }
+
+    function selectCategory(category) {
+      tabsEl.querySelectorAll('.cat-tab').forEach((b) => {
+        const active = b.dataset.cat === category.id;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
       });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-      renderFlavors(btn.dataset.cat);
-    });
-  });
+      renderFlavors(category);
+    }
 
-  renderFlavors('cremas');
+    function buildTabs(categories) {
+      tabsEl.innerHTML = categories.map((c) => `
+        <button class="cat-tab" data-cat="${esc(c.id)}" role="tab" aria-selected="false" aria-controls="cat-grid">${esc(c.name)} <span class="num">${String(c.flavors.length).padStart(2, '0')}</span></button>
+      `).join('');
+      tabsEl.querySelectorAll('.cat-tab').forEach((btn) => {
+        const cat = categories.find((c) => c.id === btn.dataset.cat);
+        btn.addEventListener('click', () => selectCategory(cat));
+      });
+    }
+
+    fetch('assets/data/flavors.json')
+      .then((res) => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then((data) => {
+        const categories = (data.categories || []).slice()
+          .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        if (!categories.length) throw new Error('Sin categorías');
+        buildTabs(categories);
+        selectCategory(categories[0]);
+      })
+      .catch((err) => {
+        console.error('No se pudo cargar el catálogo de sabores:', err);
+        gridEl.innerHTML = '<p class="cat-loading">No se pudieron cargar los sabores.</p>';
+      });
+  })();
 </script>
 
 <!-- Schema.org structured data -->

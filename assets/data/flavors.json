@@ -1,0 +1,72 @@
+{
+  "totalFlavors": 35,
+  "categories": [
+    {
+      "id": "leche-crema",
+      "name": "Leche y Crema",
+      "displayOrder": 1,
+      "vegan": false,
+      "flavors": [
+        { "id": "pistacho", "name": "Pistacho", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "tiramisu", "name": "Tiramisú", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "stracciatella", "name": "Stracciatella", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "mascarpone-berries", "name": "Mascarpone y Berries", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "vainilla-francesa", "name": "Vainilla Francesa", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "cookies-cream", "name": "Cookies and Cream", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "higos-queso", "name": "Higos con Queso", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "yogurt", "name": "Yogurt", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "3-leches", "name": "3 Leches", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "cheesecake-maracuya", "name": "Cheesecake de Maracuyá", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "chicle", "name": "Chicle", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "ron-pasas", "name": "Ron Pasas", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "menta-granizada", "name": "Menta Granizada", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "mocca", "name": "Mocca", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "banana", "name": "Banana", "origin": "Ecuador", "description": null, "image": null, "tags": [] }
+      ]
+    },
+    {
+      "id": "frutales-agua",
+      "name": "Frutales al Agua",
+      "displayOrder": 2,
+      "vegan": true,
+      "flavors": [
+        { "id": "uva", "name": "Uva", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "naranjilla", "name": "Naranjilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "mora", "name": "Mora", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "frutilla", "name": "Frutilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "taxo", "name": "Taxo", "origin": "Ecuador", "description": null, "image": null, "tags": ["solo-en-roccia"] },
+        { "id": "guanabana", "name": "Guanábana", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "mandarina", "name": "Mandarina", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "mango", "name": "Mango", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "limon-siciliano", "name": "Limón Siciliano", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "coco", "name": "Coco", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "coco-limon", "name": "Coco-Limón", "origin": "Ecuador × Italia", "description": null, "image": null, "tags": [] },
+        { "id": "uvilla", "name": "Uvilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "maracuya", "name": "Maracuyá", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "frambuesa", "name": "Frambuesa", "origin": null, "description": null, "image": null, "tags": ["nuevo"] }
+      ]
+    },
+    {
+      "id": "chocolates",
+      "name": "Chocolates",
+      "displayOrder": 3,
+      "vegan": false,
+      "flavors": [
+        { "id": "chocolate-blanco", "name": "Chocolate Blanco", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "kinder", "name": "Kinder", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "choco-avellana", "name": "Choco Avellana", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "chocolate-intenso", "name": "Chocolate Intenso", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] }
+      ]
+    },
+    {
+      "id": "dulces-leche",
+      "name": "Dulces de Leche",
+      "displayOrder": 4,
+      "vegan": false,
+      "flavors": [
+        { "id": "dulce-de-leche", "name": "Dulce de Leche", "origin": "Argentina", "description": null, "image": null, "tags": ["mas-pedido"] },
+        { "id": "dulce-de-leche-granizado", "name": "Dulce de Leche Granizado", "origin": "Argentina", "description": null, "image": null, "tags": [] }
+      ]
+    }
+  ]
+}
