@@ -19,7 +19,7 @@
         { "id": "cheesecake-maracuya", "name": "Cheesecake de Maracuyá", "origin": "Italia × Ecuador", "description": "Crema base cheesecake con maracuyá fresco ecuatoriano.", "image": "/assets/img/flavors/cheesecake-maracuya.webp", "tags": ["destacado"] },
         { "id": "chicle", "name": "Chicle", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "ron-pasas", "name": "Ron Pasas", "origin": "Italia", "description": null, "image": null, "tags": [] },
-        { "id": "menta-granizada", "name": "Menta Granizada", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "menta-granizada", "name": "Menta Granizada", "origin": null, "description": "Crema de menta con granizado de chocolate.", "image": "/assets/img/flavors/menta-granizada.webp", "tags": [] },
         { "id": "mocca", "name": "Mocca", "origin": "Italia", "description": null, "image": null, "tags": [] },
         { "id": "banana", "name": "Banana", "origin": "Ecuador", "description": null, "image": null, "tags": [] }
       ]
@@ -31,14 +31,14 @@
       "vegan": true,
       "flavors": [
         { "id": "uva", "name": "Uva", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "naranjilla", "name": "Naranjilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "naranjilla", "name": "Naranjilla", "origin": "Ecuador", "description": "Sorbete cítrico de naranjilla, ácido natural andino.", "image": "/assets/img/flavors/naranjilla.webp", "tags": [] },
         { "id": "mora", "name": "Mora", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "frutilla", "name": "Frutilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "frutilla", "name": "Frutilla", "origin": "Ecuador", "description": "Sorbete vegan de frutilla ecuatoriana, sin lácteos.", "image": "/assets/img/flavors/frutilla.webp", "tags": [] },
         { "id": "taxo", "name": "Taxo", "origin": "Ecuador", "description": "Fruta serrana ecuatoriana, ácido natural balanceado.", "image": "/assets/img/flavors/taxo.webp", "tags": ["solo-en-roccia", "destacado"] },
         { "id": "guanabana", "name": "Guanábana", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "mandarina", "name": "Mandarina", "origin": "Ecuador", "description": "Frutal cítrico al agua, fresco y vegano.", "image": "/assets/img/flavors/mandarina.webp", "tags": ["destacado"] },
-        { "id": "mango", "name": "Mango", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "limon-siciliano", "name": "Limón Siciliano", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "mango", "name": "Mango", "origin": "Ecuador", "description": "Mango tropical ecuatoriano, fresco y vegano.", "image": "/assets/img/flavors/mango.webp", "tags": [] },
+        { "id": "limon-siciliano", "name": "Limón Siciliano", "origin": "Italia", "description": "Sorbete vegan de limón siciliano, fresco y aromático.", "image": "/assets/img/flavors/limon-siciliano.webp", "tags": [] },
         { "id": "coco", "name": "Coco", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "coco-limon", "name": "Coco-Limón", "origin": "Ecuador × Italia", "description": null, "image": null, "tags": [] },
         { "id": "uvilla", "name": "Uvilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
@@ -53,7 +53,7 @@
       "vegan": false,
       "flavors": [
         { "id": "chocolate-blanco", "name": "Chocolate Blanco", "origin": null, "description": null, "image": null, "tags": [] },
-        { "id": "kinder", "name": "Kinder", "origin": null, "description": null, "image": null, "tags": [] },
+        { "id": "kinder", "name": "Kinder", "origin": null, "description": "Cremoso con galleta y chocolate Kinder.", "image": "/assets/img/flavors/kinder.webp", "tags": [] },
         { "id": "choco-avellana", "name": "Choco Avellana", "origin": "Italia", "description": "Avellana piamontesa con cacao en notas suaves.", "image": "/assets/img/flavors/choco-avellana.webp", "tags": ["destacado"] },
         { "id": "chocolate-intenso", "name": "Chocolate Intenso", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] }
       ]

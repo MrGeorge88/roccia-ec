@@ -596,6 +596,185 @@
     filter: sepia(0.12) saturate(0.95);
   }
 
+  /* ── Cinco razones ───────────────────────────────────── */
+  .razones-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 1100px) { .razones-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .razones-grid { grid-template-columns: 1fr; } }
+  .razon-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(80, 53, 28, 0.22);
+  }
+  .razon-num {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+    color: var(--mostaza);
+    line-height: 1;
+  }
+  .razon-name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: var(--cafe-oscuro);
+  }
+  .razon-body {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--cafe-neutro);
+  }
+
+  /* ── Creaciones de la casa ───────────────────────────── */
+  .creaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 880px) { .creaciones-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .creaciones-grid { grid-template-columns: 1fr; } }
+  .creacion-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--cafe-oscuro);
+    text-decoration: none;
+    display: block;
+  }
+  .creacion-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: sepia(0.12) saturate(0.95);
+  }
+  .creacion-card .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,24,12,0) 45%, rgba(40,24,12,0.88) 100%);
+  }
+  .creacion-card.no-photo {
+    background: linear-gradient(150deg, var(--cafe-oscuro) 0%, var(--cafe-neutro) 100%);
+  }
+  .creacion-meta {
+    position: absolute; bottom: 22px; left: 22px; right: 22px;
+    color: var(--crema);
+  }
+  .creacion-name {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(22px, 2.4vw, 30px);
+    letter-spacing: -0.02em; text-transform: uppercase; line-height: 1;
+  }
+  .creacion-desc {
+    font-family: var(--serif); font-style: italic;
+    font-size: 13px; opacity: 0.85; margin-top: 8px;
+  }
+  .creacion-price {
+    font-family: var(--serif); font-size: 13px;
+    color: var(--mostaza); margin-top: 6px; letter-spacing: 0.04em;
+  }
+
+  /* ── Catorce frutales (vegan) ────────────────────────── */
+  .vegan-section { background: var(--verde); color: var(--crema); }
+  .vegan-section .seal { color: var(--crema); border-color: rgba(250,244,224,0.5); }
+  .vegan-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 880px) { .vegan-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .vegan-grid { grid-template-columns: 1fr; } }
+  .vegan-card { display: flex; flex-direction: column; gap: 12px; }
+  .vegan-photo { aspect-ratio: 1/1; overflow: hidden; background: rgba(0,0,0,0.15); }
+  .vegan-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .vegan-name {
+    font-family: var(--display); font-weight: 600; font-size: 20px;
+    letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.05;
+  }
+  .vegan-origin {
+    font-family: var(--serif); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(250,244,224,0.7);
+  }
+  .vegan-desc {
+    font-family: var(--serif); font-style: italic; font-size: 13.5px;
+    line-height: 1.5; color: rgba(250,244,224,0.85);
+  }
+  .vegan-badge-pill {
+    align-self: flex-start;
+    font-family: var(--serif); font-weight: 500; font-size: 9px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 4px 9px 3px; border: 1px solid var(--crema); border-radius: 2px;
+  }
+  .vegan-cta-wrap { margin-top: clamp(36px, 4vw, 56px); }
+
+  /* ── Reseñas ─────────────────────────────────────────── */
+  .resenas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 880px) { .resenas-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .resenas-grid { grid-template-columns: 1fr; } }
+  .resena-card {
+    background: var(--crema);
+    border: 1px solid rgba(80, 53, 28, 0.14);
+    padding: 28px 26px 24px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .resena-quote {
+    font-family: var(--display); font-weight: 600; font-size: 40px;
+    line-height: 0.6; color: var(--mostaza); height: 22px;
+  }
+  .resena-stars { color: var(--mostaza); font-size: 13px; letter-spacing: 2px; }
+  .resena-text {
+    font-family: var(--serif); font-size: 14.5px; line-height: 1.6;
+    color: var(--cafe-neutro); flex: 1;
+  }
+  .resena-author {
+    font-family: var(--serif); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--cafe-medio);
+  }
+  .resena-author strong { color: var(--cafe-oscuro); font-weight: 600; }
+
+  /* ── FAQ ─────────────────────────────────────────────── */
+  .faq-list { margin-top: clamp(40px, 5vw, 64px); max-width: 60rem; }
+  .faq-item { border-top: 1px solid rgba(80, 53, 28, 0.18); }
+  .faq-item:last-child { border-bottom: 1px solid rgba(80, 53, 28, 0.18); }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 24px 0; text-align: left;
+    font-family: var(--display); font-weight: 600; font-size: clamp(17px, 1.8vw, 21px);
+    letter-spacing: -0.01em; color: var(--cafe-oscuro);
+  }
+  .faq-q .faq-icon {
+    flex: none; font-family: var(--serif); font-size: 24px; color: var(--mostaza);
+    transition: transform 0.3s ease; line-height: 1;
+  }
+  .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    overflow: hidden; max-height: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .faq-item.open .faq-a { max-height: 600px; opacity: 1; }
+  .faq-a p {
+    font-family: var(--serif); font-size: 15px; line-height: 1.65;
+    color: var(--cafe-neutro); padding: 0 0 26px; max-width: 56ch;
+  }
+  .faq-a a { color: var(--cafe-oscuro); text-decoration: underline; }
+
   /* ── Sabor del mes ───────────────────────────────────── */
   .inseason { background: var(--cafe-oscuro); color: var(--crema); }
   .inseason-grid {
@@ -1188,6 +1367,46 @@
   </div>
 </section>
 
+<!-- ── Cinco razones ────────────────────────────────── -->
+<section class="section" id="razones" aria-labelledby="razones-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Técnica</span></div>
+      <div>
+        <h2 id="razones-heading" class="section-headline">Cinco <em>razones.</em></h2>
+        <p class="section-eyebrow">Por qué nuestro helado es distinto.</p>
+      </div>
+    </div>
+    <div class="razones-grid">
+      <div class="razon-card">
+        <div class="razon-num">01</div>
+        <h3 class="razon-name">Técnica italiana</h3>
+        <p class="razon-body">Laboratorio 100% italiano. Pasteurización lenta, maduración mínima de 12 horas. La textura no se inventa, se construye.</p>
+      </div>
+      <div class="razon-card">
+        <div class="razon-num">02</div>
+        <h3 class="razon-name">Ingredientes reales</h3>
+        <p class="razon-body">Sin saborizantes artificiales ni colorantes. Frutas reales, cacao ecuatoriano, pistacho siciliano molido en piedra.</p>
+      </div>
+      <div class="razon-card">
+        <div class="razon-num">03</div>
+        <h3 class="razon-name">Origen ecuatoriano</h3>
+        <p class="razon-body">Cacao de Manabí y Esmeraldas. Higo de la sierra. Mango y guanábana de la costa. Lo de aquí, hecho aquí.</p>
+      </div>
+      <div class="razon-card">
+        <div class="razon-num">04</div>
+        <h3 class="razon-name">Hecho a mano</h3>
+        <p class="razon-body">Cada lote artesanal, controlado. La vitrina cambia con la temporada y los ingredientes que tengamos a mano.</p>
+      </div>
+      <div class="razon-card">
+        <div class="razon-num">05</div>
+        <h3 class="razon-name">Frío profesional</h3>
+        <p class="razon-body">Pozeta italiana para preservar textura. Envases térmicos para que llegue firme a tu casa, oficina o evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Sabor de la casa ─────────────────────────────── -->
 <section class="inseason section" id="mes" aria-labelledby="inseason-heading">
   <div class="wrap">
@@ -1236,6 +1455,28 @@
   </div>
 </section>
 
+<!-- ── Catorce frutales (vegan) ─────────────────────── -->
+<section class="vegan-section section" id="frutales-vegan" aria-labelledby="vegan-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">100% Vegano</span></div>
+      <div>
+        <h2 id="vegan-heading" class="section-headline on-dark">Catorce frutales. <em>Cero lácteos.</em></h2>
+        <p class="section-eyebrow on-dark">Toda nuestra línea frutal es 100% vegana. Solo fruta, agua y azúcar. Sin colorantes, sin saborizantes, sin lácteos. Catorce sabores que cambian con la temporada.</p>
+      </div>
+    </div>
+    <div class="vegan-grid" id="vegan-grid">
+      <p class="cat-loading" style="color: rgba(250,244,224,0.7);">Cargando frutales…</p>
+    </div>
+    <div class="vegan-cta-wrap">
+      <a href="#sabores" class="pill invert" data-target-cat="frutales-agua">
+        Ver los catorce sabores
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── Catálogo de sabores ──────────────────────────── -->
 <section class="section" id="sabores" aria-labelledby="sabores-heading">
   <div class="wrap">
@@ -1257,56 +1498,56 @@
   </div>
 </section>
 
-<!-- ── Insignias del local ────────────────────────────── -->
-<section class="section-tight" style="background: var(--crema);" aria-labelledby="insignias-heading">
+<!-- ── Creaciones de la casa ──────────────────────────── -->
+<section class="section-tight" style="background: var(--crema);" id="creaciones" aria-labelledby="creaciones-heading">
   <div class="wrap">
     <div class="section-head" style="margin-bottom: clamp(32px, 4vw, 48px);">
-      <div><span class="seal">Insignias</span></div>
+      <div><span class="seal">Creaciones</span></div>
       <div>
-        <h2 id="insignias-heading" class="section-headline">Los <em>imperdibles</em> de la casa.</h2>
-        <p class="section-eyebrow">Cinco creaciones que no aparecen en ningún delivery. Solo en mesa, recién hechas.</p>
+        <h2 id="creaciones-heading" class="section-headline">Creaciones de la <em>casa.</em></h2>
+        <p class="section-eyebrow">Solo en mesa. Recién hechas, recién servidas.</p>
       </div>
     </div>
-    <div class="insignia-grid">
-      <a href="#menu" style="position:relative; aspect-ratio: 4/5; overflow:hidden; grid-row: span 2; text-decoration:none;">
-        <img src="assets/img/photo-modelo-affogato.jpg" alt="Affogato Roccia — espresso illy sobre vainilla artesanal" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.85) 100%);" aria-hidden="true"></div>
-        <div style="position:absolute; bottom:24px; left:24px; right:24px; color: var(--crema);">
-          <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza); margin-bottom: 12px;">Insignia</span>
-          <div style="font-family: var(--display); font-weight:600; font-size: clamp(28px, 3vw, 44px); letter-spacing:-0.02em; text-transform:uppercase; line-height:0.95; margin-top:14px;">Affogato</div>
-          <div style="font-family: var(--serif); font-style: italic; font-size:14px; opacity:0.85; margin-top:8px;">Expresso illy sobre vainilla artesanal. $4.90</div>
+    <div class="creaciones-grid">
+      <a href="#menu" class="creacion-card">
+        <img src="assets/img/creations/affogato.webp" alt="Affogato Roccia — espresso illy sobre vainilla artesanal" width="1122" height="1402" loading="lazy" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="creacion-meta">
+          <div class="creacion-name">Affogato</div>
+          <div class="creacion-desc">Espresso illy sobre vainilla artesanal.</div>
+          <div class="creacion-price">$4.90</div>
         </div>
       </a>
-      <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/img/photo-waffle-bowl-mango.jpg" alt="Brioscia con waffle bowl" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
-        <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
-          <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Brioscia</div>
-          <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Waffle bowl, maracuyá. $5.40</div>
+      <a href="#menu" class="creacion-card">
+        <img src="assets/img/creations/brioscia.webp" alt="Brioscia Roccia — waffle bowl con maracuyá" width="1122" height="1402" loading="lazy" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="creacion-meta">
+          <div class="creacion-name">Brioscia</div>
+          <div class="creacion-desc">Waffle bowl con maracuyá.</div>
+          <div class="creacion-price">$5.40</div>
         </div>
       </a>
-      <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/img/photo-torta-helada.jpg" alt="Torta helada Roccia" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
-        <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
-          <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Torta helada</div>
-          <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Capa sobre capa. $4.90</div>
+      <a href="#menu" class="creacion-card no-photo">
+        <div class="creacion-meta">
+          <div class="creacion-name">Cornetto</div>
+          <div class="creacion-desc">Cono crujiente relleno de gelato.</div>
+          <div class="creacion-price">$5.40</div>
         </div>
       </a>
-      <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/img/photo-frappe.jpg" alt="Frappé Roccia — café batido cremoso" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
-        <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
-          <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Frappé</div>
-          <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Café batido cremoso. $5.50</div>
+      <a href="#menu" class="creacion-card">
+        <img src="assets/img/creations/torta.webp" alt="Torta helada Roccia — capa sobre capa de gelato y crocante" width="1086" height="1448" loading="lazy" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="creacion-meta">
+          <div class="creacion-name">Torta Helada</div>
+          <div class="creacion-desc">Capa sobre capa de gelato y crocante.</div>
+          <div class="creacion-price">$4.90</div>
         </div>
       </a>
-      <a href="#menu" style="position:relative; aspect-ratio: 1/1; overflow:hidden; text-decoration:none;">
-        <img src="assets/img/photo-alfajores.jpg" alt="Alfajores Roccia — dulce de leche cocido lento" style="width:100%; height:100%; object-fit:cover; filter: sepia(0.12) saturate(0.95);" />
-        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(40,24,12,0) 50%, rgba(40,24,12,0.82) 100%);" aria-hidden="true"></div>
-        <div style="position:absolute; bottom:18px; left:18px; right:18px; color: var(--crema);">
-          <div style="font-family: var(--display); font-weight:600; font-size: 22px; letter-spacing:-0.02em; text-transform:uppercase; line-height:1;">Alfajores</div>
-          <div style="font-family: var(--serif); font-style: italic; font-size:12px; opacity:0.85; margin-top:6px;">Dulce de leche cocido lento.</div>
+      <a href="#menu" class="creacion-card no-photo">
+        <div class="creacion-meta">
+          <div class="creacion-name">Frappé</div>
+          <div class="creacion-desc">Café batido cremoso.</div>
+          <div class="creacion-price">$5.50</div>
         </div>
       </a>
     </div>
@@ -1466,6 +1707,105 @@
   </div>
 </section>
 
+<!-- ── Reseñas ──────────────────────────────────────── -->
+<section class="section" id="resenas" aria-labelledby="resenas-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Reseñas</span></div>
+      <div>
+        <h2 id="resenas-heading" class="section-headline">Lo que dicen quienes <em>nos visitan.</em></h2>
+        <p class="section-eyebrow">5.0 en Google · 65+ reseñas verificadas.</p>
+      </div>
+    </div>
+    <div class="resenas-grid">
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">¡La mejor affogato de todo Quito! La atención de todos los chicos y chicas es maravillosa, son super atentos.</p>
+        <div class="resena-author"><strong>Aricya Locus</strong> · hace 2 semanas</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">Me sorprendieron mucho, estaban deliciosos. Pedí el sabor de choco avellana y me encantó. Tienen una gran variedad de sabores que se ven riquísimos, definitivamente quiero volver a probar más.</p>
+        <div class="resena-author"><strong>Kc Wang</strong> (Local Guide) · hace 4 semanas</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">Un lugar espectacular. Tienen una atención excelente, los helados son cremosos y sus sorbetes bien refrescantes. Mi nuevo lugar favorito en Briza Cumbayá.</p>
+        <div class="resena-author"><strong>Marcos Tapia</strong> · hace 7 semanas</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">Riquísimo, como estar en Buenos Aires comiendo dulce de leche.</p>
+        <div class="resena-author"><strong>Santiago Rubio</strong> · hace 3 meses</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">El mejor pistacho de todo Ecuador. Super recomendado.</p>
+        <div class="resena-author"><strong>Luis Galarza</strong> (Local Guide) · hace 3 meses</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-quote" aria-hidden="true">“</div>
+        <div class="resena-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="resena-text">El helado de manjar de leche fue una grata experiencia. Heladería premium con cafetería de primer nivel, ideal para un fin de semana soleado. Negocio familiar con unos propietarios super buena onda.</p>
+        <div class="resena-author"><strong>Tomás Márquez</strong> (Local Guide) · hace 5 meses</div>
+      </div>
+    </div>
+    <div class="vegan-cta-wrap">
+      <a href="https://www.google.com/maps/place/Roccia+Helader%C3%ADa/@-0.2022306,-78.427118,19.25z/data=!4m8!3m7!1s0x91d5917386825d1f:0x3e270d756a63e4d!8m2!3d-0.2019223!4d-78.4265223!9m1!1b1!16s%2Fg%2F11ymmn92jn?entry=ttu" target="_blank" rel="noopener noreferrer" class="pill">
+        Ver todas las reseñas en Google
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────── -->
+<section class="section" id="faq" aria-labelledby="faq-heading" style="background: var(--crema);">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Preguntas</span></div>
+      <div>
+        <h2 id="faq-heading" class="section-headline">Lo que más nos <em>preguntan.</em></h2>
+      </div>
+    </div>
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true"><span>¿Hacen delivery a domicilio?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Sí. Pides helado Roccia a domicilio por Uber Eats, Rappi y PedidosYa. Cubrimos Cumbayá, Tumbaco, Quito y valles cercanos. El tiempo promedio en Cumbayá es de 25 minutos. Llega firme, en envases térmicos. También puedes llamarnos directo al local para coordinar pedidos grandes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Por qué el delivery empieza a las 11:30 y no a las 10:00 como el local?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>El local abre a las 10:00, pero el delivery arranca a las 11:30. La razón es deliberada: el helado artesanal vive o muere en la cadena de frío. Cada pedido pasa por un protocolo de armado en pozeta, sellado en envase térmico y entrega coordinada con el rider en una ventana corta para que llegue firme a tu puerta. Esa hora y media entre la apertura del local y el primer pedido de delivery es lo que toma estabilizar las temperaturas y preparar los envases del día. Si lo hiciéramos antes, el helado llegaría con escarcha o derretido. Preferimos arrancar tarde y entregar perfecto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Dónde están ubicados?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Nuestro local está en Plaza Briza, Av. Francisco de Orellana y Tajamar, Cumbayá, 170901, Quito. Atendemos todos los días de 10:00 a 20:00. Hay parqueo del centro comercial.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Cuántos sabores tienen disponibles?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Tenemos 35 sabores siempre disponibles, todos los días. 24 a la vista en vitrina de exhibición y el resto en pozeta italiana, un sistema de conservación que mantiene cada sabor a temperatura ideal. Si no ves tu favorito en la vitrina, solo pídelo al equipo: lo tenemos guardado. Los sabores se organizan en 4 categorías: Leche y Crema, Frutales al Agua (todos veganos), Chocolates y Dulces de Leche.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Sus helados son artesanales?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Sí, todos. Trabajamos con técnica italiana: pasteurización lenta, maduración mínima de 12 horas, mantecación en lote pequeño. No usamos saborizantes artificiales ni colorantes. Cada lote sale de nuestro laboratorio en Cumbayá. Eso es lo que hace que la textura sea distinta a la del helado industrial.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Atienden eventos privados o catering?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Sí. Hacemos servicio de carrito de helados para bodas, cumpleaños y eventos corporativos en Quito y valles. También vendemos potes de medio litro y litro para llevar. Para coordinar, escríbenos a <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a> con la fecha y el número de invitados.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>¿Tienen opciones sin azúcar o veganas?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Toda nuestra línea de Frutales al Agua (14 sabores) es 100% vegana: solo fruta, agua y azúcar. Para sin azúcar añadida trabajamos por encargo, con 48 horas de aviso, así garantizamos calidad. Consulta en el local por opciones del día.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── B2B Mayoristas ───────────────────────────────── -->
 <section class="b2b section" id="mayoristas" aria-labelledby="b2b-heading">
   <div class="wrap">
@@ -1554,6 +1894,8 @@
     const tabsEl = document.getElementById('cat-tabs');
     const gridEl = document.getElementById('cat-grid');
     const popularEl = document.getElementById('popular-grid');
+    const veganEl = document.getElementById('vegan-grid');
+    const VEGAN_FEATURE_IDS = ['frutilla', 'mango', 'naranjilla', 'limon-siciliano'];
     const TAG_LABELS = {
       'nuevo': 'Nuevo',
       'solo-en-roccia': 'Solo en Roccia',
@@ -1617,6 +1959,29 @@
       }).join('');
     }
 
+    function renderVeganFeature(categories) {
+      if (!veganEl) return;
+      const byId = {};
+      categories.forEach((c) => (c.flavors || []).forEach((f) => { byId[f.id] = f; }));
+      veganEl.innerHTML = VEGAN_FEATURE_IDS.map((id) => {
+        const f = byId[id];
+        if (!f) return '';
+        const photo = f.image
+          ? `<div class="vegan-photo"><img src="${esc(f.image)}" alt="${esc(f.name)}" width="480" height="480" loading="lazy" /></div>`
+          : '';
+        const origin = f.origin ? `<div class="vegan-origin">${esc(f.origin)}</div>` : '';
+        const desc = f.description ? `<p class="vegan-desc">${esc(f.description)}</p>` : '';
+        return `
+        <article class="vegan-card">
+          ${photo}
+          <h3 class="vegan-name">${esc(f.name)}</h3>
+          ${origin}
+          <span class="vegan-badge-pill">Vegano</span>
+          ${desc}
+        </article>`;
+      }).join('');
+    }
+
     function selectCategory(category) {
       tabsEl.querySelectorAll('.cat-tab').forEach((b) => {
         const active = b.dataset.cat === category.id;
@@ -1646,14 +2011,42 @@
           .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         if (!categories.length) throw new Error('Sin categorías');
         renderPopular(categories);
+        renderVeganFeature(categories);
         buildTabs(categories);
         selectCategory(categories[0]);
+
+        document.querySelectorAll('[data-target-cat]').forEach((el) => {
+          el.addEventListener('click', () => {
+            const cat = categories.find((c) => c.id === el.dataset.targetCat);
+            if (cat) selectCategory(cat);
+          });
+        });
       })
       .catch((err) => {
         console.error('No se pudo cargar el catálogo de sabores:', err);
         gridEl.innerHTML = '<p class="cat-loading">No se pudieron cargar los sabores.</p>';
         if (popularEl) popularEl.innerHTML = '<p class="cat-loading">No se pudieron cargar los favoritos.</p>';
+        if (veganEl) veganEl.innerHTML = '<p class="cat-loading" style="color: rgba(250,244,224,0.7);">No se pudieron cargar los frutales.</p>';
       });
+  })();
+
+  // ── FAQ accordion
+  (function () {
+    const items = document.querySelectorAll('#faq-list .faq-item');
+    items.forEach((item) => {
+      const btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        items.forEach((i) => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   })();
 </script>
 
