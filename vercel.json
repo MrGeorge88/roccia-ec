@@ -6,6 +6,42 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "heladosroccia.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.heladosroccia.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "momentosroccia.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.momentosroccia.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "roccia.com.ec" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://roccia.ec/$1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.roccia.com.ec" }]
     }
   ],
   "headers": [
