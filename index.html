@@ -399,10 +399,6 @@
   }
   .statement-text .last { color: var(--cafe-medio); display: block; margin-top: 0.4em; }
 
-  /* ── Gallery grid ────────────────────────────────────── */
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  @media (max-width: 880px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-
   /* ── Origen Triple ───────────────────────────────────── */
   .origen { background: var(--cafe-oscuro); color: var(--crema); }
   .origen-grid {
@@ -897,6 +893,13 @@
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(80, 53, 28, 0.22);
   }
+  .menu-cat-desc {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cafe-neutro);
+    margin: 0;
+  }
   .menu-row {
     display: flex; align-items: baseline; gap: 12px;
     padding: 12px 0;
@@ -1271,12 +1274,12 @@
     <span class="marquee-item">Pausas dulces <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Origen triple <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Siéntate un poco más cerca <span class="marquee-star">✺</span></span>
-    <span class="marquee-item">Hecho a mano en Cumbayá <span class="marquee-star">✺</span></span>
+    <span class="marquee-item">Hecho a mano <span class="marquee-star">✺</span></span>
     <span class="marquee-item">De los Alpes a los Andes <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Pausas dulces <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Origen triple <span class="marquee-star">✺</span></span>
     <span class="marquee-item">Siéntate un poco más cerca <span class="marquee-star">✺</span></span>
-    <span class="marquee-item">Hecho a mano en Cumbayá <span class="marquee-star">✺</span></span>
+    <span class="marquee-item">Hecho a mano <span class="marquee-star">✺</span></span>
   </div>
 </section>
 
@@ -1302,33 +1305,6 @@
           El frío nos hace sentarnos más cerca, abrazar más fuerte, entrelazar las manos, quedarnos más tiempo juntos. <em>Argentina y Ecuador, a los que hemos llamado hogar, nos han enseñado la dulzura del frío y el abrigo del encuentro.</em>
           <span class="last">Poniendo en práctica técnicas artesanales y usando ingredientes reales de nuestros distintos orígenes, creamos recuerdos comestibles.</span>
         </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Galería editorial ─────────────────────────────── -->
-<section style="background: var(--cafe-oscuro); padding: clamp(72px, 9vw, 128px) 0; color: var(--crema);" aria-labelledby="galeria-heading">
-  <div class="wrap">
-    <div class="section-head" style="margin-bottom: clamp(40px, 5vw, 64px);">
-      <div><span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Galería</span></div>
-      <div>
-        <h2 id="galeria-heading" class="section-headline on-dark">Sabores de <em>altura.</em></h2>
-        <p class="section-eyebrow on-dark">Cuatro retratos. Una sola cuchara. La técnica detrás del helado se ve en cada cucharada.</p>
-      </div>
-    </div>
-    <div class="gallery-grid">
-      <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/img/photo-sabores-altura-poster.jpg" alt="Sabores de altura — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
-      </div>
-      <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/img/photo-pistacchio-poster.jpg" alt="Pistacchio — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
-      </div>
-      <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/img/photo-mascarpone-poster.jpg" alt="Mascarpone &amp; Berries — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
-      </div>
-      <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; background: #335b40;">
-        <img src="assets/img/photo-mandarina-poster.jpg" alt="Mandarina — poster de marca Roccia" style="width:100%; height:100%; object-fit: cover;" />
       </div>
     </div>
   </div>
@@ -1371,7 +1347,7 @@
 <section class="section" id="razones" aria-labelledby="razones-heading">
   <div class="wrap">
     <div class="section-head">
-      <div><span class="seal">Técnica</span></div>
+      <div><span class="seal">Cap. dos</span></div>
       <div>
         <h2 id="razones-heading" class="section-headline">Cinco <em>razones.</em></h2>
         <p class="section-eyebrow">Por qué nuestro helado es distinto.</p>
@@ -1481,7 +1457,7 @@
 <section class="section" id="sabores" aria-labelledby="sabores-heading">
   <div class="wrap">
     <div class="section-head">
-      <div><span class="seal">Cap. dos</span></div>
+      <div><span class="seal">Catálogo</span></div>
       <div>
         <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>treinta y cinco</em> historias.</h2>
         <p class="section-eyebrow">Cada sabor es un viaje corto. Elige uno y empieza por ahí.</p>
@@ -1502,7 +1478,7 @@
 <section class="section-tight" style="background: var(--crema);" id="creaciones" aria-labelledby="creaciones-heading">
   <div class="wrap">
     <div class="section-head" style="margin-bottom: clamp(32px, 4vw, 48px);">
-      <div><span class="seal">Creaciones</span></div>
+      <div><span class="seal">Cap. tres</span></div>
       <div>
         <h2 id="creaciones-heading" class="section-headline">Creaciones de la <em>casa.</em></h2>
         <p class="section-eyebrow">Solo en mesa. Recién hechas, recién servidas.</p>
@@ -1519,11 +1495,11 @@
         </div>
       </a>
       <a href="#menu" class="creacion-card">
-        <img src="assets/img/creations/brioscia.webp" alt="Brioscia Roccia — waffle bowl con maracuyá" width="1122" height="1402" loading="lazy" />
+        <img src="assets/img/creations/brioscia.webp" alt="Brioscia Roccia — brioche italiana con gelato" width="1122" height="1402" loading="lazy" />
         <div class="veil" aria-hidden="true"></div>
         <div class="creacion-meta">
           <div class="creacion-name">Brioscia</div>
-          <div class="creacion-desc">Waffle bowl con maracuyá.</div>
+          <div class="creacion-desc">Brioche italiana con gelato.</div>
           <div class="creacion-price">$5.40</div>
         </div>
       </a>
@@ -1565,43 +1541,35 @@
 
     <div class="menu-grid">
       <div class="menu-col">
-        <h3>Helados</h3>
-        <div class="menu-row"><span class="name">Simple</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.75</span></div>
-        <div class="menu-row"><span class="name">Doble</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.95</span></div>
-        <div class="menu-row"><span class="name">Medio Litro</span><span class="dotted" aria-hidden="true"></span><span class="price">$8.00</span></div>
-        <div class="menu-row"><span class="name">Un Litro</span><span class="dotted" aria-hidden="true"></span><span class="price">$15.00</span></div>
-        <div class="menu-row"><span class="name">Para compartir <span class="insignia-tag">Insignia</span></span><span class="dotted" aria-hidden="true"></span><span class="price">$21.00</span></div>
+        <h3>Helado por tamaños</h3>
+        <p class="menu-cat-desc">Simple, doble, medio litro, litro y formato para compartir.</p>
       </div>
 
       <div class="menu-col">
-        <h3>Café</h3>
-        <div class="menu-row"><span class="name">Affogato <span class="insignia-tag">Insignia</span></span><span class="dotted" aria-hidden="true"></span><span class="price">$4.90</span></div>
-        <div class="menu-row"><span class="name">Expresso</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.50</span></div>
-        <div class="menu-row"><span class="name">Expresso Doble</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.25</span></div>
-        <div class="menu-row"><span class="name">Macchiato</span><span class="dotted" aria-hidden="true"></span><span class="price">$2.80</span></div>
-        <div class="menu-row"><span class="name">Americano</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.00</span></div>
-        <div class="menu-row"><span class="name">Cappuccino</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.50</span></div>
+        <h3>Cafetería italiana</h3>
+        <p class="menu-cat-desc">Espresso, macchiato, cappuccino y más, con grano illy.</p>
       </div>
 
       <div class="menu-col">
-        <h3>Creaciones</h3>
-        <div class="menu-row"><span class="name">Brioscia</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.40</span></div>
-        <div class="menu-row"><span class="name">Cornetto</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.40</span></div>
-        <div class="menu-row"><span class="name">Torta helada</span><span class="dotted" aria-hidden="true"></span><span class="price">$4.90</span></div>
-        <div class="menu-row"><span class="name">Frappé</span><span class="dotted" aria-hidden="true"></span><span class="price">$5.50</span></div>
+        <h3>Creaciones de la casa</h3>
+        <p class="menu-cat-desc">Affogato, brioscia, cornetto, torta helada y frappé.</p>
       </div>
 
       <div class="menu-col">
-        <h3>Combos</h3>
-        <div class="menu-row"><span class="name">Expresso + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.49</span></div>
-        <div class="menu-row"><span class="name">Americano + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$3.99</span></div>
-        <div class="menu-row"><span class="name">Cappuccino + 2 Alfajores</span><span class="dotted" aria-hidden="true"></span><span class="price">$4.49</span></div>
+        <h3>Combos café + alfajores</h3>
+        <p class="menu-cat-desc">Tu café favorito con alfajores artesanales.</p>
       </div>
     </div>
 
-    <div style="text-align:center; margin-top: clamp(40px, 5vw, 64px);">
-      <a href="#menu" class="pill ghost" style="border-color: var(--cafe-oscuro);">
-        Ver carta completa
+    <p class="section-eyebrow" style="text-align:center; margin: clamp(36px, 4vw, 52px) auto 0; max-width: 52ch;">Carta completa en el local. Precios actualizados en Uber Eats y Rappi.</p>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top: clamp(28px, 3vw, 40px);">
+      <a href="https://www.ubereats.com/ec/store/roccia-heladeria-quito/ykuLU1U_WnS1XdmfUux0dw" target="_blank" rel="noopener noreferrer" class="pill">
+        Pedir en Uber Eats
+        <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://www.rappi.com.ec/restaurantes/46500-roccia" target="_blank" rel="noopener noreferrer" class="pill ghost" style="border-color: var(--cafe-oscuro);">
+        Pedir en Rappi
         <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     </div>
@@ -1618,27 +1586,19 @@
     </div>
 
     <div class="delivery-grid">
-      <a href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer" class="delivery-card">
+      <a href="https://www.ubereats.com/ec/store/roccia-heladeria-quito/ykuLU1U_WnS1XdmfUux0dw" target="_blank" rel="noopener noreferrer" class="delivery-card">
         <div>
-          <div class="num">01 / Tres</div>
+          <div class="num">01 / Dos</div>
           <div class="name" style="margin-top: 14px;">Uber Eats</div>
           <p class="desc" style="margin-top: 12px;">Entrega rápida en Cumbayá y valle. Ideal para tarde de domingo.</p>
         </div>
         <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
-      <a href="https://www.rappi.com.ec" target="_blank" rel="noopener noreferrer" class="delivery-card">
+      <a href="https://www.rappi.com.ec/restaurantes/46500-roccia" target="_blank" rel="noopener noreferrer" class="delivery-card">
         <div>
-          <div class="num">02 / Tres</div>
+          <div class="num">02 / Dos</div>
           <div class="name" style="margin-top: 14px;">Rappi</div>
           <p class="desc" style="margin-top: 12px;">Cobertura amplia en Quito. Promociones de fin de semana.</p>
-        </div>
-        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-      </a>
-      <a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener noreferrer" class="delivery-card">
-        <div>
-          <div class="num">03 / Tres</div>
-          <div class="name" style="margin-top: 14px;">PedidosYa</div>
-          <p class="desc" style="margin-top: 12px;">Reparto programado. Perfecto para cumpleaños y antojos planeados.</p>
         </div>
         <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
@@ -1697,12 +1657,7 @@
         </div>
       </div>
 
-      <div class="visit-photo" role="img" aria-label="Ambiente en Roccia — affogato en el local">
-        <div class="visit-photo-overlay">
-          <div class="word">Roccia</div>
-          <div class="tag">Una dulce excusa para verse.</div>
-        </div>
-      </div>
+      <div class="visit-photo" role="img" aria-label="Ambiente en Roccia — affogato en el local"></div>
     </div>
   </div>
 </section>
@@ -1776,7 +1731,7 @@
     <div class="faq-list" id="faq-list">
       <div class="faq-item open">
         <button class="faq-q" aria-expanded="true"><span>¿Hacen delivery a domicilio?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-        <div class="faq-a"><p>Sí. Pides helado Roccia a domicilio por Uber Eats, Rappi y PedidosYa. Cubrimos Cumbayá, Tumbaco, Quito y valles cercanos. El tiempo promedio en Cumbayá es de 25 minutos. Llega firme, en envases térmicos. También puedes llamarnos directo al local para coordinar pedidos grandes.</p></div>
+        <div class="faq-a"><p>Sí. Pides helado Roccia a domicilio por Uber Eats y Rappi. Cubrimos Cumbayá, Tumbaco, Quito y valles cercanos. El tiempo promedio en Cumbayá es de 25 minutos. Llega firme, en envases térmicos. También puedes llamarnos directo al local para coordinar pedidos grandes.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>¿Por qué el delivery empieza a las 11:30 y no a las 10:00 como el local?</span><span class="faq-icon" aria-hidden="true">+</span></button>
@@ -1796,7 +1751,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>¿Atienden eventos privados o catering?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-        <div class="faq-a"><p>Sí. Hacemos servicio de carrito de helados para bodas, cumpleaños y eventos corporativos en Quito y valles. También vendemos potes de medio litro y litro para llevar. Para coordinar, escríbenos a <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a> con la fecha y el número de invitados.</p></div>
+        <div class="faq-a"><p>Sí. Hacemos servicio de carrito de helados para bodas, cumpleaños y eventos corporativos en Quito y valles. También tenemos envases térmicos de ½ L y 1 L para llevar. Para coordinar, escríbenos a <a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a> con la fecha y el número de invitados.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>¿Tienen opciones sin azúcar o veganas?</span><span class="faq-icon" aria-hidden="true">+</span></button>
@@ -1835,8 +1790,7 @@
         <h3>Pedir</h3>
         <ul>
           <li><a href="https://www.ubereats.com/ec/store/roccia-heladeria-quito/ykuLU1U_WnS1XdmfUux0dw" target="_blank" rel="noopener noreferrer">Uber Eats</a></li>
-          <li><a href="https://www.rappi.com.ec" target="_blank" rel="noopener noreferrer">Rappi</a></li>
-          <li><a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener noreferrer">PedidosYa</a></li>
+          <li><a href="https://www.rappi.com.ec/restaurantes/46500-roccia" target="_blank" rel="noopener noreferrer">Rappi</a></li>
         </ul>
       </div>
       <div class="footer-col">
