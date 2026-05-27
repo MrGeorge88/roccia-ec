@@ -7,16 +7,16 @@
       "displayOrder": 1,
       "vegan": false,
       "flavors": [
-        { "id": "pistacho", "name": "Pistacho", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "pistacho", "name": "Pistacho", "origin": "Italia", "description": "Pasta de pistacho con grano fino y notas tostadas.", "image": "/assets/img/flavors/pistacho.webp", "tags": ["destacado"] },
         { "id": "tiramisu", "name": "Tiramisú", "origin": "Italia", "description": null, "image": null, "tags": [] },
-        { "id": "stracciatella", "name": "Stracciatella", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "mascarpone-berries", "name": "Mascarpone y Berries", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "stracciatella", "name": "Stracciatella", "origin": "Italia × Ecuador", "description": "Crema con láminas de cacao manabita.", "image": "/assets/img/flavors/stracciatella.webp", "tags": ["destacado"] },
+        { "id": "mascarpone-berries", "name": "Mascarpone y Berries", "origin": "Italia", "description": "Crema de mascarpone con frutos rojos frescos.", "image": "/assets/img/flavors/mascarpone-berries.webp", "tags": ["destacado"] },
         { "id": "vainilla-francesa", "name": "Vainilla Francesa", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "cookies-cream", "name": "Cookies and Cream", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "higos-queso", "name": "Higos con Queso", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "yogurt", "name": "Yogurt", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "3-leches", "name": "3 Leches", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "cheesecake-maracuya", "name": "Cheesecake de Maracuyá", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "cheesecake-maracuya", "name": "Cheesecake de Maracuyá", "origin": "Italia × Ecuador", "description": "Crema base cheesecake con maracuyá fresco ecuatoriano.", "image": "/assets/img/flavors/cheesecake-maracuya.webp", "tags": ["destacado"] },
         { "id": "chicle", "name": "Chicle", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "ron-pasas", "name": "Ron Pasas", "origin": "Italia", "description": null, "image": null, "tags": [] },
         { "id": "menta-granizada", "name": "Menta Granizada", "origin": null, "description": null, "image": null, "tags": [] },
@@ -34,9 +34,9 @@
         { "id": "naranjilla", "name": "Naranjilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "mora", "name": "Mora", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "frutilla", "name": "Frutilla", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "taxo", "name": "Taxo", "origin": "Ecuador", "description": null, "image": null, "tags": ["solo-en-roccia"] },
+        { "id": "taxo", "name": "Taxo", "origin": "Ecuador", "description": "Fruta serrana ecuatoriana, ácido natural balanceado.", "image": "/assets/img/flavors/taxo.webp", "tags": ["solo-en-roccia", "destacado"] },
         { "id": "guanabana", "name": "Guanábana", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
-        { "id": "mandarina", "name": "Mandarina", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
+        { "id": "mandarina", "name": "Mandarina", "origin": "Ecuador", "description": "Frutal cítrico al agua, fresco y vegano.", "image": "/assets/img/flavors/mandarina.webp", "tags": ["destacado"] },
         { "id": "mango", "name": "Mango", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
         { "id": "limon-siciliano", "name": "Limón Siciliano", "origin": "Italia", "description": null, "image": null, "tags": [] },
         { "id": "coco", "name": "Coco", "origin": "Ecuador", "description": null, "image": null, "tags": [] },
@@ -54,7 +54,7 @@
       "flavors": [
         { "id": "chocolate-blanco", "name": "Chocolate Blanco", "origin": null, "description": null, "image": null, "tags": [] },
         { "id": "kinder", "name": "Kinder", "origin": null, "description": null, "image": null, "tags": [] },
-        { "id": "choco-avellana", "name": "Choco Avellana", "origin": "Italia", "description": null, "image": null, "tags": [] },
+        { "id": "choco-avellana", "name": "Choco Avellana", "origin": "Italia", "description": "Avellana piamontesa con cacao en notas suaves.", "image": "/assets/img/flavors/choco-avellana.webp", "tags": ["destacado"] },
         { "id": "chocolate-intenso", "name": "Chocolate Intenso", "origin": "Italia × Ecuador", "description": null, "image": null, "tags": [] }
       ]
     },
@@ -64,7 +64,7 @@
       "displayOrder": 4,
       "vegan": false,
       "flavors": [
-        { "id": "dulce-de-leche", "name": "Dulce de Leche", "origin": "Argentina", "description": null, "image": null, "tags": ["mas-pedido"] },
+        { "id": "dulce-de-leche", "name": "Dulce de Leche", "origin": "Argentina", "description": "Cocción lenta con leche y azúcar a fuego suave.", "image": "/assets/img/flavors/dulce-de-leche.webp", "tags": ["mas-pedido", "destacado"] },
         { "id": "dulce-de-leche-granizado", "name": "Dulce de Leche Granizado", "origin": "Argentina", "description": null, "image": null, "tags": [] }
       ]
     }

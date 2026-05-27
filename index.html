@@ -573,6 +573,29 @@
     padding: 32px 0;
   }
 
+  /* ── Los más pedidos ─────────────────────────────────── */
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (max-width: 1100px) { .popular-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .popular-grid { grid-template-columns: 1fr; } }
+  .popular-card { display: flex; flex-direction: column; gap: 14px; }
+  .popular-photo {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--cafe-medio);
+  }
+  .popular-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.12) saturate(0.95);
+  }
+
   /* ── Sabor del mes ───────────────────────────────────── */
   .inseason { background: var(--cafe-oscuro); color: var(--crema); }
   .inseason-grid {
@@ -1030,7 +1053,7 @@
     <span class="seal">Una dulce excusa</span>
   </div>
   <div class="hero-corner hero-corner-bl" aria-hidden="true">
-    Edición Febrero · 26
+    Vol. 01 · 26
   </div>
 
   <div class="hero-inner">
@@ -1165,36 +1188,15 @@
   </div>
 </section>
 
-<!-- ── Catálogo de sabores ──────────────────────────── -->
-<section class="section" id="sabores" aria-labelledby="sabores-heading">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="seal">Cap. dos</span></div>
-      <div>
-        <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>treinta y cinco</em> historias.</h2>
-        <p class="section-eyebrow">Cada sabor es un viaje corto. Elige uno y empieza por ahí.</p>
-      </div>
-    </div>
-
-    <div class="cat-tabs" role="tablist" aria-label="Categorías de sabores" id="cat-tabs">
-      <!-- tabs populated by JS from assets/data/flavors.json -->
-    </div>
-
-    <div class="cat-grid" id="cat-grid" role="tabpanel">
-      <p class="cat-loading">Cargando sabores…</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Sabor del mes ────────────────────────────────── -->
+<!-- ── Sabor de la casa ─────────────────────────────── -->
 <section class="inseason section" id="mes" aria-labelledby="inseason-heading">
   <div class="wrap">
     <div class="inseason-grid">
       <div class="inseason-photo" role="img" aria-label="Stracciatella Triple Origen en copa">
-        <span class="seal inseason-stamp">Sabor de febrero</span>
+        <span class="seal inseason-stamp">Nuestro favorito</span>
       </div>
       <div>
-        <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">In Season</span>
+        <span class="seal" style="color: var(--mostaza); border-color: var(--mostaza);">Sabor de la casa</span>
         <h2 id="inseason-heading" class="inseason-headline">Stracciatella <em>triple</em> origen</h2>
         <p class="inseason-sub">Crema italiana con láminas de cacao ecuatoriano. Tres provincias, una sola historia.</p>
         <p class="inseason-body">
@@ -1213,6 +1215,44 @@
           <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Los más pedidos ──────────────────────────────── -->
+<section class="section" id="mas-pedidos" aria-labelledby="populares-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Favoritos</span></div>
+      <div>
+        <h2 id="populares-heading" class="section-headline">Los <em>más pedidos.</em></h2>
+        <p class="section-eyebrow">Ocho sabores que vuelven una y otra vez. Cremas italianas, dulces argentinos, chocolates de Manabí y frutales ecuatorianos.</p>
+      </div>
+    </div>
+
+    <div class="popular-grid" id="popular-grid">
+      <p class="cat-loading">Cargando favoritos…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Catálogo de sabores ──────────────────────────── -->
+<section class="section" id="sabores" aria-labelledby="sabores-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Cap. dos</span></div>
+      <div>
+        <h2 id="sabores-heading" class="section-headline">Cuatro familias, <em>treinta y cinco</em> historias.</h2>
+        <p class="section-eyebrow">Cada sabor es un viaje corto. Elige uno y empieza por ahí.</p>
+      </div>
+    </div>
+
+    <div class="cat-tabs" role="tablist" aria-label="Categorías de sabores" id="cat-tabs">
+      <!-- tabs populated by JS from assets/data/flavors.json -->
+    </div>
+
+    <div class="cat-grid" id="cat-grid" role="tabpanel">
+      <p class="cat-loading">Cargando sabores…</p>
     </div>
   </div>
 </section>
@@ -1452,12 +1492,11 @@
 
     <div class="footer-grid">
       <div class="footer-col">
-        <h3>Ecosistema</h3>
+        <h3>Pedir</h3>
         <ul>
-          <li><a href="https://roccia.ec">roccia.ec</a></li>
-          <li><a href="https://heladosroccia.com">heladosroccia.com</a></li>
-          <li><a href="https://momentosroccia.com">momentosroccia.com</a></li>
-          <li><a href="https://rocciaheladeria.com">rocciaheladeria.com</a></li>
+          <li><a href="https://www.ubereats.com/ec/store/roccia-heladeria-quito/ykuLU1U_WnS1XdmfUux0dw" target="_blank" rel="noopener noreferrer">Uber Eats</a></li>
+          <li><a href="https://www.rappi.com.ec" target="_blank" rel="noopener noreferrer">Rappi</a></li>
+          <li><a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener noreferrer">PedidosYa</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1482,7 +1521,6 @@
         <h3>Síguenos</h3>
         <ul>
           <li><a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener noreferrer">@roccia_ec</a></li>
-          <li><a href="#delivery">Uber Eats · Rappi · PedidosYa</a></li>
           <li><a href="mailto:hola@rocciaheladeria.com">hola@rocciaheladeria.com</a></li>
         </ul>
       </div>
@@ -1515,6 +1553,7 @@
   (function () {
     const tabsEl = document.getElementById('cat-tabs');
     const gridEl = document.getElementById('cat-grid');
+    const popularEl = document.getElementById('popular-grid');
     const TAG_LABELS = {
       'nuevo': 'Nuevo',
       'solo-en-roccia': 'Solo en Roccia',
@@ -1528,12 +1567,6 @@
     function renderFlavors(category) {
       const flavors = category.flavors || [];
       gridEl.innerHTML = flavors.map((f, i) => {
-        const tagPills = (f.tags || [])
-          .map((t) => `<span class="flavor-badge flavor-badge--${esc(t)}">${esc(TAG_LABELS[t] || t)}</span>`)
-          .join('');
-        const veganPill = category.vegan
-          ? '<span class="flavor-badge flavor-badge--vegan">Vegano</span>'
-          : '';
         const origin = f.origin
           ? `<div class="flavor-meta"><span class="flavor-origin"><span class="dot" aria-hidden="true"></span>${esc(f.origin)}</span></div>`
           : '';
@@ -1542,7 +1575,43 @@
         <article class="flavor-card" style="animation: rise .55s cubic-bezier(.2,.6,.2,1) ${i * 0.04}s both;">
           <h3 class="flavor-name">${esc(f.name)}</h3>
           ${origin}
-          ${(veganPill || tagPills) ? `<div class="flavor-badges">${veganPill}${tagPills}</div>` : ''}
+          ${badgesHtml(f, category.vegan)}
+          ${desc}
+        </article>`;
+      }).join('');
+    }
+
+    function badgesHtml(flavor, vegan) {
+      const tagPills = (flavor.tags || [])
+        .filter((t) => t !== 'destacado')
+        .map((t) => `<span class="flavor-badge flavor-badge--${esc(t)}">${esc(TAG_LABELS[t] || t)}</span>`)
+        .join('');
+      const veganPill = vegan
+        ? '<span class="flavor-badge flavor-badge--vegan">Vegano</span>'
+        : '';
+      return (veganPill || tagPills) ? `<div class="flavor-badges">${veganPill}${tagPills}</div>` : '';
+    }
+
+    function renderPopular(categories) {
+      if (!popularEl) return;
+      const items = [];
+      categories.forEach((c) => (c.flavors || []).forEach((f) => {
+        if ((f.tags || []).includes('destacado')) items.push({ flavor: f, vegan: c.vegan });
+      }));
+      popularEl.innerHTML = items.map(({ flavor: f, vegan }) => {
+        const origin = f.origin
+          ? `<div class="flavor-meta"><span class="flavor-origin"><span class="dot" aria-hidden="true"></span>${esc(f.origin)}</span></div>`
+          : '';
+        const desc = f.description ? `<p class="flavor-desc">${esc(f.description)}</p>` : '';
+        const photo = f.image
+          ? `<div class="popular-photo"><img src="${esc(f.image)}" alt="${esc(f.name)}" width="480" height="480" loading="lazy" /></div>`
+          : '';
+        return `
+        <article class="popular-card">
+          ${photo}
+          <h3 class="flavor-name">${esc(f.name)}</h3>
+          ${origin}
+          ${badgesHtml(f, vegan)}
           ${desc}
         </article>`;
       }).join('');
@@ -1576,12 +1645,14 @@
         const categories = (data.categories || []).slice()
           .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         if (!categories.length) throw new Error('Sin categorías');
+        renderPopular(categories);
         buildTabs(categories);
         selectCategory(categories[0]);
       })
       .catch((err) => {
         console.error('No se pudo cargar el catálogo de sabores:', err);
         gridEl.innerHTML = '<p class="cat-loading">No se pudieron cargar los sabores.</p>';
+        if (popularEl) popularEl.innerHTML = '<p class="cat-loading">No se pudieron cargar los favoritos.</p>';
       });
   })();
 </script>
