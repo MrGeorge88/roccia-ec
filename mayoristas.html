@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Roccia · Mayoristas — Helado artesanal para tu carta</title>
-<meta name="description" content="Helado artesanal italo-argentino para restaurantes, hoteles, cafeterías, catering y tiendas premium. Postres firmados, pintas 500 ml y sabores a medida desde nuestro laboratorio 100% italiano en Cumbayá." />
+<meta name="description" content="Helado artesanal italo-argentino para restaurantes, hoteles, cafeterías, catering y tiendas premium. Bandejas gastronorm, envases térmicos y sabores a medida desde nuestro laboratorio 100% italiano en Cumbayá." />
 <link rel="canonical" href="https://roccia.ec/mayoristas" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Roccia" />
@@ -692,70 +692,6 @@
     margin: 0;
   }
 
-  /* ── Marcas placeholder ──────────────────── */
-  .marcas-section { background: var(--crema-warm); }
-  .marcas-card {
-    border: 1px dashed rgba(80, 53, 28, 0.4);
-    padding: clamp(40px, 5vw, 72px);
-    text-align: center;
-    background: var(--crema);
-    margin-top: clamp(40px, 5vw, 64px);
-  }
-  .marcas-card .label {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 10.5px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mostaza);
-    margin-bottom: 18px;
-  }
-  .marcas-card h3 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(28px, 3.5vw, 44px);
-    letter-spacing: -0.025em;
-    text-transform: uppercase;
-    line-height: 1.05;
-    color: var(--cafe-oscuro);
-    margin: 0 0 16px;
-    max-width: 22ch;
-    margin-left: auto; margin-right: auto;
-  }
-  .marcas-card h3 em {
-    font-family: var(--script);
-    font-style: normal;
-    font-weight: 400;
-    text-transform: none;
-    color: var(--mostaza);
-    letter-spacing: 0;
-  }
-  .marcas-card p {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.55;
-    color: var(--cafe-medio);
-    max-width: 48ch;
-    margin: 0 auto 24px;
-  }
-  .marcas-row {
-    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-    margin-top: 28px;
-  }
-  .marcas-row .placeholder {
-    width: 110px; height: 56px;
-    border: 1px solid rgba(80, 53, 28, 0.18);
-    background: var(--crema-warm);
-    display: grid; place-items: center;
-    font-family: var(--serif);
-    font-size: 9.5px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--cafe-medio);
-    opacity: 0.55;
-  }
-
   /* ── Formulario ──────────────────────────── */
   .form-section {
     background: var(--cafe-oscuro);
@@ -1098,6 +1034,30 @@
     color: var(--cafe-medio);
     margin-top: 3px;
   }
+
+  /* ── Desarrollo del sabor ─────────────────────────── */
+  .posters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+  }
+  @media (max-width: 880px) { .posters-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+  @media (max-width: 520px) { .posters-grid { grid-template-columns: 1fr; } }
+  .poster-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--verde);
+  }
+  .poster-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+  }
+  .poster-card:hover img { transform: scale(1.04); }
 </style>
 </head>
 <body>
@@ -1105,7 +1065,7 @@
 <!-- ── Header ───────────────────────────────────────── -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand" aria-label="Roccia · Mayoristas">
+    <a href="/" class="nav-brand" aria-label="Roccia · Mayoristas">
       <img src="assets/img/logo-crema.png" alt="Roccia" class="nav-logo nav-logo-light" />
       <img src="assets/img/logo-roca.png"  alt="Roccia" class="nav-logo nav-logo-dark"  />
       <span class="nav-sub">Mayoristas</span>
@@ -1137,7 +1097,7 @@
           Roccia <em>en tu</em><br/>carta<span class="dot">.</span>
         </h1>
         <p class="m-hero-sub rise delay-3">
-          Llevamos nuestra técnica artesanal italo-argentina a tu cocina. Postres firmados, pintas individuales y sabores a medida, producidos en nuestro laboratorio 100% italiano en Cumbayá. Misma cremosidad que servimos en mesa, en formatos pensados para tu operación.
+          Llevamos nuestra técnica artesanal italo-argentina a tu cocina. Bandejas gastronorm, envases térmicos y sabores a medida, producidos en nuestro laboratorio 100% italiano en Cumbayá. Misma cremosidad que servimos en mesa, en formatos pensados para tu operación.
         </p>
         <div class="m-hero-ctas rise delay-4">
           <a href="#contacto" class="pill">
@@ -1256,10 +1216,10 @@
         <span class="seal caso-tag">Hoteles 4-5★</span>
         <div class="caso-body">
           <h3 class="caso-title">Room service y eventos</h3>
-          <p class="caso-desc">Pintas individuales 500 ml para minibar y room service. Cubetas grandes para banquetes y eventos privados.</p>
+          <p class="caso-desc">Envases térmicos de ½ L y 1 L para minibar y room service. Bandejas gastronorm de 5 L y 7 L para banquetes y eventos privados.</p>
           <div class="caso-example">
             <span class="label">Ejemplo</span>
-            Pintas firmadas con sello del hotel para suites de huésped premium.
+            Envases firmados con sello del hotel para suites de huésped premium.
           </div>
         </div>
       </article>
@@ -1269,7 +1229,7 @@
         <span class="seal caso-tag">Cafeterías</span>
         <div class="caso-body">
           <h3 class="caso-title">Oferta complementaria</h3>
-          <p class="caso-desc">Vitrina lista en 6 sabores rotativos. Affogato, brioscia y torta helada como anclas. Capacitamos a tu equipo en mantención y servicio.</p>
+          <p class="caso-desc">Vitrina lista en 6 sabores rotativos. Bases para affogato y torta helada como anclas. Capacitamos a tu equipo en mantención y servicio.</p>
           <div class="caso-example">
             <span class="label">Ejemplo</span>
             Carta breve de 6 sabores con rotación mensual estacional.
@@ -1282,7 +1242,7 @@
         <span class="seal caso-tag">Catering</span>
         <div class="caso-body">
           <h3 class="caso-title">Eventos privados</h3>
-          <p class="caso-desc">Estación de helado servida por nuestro equipo o pintas pre-porcionadas para invitados. Volúmenes desde 30 hasta 600 invitados.</p>
+          <p class="caso-desc">Estación de helado servida por nuestro equipo o envases individuales pre-porcionados para invitados. Volúmenes desde 30 hasta 600 invitados.</p>
           <div class="caso-example">
             <span class="label">Ejemplo</span>
             Bodas, corporativos, lanzamientos. Tres sabores firmados por evento.
@@ -1295,7 +1255,7 @@
         <span class="seal caso-tag">Tiendas premium</span>
         <div class="caso-body">
           <h3 class="caso-title">Delicatessen y gourmet</h3>
-          <p class="caso-desc">Pintas 500 ml etiquetadas para reventa en delicatessen, mercados gourmet y tiendas de especialidad. Mínimo de pedido y rotación garantizada.</p>
+          <p class="caso-desc">Envases térmicos de 1 L etiquetados para reventa en delicatessen, mercados gourmet y tiendas de especialidad. Mínimo de pedido y rotación garantizada.</p>
           <div class="caso-example">
             <span class="label">Ejemplo</span>
             Línea de seis sabores con etiqueta Roccia para góndola refrigerada.
@@ -1335,12 +1295,16 @@
 
       <div class="formato">
         <div class="formato-roman">I</div>
-        <h3 class="formato-title">Postres firmados</h3>
-        <p class="formato-lead">Cubetas profesionales de 2,5 ó 5 litros para servicio en mesa.</p>
+        <h3 class="formato-title">Bandejas gastronorm</h3>
+        <p class="formato-lead">Bandejas y baldes profesionales para servicio en vitrina y producción.</p>
         <ul class="formato-specs">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Cubetas Gastronorm 2,5 L y 5 L</span>
+            <span>Bandejas gastronorm 5 L y 7 L</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Baldes 7 L para producción alta</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1356,23 +1320,27 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Pedido mínimo: 5 cubetas mensuales</span>
+            <span>Pedido mínimo: 5 unidades mensuales</span>
           </li>
         </ul>
         <div class="formato-ideal">
           <span class="label">Ideal para</span>
-          <p class="text">Restaurantes con carta de postres y hoteles con servicio de banquetes.</p>
+          <p class="text">Restaurantes con carta de postres, hoteles con servicio de banquetes y cafeterías con vitrina propia.</p>
         </div>
       </div>
 
       <div class="formato">
         <div class="formato-roman">II</div>
-        <h3 class="formato-title">Pintas individuales</h3>
-        <p class="formato-lead">Envases 500 ml etiquetados, listos para reventa o consumo individual.</p>
+        <h3 class="formato-title">Envases térmicos</h3>
+        <p class="formato-lead">Envases de ½ L y 1 L etiquetados, listos para reventa o consumo individual.</p>
         <ul class="formato-specs">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Envases 500 ml con tapa hermética</span>
+            <span>Envases térmicos de ½ L y 1 L</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Tapa hermética</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1388,7 +1356,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Pedido mínimo: 60 pintas mensuales</span>
+            <span>Pedido mínimo: 60 envases mensuales</span>
           </li>
         </ul>
         <div class="formato-ideal">
@@ -1570,8 +1538,27 @@
   </div>
 </section>
 
+<!-- ── Desarrollo del sabor ─────────────────────────── -->
+<section class="section" id="desarrollo" aria-labelledby="desarrollo-heading" data-screen-label="08 Desarrollo">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Proceso</span></div>
+      <div>
+        <h2 id="desarrollo-heading" class="section-headline">Desarrollo del <em>sabor.</em></h2>
+        <p class="section-eyebrow">Cada sabor pasa por un desarrollo dedicado. Probamos, ajustamos balance técnico, validamos en cocina. Cuatro retratos del proceso.</p>
+      </div>
+    </div>
+    <div class="posters-grid">
+      <div class="poster-card"><img src="assets/img/photo-sabores-altura-poster.jpg" alt="Desarrollo de sabor — poster editorial Roccia" loading="lazy" /></div>
+      <div class="poster-card"><img src="assets/img/photo-pistacchio-poster.jpg" alt="Desarrollo del pistacho — poster editorial Roccia" loading="lazy" /></div>
+      <div class="poster-card"><img src="assets/img/photo-mascarpone-poster.jpg" alt="Desarrollo de mascarpone y berries — poster editorial Roccia" loading="lazy" /></div>
+      <div class="poster-card"><img src="assets/img/photo-mandarina-poster.jpg" alt="Desarrollo de mandarina — poster editorial Roccia" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Vista del catálogo ───────────────────────────── -->
-<section class="section" id="catalogo" aria-labelledby="catalogo-heading" data-screen-label="08 Catálogo">
+<section class="section" id="catalogo" aria-labelledby="catalogo-heading" data-screen-label="09 Catálogo">
   <div class="wrap">
     <div class="section-head">
       <div><span class="seal">Catálogo</span></div>
@@ -1594,14 +1581,6 @@
         <figcaption class="catalogo-caption"><div class="catalogo-name">Stracciatella</div><div class="catalogo-cat">Crema italo-ecuatoriana</div></figcaption>
       </figure>
       <figure class="catalogo-card">
-        <div class="catalogo-photo"><img src="assets/img/flavors/frutilla.webp" alt="Sorbete vegano de frutilla Roccia" loading="lazy" width="840" height="1050" /></div>
-        <figcaption class="catalogo-caption"><div class="catalogo-name">Frutilla</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
-      </figure>
-      <figure class="catalogo-card">
-        <div class="catalogo-photo"><img src="assets/img/flavors/mango.webp" alt="Sorbete vegano de mango Roccia" loading="lazy" width="840" height="1050" /></div>
-        <figcaption class="catalogo-caption"><div class="catalogo-name">Mango</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
-      </figure>
-      <figure class="catalogo-card">
         <div class="catalogo-photo"><img src="assets/img/flavors/choco-avellana.webp" alt="Gelato de choco avellana Roccia" loading="lazy" width="840" height="1050" /></div>
         <figcaption class="catalogo-caption"><div class="catalogo-name">Choco Avellana</div><div class="catalogo-cat">Chocolate</div></figcaption>
       </figure>
@@ -1614,39 +1593,29 @@
         <figcaption class="catalogo-caption"><div class="catalogo-name">Mascarpone y Berries</div><div class="catalogo-cat">Crema premium</div></figcaption>
       </figure>
       <figure class="catalogo-card">
-        <div class="catalogo-photo"><img src="assets/img/flavors/taxo.webp" alt="Sorbete de taxo Roccia" loading="lazy" width="840" height="1050" /></div>
-        <figcaption class="catalogo-caption"><div class="catalogo-name">Taxo</div><div class="catalogo-cat">Frutal exclusivo</div></figcaption>
+        <div class="catalogo-photo"><img src="assets/img/flavors/frutilla.webp" alt="Sorbete vegan de frutilla Roccia" loading="lazy" width="840" height="1050" /></div>
+        <figcaption class="catalogo-caption"><div class="catalogo-name">Frutilla</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
       </figure>
       <figure class="catalogo-card">
-        <div class="catalogo-photo"><img src="assets/img/creations/affogato.webp" alt="Affogato Roccia" loading="lazy" width="840" height="1050" /></div>
-        <figcaption class="catalogo-caption"><div class="catalogo-name">Affogato</div><div class="catalogo-cat">Creación de la casa</div></figcaption>
+        <div class="catalogo-photo"><img src="assets/img/flavors/mango.webp" alt="Sorbete vegan de mango Roccia" loading="lazy" width="840" height="1050" /></div>
+        <figcaption class="catalogo-caption"><div class="catalogo-name">Mango</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
+      </figure>
+      <figure class="catalogo-card">
+        <div class="catalogo-photo"><img src="assets/img/flavors/naranjilla.webp" alt="Sorbete vegan de naranjilla Roccia" loading="lazy" width="840" height="1050" /></div>
+        <figcaption class="catalogo-caption"><div class="catalogo-name">Naranjilla</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
+      </figure>
+      <figure class="catalogo-card">
+        <div class="catalogo-photo"><img src="assets/img/flavors/limon-siciliano.webp" alt="Sorbete vegan de limón siciliano Roccia" loading="lazy" width="840" height="1050" /></div>
+        <figcaption class="catalogo-caption"><div class="catalogo-name">Limón Siciliano</div><div class="catalogo-cat">Frutal vegan</div></figcaption>
+      </figure>
+      <figure class="catalogo-card">
+        <div class="catalogo-photo"><img src="assets/img/flavors/taxo.webp" alt="Sorbete vegan de taxo Roccia" loading="lazy" width="840" height="1050" /></div>
+        <figcaption class="catalogo-caption"><div class="catalogo-name">Taxo</div><div class="catalogo-cat">Frutal exclusivo</div></figcaption>
       </figure>
       <figure class="catalogo-card">
         <div class="catalogo-photo"><img src="assets/img/creations/torta.webp" alt="Torta helada Roccia" loading="lazy" width="840" height="1050" /></div>
         <figcaption class="catalogo-caption"><div class="catalogo-name">Torta Helada</div><div class="catalogo-cat">Creación de la casa</div></figcaption>
       </figure>
-      <figure class="catalogo-card">
-        <div class="catalogo-photo"><img src="assets/img/creations/brioscia.webp" alt="Brioscia Roccia" loading="lazy" width="840" height="1050" /></div>
-        <figcaption class="catalogo-caption"><div class="catalogo-name">Brioscia</div><div class="catalogo-cat">Creación de la casa</div></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ── Marcas placeholder ───────────────────────────── -->
-<section class="marcas-section section-tight" data-screen-label="09 Marcas">
-  <div class="wrap">
-    <div class="marcas-card">
-      <div class="label">Marcas que confían</div>
-      <h3>Pronto, <em>aquí.</em></h3>
-      <p>Estamos cerrando nuestras primeras alianzas mayoristas en Quito y Cumbayá. Pronto verás aquí los logos de los restaurantes, hoteles y tiendas premium que sirven Roccia en su mesa.</p>
-      <div class="marcas-row">
-        <div class="placeholder">Pronto</div>
-        <div class="placeholder">Pronto</div>
-        <div class="placeholder">Pronto</div>
-        <div class="placeholder">Pronto</div>
-        <div class="placeholder">Pronto</div>
-      </div>
     </div>
   </div>
 </section>
@@ -1734,13 +1703,13 @@
           <div class="form-field full" style="margin-bottom: 28px;">
             <label class="form-label">Formatos de interés <span class="req">*</span></label>
             <div class="chips" id="chips-formatos" role="group" aria-label="Formatos de interés">
-              <button type="button" class="chip" data-value="Postres firmados">
+              <button type="button" class="chip" data-value="Bandejas gastronorm">
                 <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Postres firmados
+                Bandejas gastronorm
               </button>
-              <button type="button" class="chip" data-value="Pintas 500 ml">
+              <button type="button" class="chip" data-value="Envases térmicos ½ L y 1 L">
                 <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Pintas 500 ml
+                Envases térmicos ½ L y 1 L
               </button>
               <button type="button" class="chip" data-value="Sabores a medida">
                 <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1812,12 +1781,12 @@
 <footer class="m-footer" data-screen-label="11 Footer">
   <div class="wrap">
     <div class="m-footer-grid">
-      <a href="index.html" class="m-footer-brand">
+      <a href="/" class="m-footer-brand">
         <img src="assets/img/logo-roca.png" alt="Roccia" />
         <span class="sub">Mayoristas</span>
       </a>
       <nav class="m-footer-nav" aria-label="Footer">
-        <a href="index.html">Volver a roccia.ec</a>
+        <a href="/">Volver a roccia.ec</a>
         <a href="#contacto">Contacto</a>
         <a href="https://instagram.com/roccia_ec" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:hola@rocciaheladeria.com">Email</a>
