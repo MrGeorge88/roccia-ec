@@ -21,11 +21,17 @@ Sitio principal de marca · roccia.ec
 Auto-deploy desde GitHub a Vercel en cada push a main.
 Production: https://roccia.ec
 
-## Sitios hermanos del ecosistema (próximos)
+## Dominios
 
-- heladosroccia.com — Sitio comercial SEO
-- momentosroccia.com — Blog editorial
-- rocciaheladeria.com — B2B robusto (Fase 4)
+`roccia.ec` es el dominio canónico y único sitio. Los dominios secundarios
+redirigen con 301 a `roccia.ec` (configurado en `vercel.json`):
+
+- heladosroccia.com → roccia.ec (301)
+- momentosroccia.com → roccia.ec (301)
+- roccia.com.ec → roccia.ec (301)
+
+`rocciaheladeria.com` NO redirige: se mantiene activo para el correo
+`hola@rocciaheladeria.com`.
 
 ## Brand
 

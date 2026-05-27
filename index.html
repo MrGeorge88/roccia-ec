@@ -2054,31 +2054,177 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "IceCreamShop",
-  "name": "Roccia Heladería",
-  "description": "Heladería italo-argentina artesanal en Plaza Briza, Cumbayá. Gelato con ingredientes reales de Italia, Argentina y Ecuador.",
-  "url": "https://roccia.ec",
-  "telephone": "+593963997478",
-  "email": "hola@rocciaheladeria.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Plaza Briza, Av. Francisco de Orellana y Tajamar",
-    "addressLocality": "Cumbayá",
-    "addressRegion": "Pichincha",
-    "addressCountry": "EC"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -0.2070,
-    "longitude": -78.4454
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "10:00",
-    "closes": "20:00"
-  },
-  "sameAs": ["https://instagram.com/roccia_ec"]
+  "@graph": [
+    {
+      "@type": "IceCreamShop",
+      "@id": "https://roccia.ec/#business",
+      "name": "Roccia Heladería",
+      "alternateName": "Roccia",
+      "description": "Heladería artesanal italo-argentina en Cumbayá, Quito. 35 sabores de gelato hechos a mano con técnica italiana e ingredientes ecuatorianos.",
+      "url": "https://roccia.ec",
+      "image": "https://roccia.ec/assets/img/hero-helado.webp",
+      "logo": "https://roccia.ec/assets/img/logo-roca.png",
+      "telephone": "+593963997478",
+      "email": "hola@rocciaheladeria.com",
+      "priceRange": "$$",
+      "servesCuisine": ["Italian", "Argentine", "Ecuadorian", "Gelato"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza Briza, Av. Francisco de Orellana y Tajamar",
+        "addressLocality": "Cumbayá",
+        "addressRegion": "Pichincha",
+        "postalCode": "170901",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -0.2019223,
+        "longitude": -78.4265223
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/roccia_ec",
+        "https://www.google.com/maps/place/Roccia+Helader%C3%ADa/@-0.2022306,-78.427118,19.25z"
+      ],
+      "hasMenu": { "@id": "https://roccia.ec/#menu" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "65",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Aricya Locus" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "¡La mejor affogato de todo Quito! La atención de todos los chicos y chicas es maravillosa, son super atentos.",
+          "datePublished": "2026-05-12"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Kc Wang" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Me sorprendieron mucho, estaban deliciosos. Pedí el sabor de choco avellana y me encantó. Tienen una gran variedad de sabores que se ven riquísimos, definitivamente quiero volver a probar más.",
+          "datePublished": "2026-04-28"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Marcos Tapia" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Un lugar espectacular. Tienen una atención excelente, los helados son cremosos y sus sorbetes bien refrescantes. Mi nuevo lugar favorito en Briza Cumbayá.",
+          "datePublished": "2026-04-07"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Santiago Rubio" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Riquísimo, como estar en Buenos Aires comiendo dulce de leche.",
+          "datePublished": "2026-02-26"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Luis Galarza" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "El mejor pistacho de todo Ecuador. Super recomendado.",
+          "datePublished": "2026-02-20"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Tomás Márquez" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "El helado de manjar de leche fue una grata experiencia. Heladería premium con cafetería de primer nivel, ideal para un fin de semana soleado. Negocio familiar con unos propietarios super buena onda.",
+          "datePublished": "2025-12-26"
+        }
+      ]
+    },
+    {
+      "@type": "Menu",
+      "@id": "https://roccia.ec/#menu",
+      "name": "Menú Roccia",
+      "description": "35 sabores de gelato más creaciones de la casa",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Leche y Crema",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Pistacho" },
+            { "@type": "MenuItem", "name": "Tiramisú" },
+            { "@type": "MenuItem", "name": "Stracciatella" },
+            { "@type": "MenuItem", "name": "Mascarpone y Berries" },
+            { "@type": "MenuItem", "name": "Vainilla Francesa" },
+            { "@type": "MenuItem", "name": "Cookies and Cream" },
+            { "@type": "MenuItem", "name": "Higos con Queso" },
+            { "@type": "MenuItem", "name": "Yogurt" },
+            { "@type": "MenuItem", "name": "3 Leches" },
+            { "@type": "MenuItem", "name": "Cheesecake de Maracuyá" },
+            { "@type": "MenuItem", "name": "Chicle" },
+            { "@type": "MenuItem", "name": "Ron Pasas" },
+            { "@type": "MenuItem", "name": "Menta Granizada" },
+            { "@type": "MenuItem", "name": "Mocca" },
+            { "@type": "MenuItem", "name": "Banana" }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Frutales al Agua",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Uva", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Naranjilla", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Mora", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Frutilla", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Taxo", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Guanábana", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Mandarina", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Mango", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Limón Siciliano", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Coco", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Coco-Limón", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Uvilla", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Maracuyá", "suitableForDiet": "https://schema.org/VeganDiet" },
+            { "@type": "MenuItem", "name": "Frambuesa", "suitableForDiet": "https://schema.org/VeganDiet" }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Chocolates",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Chocolate Blanco" },
+            { "@type": "MenuItem", "name": "Kinder" },
+            { "@type": "MenuItem", "name": "Choco Avellana" },
+            { "@type": "MenuItem", "name": "Chocolate Intenso" }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Dulces de Leche",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Dulce de Leche" },
+            { "@type": "MenuItem", "name": "Dulce de Leche Granizado" }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Creaciones",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Affogato", "offers": { "@type": "Offer", "price": "4.90", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Brioscia", "offers": { "@type": "Offer", "price": "5.40", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Cornetto", "offers": { "@type": "Offer", "price": "5.40", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Torta Helada", "offers": { "@type": "Offer", "price": "4.90", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Frappé", "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "USD" } }
+          ]
+        }
+      ]
+    }
+  ]
 }
 </script>
 
