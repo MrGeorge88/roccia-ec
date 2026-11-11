@@ -679,6 +679,112 @@
     color: var(--mostaza); margin-top: 6px; letter-spacing: 0.04em;
   }
 
+  .creacion-new {
+    display: inline-block; vertical-align: middle;
+    margin-left: 8px; padding: 4px 8px 3px;
+    font-family: var(--serif); font-weight: 500; font-size: 9px;
+    letter-spacing: 0.16em; text-transform: uppercase; line-height: 1;
+    color: var(--cafe-oscuro); background: var(--mostaza); border-radius: 2px;
+  }
+  .creacion-mark {
+    position: absolute; top: 16%; left: 0; right: 0; text-align: center;
+    font-family: var(--script); font-size: clamp(64px, 7vw, 104px); line-height: 1;
+    color: var(--mostaza); opacity: 0.38; transform: rotate(-7deg);
+  }
+
+  /* ── Paletas ─────────────────────────────────────────── */
+  .paletas-section { background: var(--cafe-oscuro); color: var(--crema); overflow: hidden; }
+  .paletas-section .seal { color: var(--crema); border-color: rgba(250,244,224,0.5); }
+  .paletas-stage {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+    margin-top: clamp(32px, 4vw, 56px);
+  }
+  @media (max-width: 880px) { .paletas-stage { grid-template-columns: 1fr; } }
+  .paletas-visual {
+    position: relative;
+    width: 100%; max-width: 600px; margin: 0 auto;
+    aspect-ratio: 1 / 1;
+  }
+  .paletas-visual::before {
+    content: ''; position: absolute; inset: 4%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(250,244,224,0.20), rgba(198,162,82,0.10) 55%, rgba(198,162,82,0) 100%);
+  }
+  .paleta-fig { position: absolute; margin: 0; }
+  .paleta-fig img {
+    display: block; width: 100%; height: auto;
+    filter: drop-shadow(0 22px 26px rgba(20, 10, 4, 0.45));
+  }
+  .paleta-fig.a { width: 40%; left: 9%; top: 9%; rotate: -10deg; animation: paleta-float 7s ease-in-out infinite; }
+  .paleta-fig.b { width: 46%; right: 5%; top: 13%; rotate: 9deg; animation: paleta-float 7s ease-in-out -3.5s infinite; }
+  @keyframes paleta-float {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -14px; }
+  }
+  .paletas-label {
+    font-family: var(--serif); font-weight: 500; font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(250,244,224,0.7);
+  }
+  .paletas-chips {
+    list-style: none; margin: 14px 0 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .paletas-chips li {
+    font-family: var(--display); font-weight: 600; font-size: 15px;
+    letter-spacing: 0.02em; text-transform: uppercase; line-height: 1;
+    padding: 10px 14px 9px;
+    border: 1px solid rgba(250,244,224,0.45); border-radius: 9999px;
+  }
+  .paletas-note {
+    font-family: var(--serif); font-style: italic; font-size: 13.5px;
+    color: rgba(250,244,224,0.7); margin: 14px 0 0;
+  }
+  .paletas-prices { margin: clamp(28px, 3vw, 40px) 0 0; }
+  .paletas-row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(250,244,224,0.22);
+  }
+  .paletas-row:first-child { border-top: 1px solid rgba(250,244,224,0.22); }
+  .paletas-row dt {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(18px, 1.7vw, 22px);
+    letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.15;
+  }
+  .paletas-row dt small {
+    display: block; margin-top: 5px;
+    font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 13px;
+    letter-spacing: 0; text-transform: none;
+    color: rgba(250,244,224,0.7);
+  }
+  .paletas-row dd {
+    margin: 0; white-space: nowrap;
+    font-family: var(--serif); font-size: 17px; letter-spacing: 0.04em;
+    color: var(--mostaza);
+  }
+  .paletas-toppings {
+    font-family: var(--serif); font-size: 14.5px; line-height: 1.6;
+    color: rgba(250,244,224,0.85); margin: 22px 0 0; max-width: 56ch;
+  }
+  .paletas-toppings span {
+    display: block; margin-bottom: 6px;
+    font-weight: 500; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(250,244,224,0.7);
+  }
+  .paletas-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(28px, 3vw, 40px); }
+  .pill.paletas-ghost { background: transparent; color: var(--crema); border-color: rgba(250,244,224,0.6); }
+  .pill.paletas-ghost:hover { background: var(--crema); color: var(--cafe-oscuro); border-color: var(--crema); }
+  .js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .paleta-fig.a, .paleta-fig.b { animation: none; }
+    .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  }
+
   /* ── Catorce frutales (vegan) ────────────────────────── */
   .vegan-section { background: var(--verde); color: var(--crema); }
   .vegan-section .seal { color: var(--crema); border-color: rgba(250,244,224,0.5); }
@@ -1207,6 +1313,7 @@
     </a>
     <div class="nav-links">
       <a href="#menu">Menú</a>
+      <a href="#paletas">Paletas</a>
       <a href="#sabores">Sabores</a>
       <a href="#origen">Historia</a>
       <a href="#ubicacion">Ubicación</a>
@@ -1498,10 +1605,11 @@
         </div>
       </a>
       <a href="#menu" class="creacion-card no-photo">
+        <div class="creacion-mark" aria-hidden="true">Brownie</div>
         <div class="creacion-meta">
-          <div class="creacion-name">Cornetto</div>
-          <div class="creacion-desc">Cono crujiente relleno de gelato.</div>
-          <div class="creacion-price">$5.40</div>
+          <div class="creacion-name">Brownie con helado</div>
+          <div class="creacion-desc">Brownie con gelato artesanal.</div>
+          <div class="creacion-price">$5.50</div>
         </div>
       </a>
       <a href="#menu" class="creacion-card">
@@ -1510,16 +1618,95 @@
         <div class="creacion-meta">
           <div class="creacion-name">Torta Helada</div>
           <div class="creacion-desc">Capa sobre capa de gelato y crocante.</div>
-          <div class="creacion-price">$4.90</div>
+          <div class="creacion-price">$5.90</div>
         </div>
       </a>
-      <a href="#menu" class="creacion-card no-photo">
+      <a href="#menu" class="creacion-card">
+        <img src="assets/img/creations/frappe.webp" alt="Frappé Roccia — café batido cremoso con crema y sirope de chocolate" width="1122" height="1402" loading="lazy" />
+        <div class="veil" aria-hidden="true"></div>
         <div class="creacion-meta">
           <div class="creacion-name">Frappé</div>
           <div class="creacion-desc">Café batido cremoso.</div>
           <div class="creacion-price">$5.50</div>
         </div>
       </a>
+      <a href="#paletas" class="creacion-card">
+        <img src="assets/img/creations/paleta.webp" alt="Paleta de gelato Roccia con baño, sirope de chocolate y toppings" width="1122" height="1402" loading="lazy" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="creacion-meta">
+          <div class="creacion-name">Paletas <span class="creacion-new">Nuevo</span></div>
+          <div class="creacion-desc">Gelato en paleta, con el topping que prefieras.</div>
+          <div class="creacion-price">Desde $2.75</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Paletas ──────────────────────────────────────── -->
+<section class="paletas-section section" id="paletas" aria-labelledby="paletas-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="seal">Nuevo</span></div>
+      <div>
+        <h2 id="paletas-heading" class="section-headline">Ahora también <em>en paleta.</em></h2>
+        <p class="section-eyebrow on-dark">El mismo gelato de la vitrina, hecho cada día, en una paleta de 80 gramos. Llévala sola o súmale el topping que prefieras.</p>
+      </div>
+    </div>
+
+    <div class="paletas-stage">
+      <div class="paletas-visual" data-reveal>
+        <figure class="paleta-fig a">
+          <img src="assets/img/paletas/paleta-clasica.webp" alt="Paleta de gelato Roccia con baño blanco y sirope de chocolate" width="560" height="1353" loading="lazy" />
+        </figure>
+        <figure class="paleta-fig b">
+          <img src="assets/img/paletas/paleta-toppings.webp" alt="Paleta de gelato Roccia con sirope de chocolate, galleta y trozos de chocolate" width="640" height="1253" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="paletas-info" data-reveal>
+        <div class="paletas-label">Sabores de estos días</div>
+        <ul class="paletas-chips">
+          <li>Uva</li>
+          <li>Mandarina</li>
+          <li>Unicornio</li>
+          <li>Nocciolino</li>
+          <li>Mango maracuyá tajín</li>
+        </ul>
+        <p class="paletas-note">Los sabores cambian con la producción. Pregunta en el local por los de hoy.</p>
+
+        <dl class="paletas-prices">
+          <div class="paletas-row">
+            <dt>Paleta de gelato <small>80 g</small></dt>
+            <dd>$2.75</dd>
+          </div>
+          <div class="paletas-row">
+            <dt>Topping <small>cada uno</small></dt>
+            <dd>$0.50</dd>
+          </div>
+          <div class="paletas-row">
+            <dt>Trío degustación <small>tres mini paletas</small></dt>
+            <dd>$3.75</dd>
+          </div>
+          <div class="paletas-row">
+            <dt>Caja de 10 <small>sabores a tu elección · Uber Eats</small></dt>
+            <dd>$29.00</dd>
+          </div>
+        </dl>
+
+        <p class="paletas-toppings"><span>Toppings</span>Crema chantilly · baño de chocolate · sirope de dulce de leche · sirope de chocolate · chispas de chocolate · barquillos.</p>
+
+        <div class="paletas-cta">
+          <a href="https://www.ubereats.com/ec/store/roccia-heladeria-quito/ykuLU1U_WnS1XdmfUux0dw" target="_blank" rel="noopener noreferrer" class="pill invert">
+            Pedir la caja de 10
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="https://wa.me/593963997478?text=Hola%20Roccia%2C%20quiero%20paletas%20para%20un%20evento" target="_blank" rel="noopener noreferrer" class="pill paletas-ghost">
+            Paletas para tu evento
+            <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1546,7 +1733,7 @@
 
       <div class="menu-col">
         <h3>Creaciones de la casa</h3>
-        <p class="menu-cat-desc">Affogato, brioscia, cornetto, torta helada y frappé.</p>
+        <p class="menu-cat-desc">Affogato, brioscia, brownie con helado, torta helada, frappé y paletas.</p>
       </div>
 
       <div class="menu-col">
@@ -1663,7 +1850,7 @@
       <div><span class="seal">Reseñas</span></div>
       <div>
         <h2 id="resenas-heading" class="section-headline">Lo que dicen quienes <em>nos visitan.</em></h2>
-        <p class="section-eyebrow">5.0 en Google · 65+ reseñas verificadas.</p>
+        <p class="section-eyebrow">5.0 en Google · +105 reseñas verificadas.</p>
       </div>
     </div>
     <div class="resenas-grid">
@@ -1824,6 +2011,20 @@
 </footer>
 
 <script>
+  // ── Aparición suave al hacer scroll (solo si hay JS)
+  (function () {
+    var els = document.querySelectorAll('[data-reveal]');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
   // ── Sticky nav scroll behavior
   (function () {
     const nav = document.getElementById('nav');
@@ -2043,7 +2244,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "65",
+        "reviewCount": "105",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -2163,9 +2364,18 @@
           "hasMenuItem": [
             { "@type": "MenuItem", "name": "Affogato", "offers": { "@type": "Offer", "price": "4.90", "priceCurrency": "USD" } },
             { "@type": "MenuItem", "name": "Brioscia", "offers": { "@type": "Offer", "price": "5.40", "priceCurrency": "USD" } },
-            { "@type": "MenuItem", "name": "Cornetto", "offers": { "@type": "Offer", "price": "5.40", "priceCurrency": "USD" } },
-            { "@type": "MenuItem", "name": "Torta Helada", "offers": { "@type": "Offer", "price": "4.90", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Brownie con Helado", "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Torta Helada", "offers": { "@type": "Offer", "price": "5.90", "priceCurrency": "USD" } },
             { "@type": "MenuItem", "name": "Frappé", "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "USD" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Paletas",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Paleta de gelato (80 g)", "offers": { "@type": "Offer", "price": "2.75", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Trío degustación de mini paletas", "offers": { "@type": "Offer", "price": "3.75", "priceCurrency": "USD" } },
+            { "@type": "MenuItem", "name": "Caja de 10 paletas", "offers": { "@type": "Offer", "price": "29.00", "priceCurrency": "USD" } }
           ]
         }
       ]
