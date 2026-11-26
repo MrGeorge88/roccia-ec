@@ -1308,6 +1308,7 @@
     <div class="nav-links">
       <a href="#menu">Menú</a>
       <a href="#paletas">Paletas</a>
+      <a href="/eventos">Eventos</a>
       <a href="#sabores">Sabores</a>
       <a href="#origen">Historia</a>
       <a href="#ubicacion">Ubicación</a>
@@ -1696,7 +1697,7 @@
             Pedir la caja de 10
             <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </a>
-          <a href="https://wa.me/593963997478?text=Hola%20Roccia%2C%20quiero%20paletas%20para%20un%20evento" target="_blank" rel="noopener noreferrer" class="pill paletas-ghost">
+          <a href="/eventos" class="pill paletas-ghost">
             Paletas para tu evento
             <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </a>
@@ -1973,6 +1974,7 @@
           <li><a href="#origen">Historia</a></li>
           <li><a href="#sabores">Sabores</a></li>
           <li><a href="#menu">Menú</a></li>
+          <li><a href="/eventos">Eventos</a></li>
           <li><a href="#mayoristas">Mayoristas</a></li>
         </ul>
       </div>
@@ -2202,7 +2204,7 @@
       "@id": "https://roccia.ec/#business",
       "name": "Roccia Heladería",
       "alternateName": "Roccia",
-      "description": "Heladería artesanal italo-argentina en Cumbayá, Quito. 35 sabores de gelato hechos a mano con técnica italiana e ingredientes ecuatorianos.",
+      "description": "Heladería artesanal italo-argentina en Cumbayá, Quito. 35 sabores de gelato hechos a mano con técnica italiana e ingredientes ecuatorianos. También lleva gelato a eventos: vitrina de paletas personalizada, gelato en vivo y tortas heladas.",
       "url": "https://roccia.ec",
       "image": "https://roccia.ec/assets/img/hero-helado.webp",
       "logo": "https://roccia.ec/assets/img/logo-roca.png",
@@ -2236,6 +2238,16 @@
         "https://www.google.com/maps/place/Roccia+Helader%C3%ADa/@-0.2022306,-78.427118,19.25z"
       ],
       "hasMenu": { "@id": "https://roccia.ec/#menu" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Gelato para eventos",
+        "url": "https://roccia.ec/eventos",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@id": "https://roccia.ec/eventos#vitrina-paletas" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://roccia.ec/eventos#gelato-en-vivo" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://roccia.ec/eventos#tortas-heladas" } }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",

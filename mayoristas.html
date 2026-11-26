@@ -1764,7 +1764,7 @@
       <div class="form-success" id="form-success">
         <span class="seal">Recibido · 2026</span>
         <h3>Gracias, <em id="success-name">amigo</em><span style="color: var(--mostaza);">.</span></h3>
-        <p>Te respondemos por email o WhatsApp en menos de 24 horas con una propuesta inicial: sabores sugeridos, formatos recomendados y siguientes pasos.</p>
+        <p>Se abrió WhatsApp con tu solicitud lista: solo dale enviar. Te respondemos en menos de 24 horas con una propuesta inicial: sabores sugeridos, formatos recomendados y siguientes pasos.</p>
         <div class="summary" id="success-summary"></div>
       </div>
     </div>
@@ -1914,6 +1914,22 @@
       : '';
 
     success.classList.add('visible');
+
+    // Enviar el lead a WhatsApp (antes el formulario no enviaba a ningún lado)
+    const waLines = [
+      'Hola Roccia, quiero una propuesta mayorista.',
+      `Nombre: ${fullName}`,
+      data.get('cargo') ? `Cargo: ${data.get('cargo')}` : '',
+      `Empresa: ${empresa}`,
+      `Tipo: ${tipo}`,
+      `Email: ${data.get('email')}`,
+      data.get('whatsapp') ? `WhatsApp: ${data.get('whatsapp')}` : '',
+      formatos.length ? `Formatos: ${formatos.join(', ')}` : '',
+      volumen ? `Volumen mensual: ${volumen}` : '',
+      plazo ? `Plazo: ${plazo}` : '',
+      data.get('mensaje') ? `Mensaje: ${data.get('mensaje')}` : ''
+    ].filter(Boolean).join('\n');
+    window.open('https://wa.me/593963997478?text=' + encodeURIComponent(waLines), '_blank', 'noopener');
 
     // Smooth scroll to success
     success.scrollIntoView ? null : null;
